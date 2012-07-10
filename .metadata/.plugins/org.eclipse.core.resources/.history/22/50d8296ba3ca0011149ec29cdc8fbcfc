@@ -1,0 +1,29 @@
+package ch.kusar.calendarWrapper;
+
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+public class CalendarWrapper {
+
+	public static GregorianCalendar getActualCalendar() {
+		return new GregorianCalendar();
+	}
+
+	public static GregorianCalendar getActualCalendarWithoutHourMinutesSeconds() {
+		Calendar calendar = new GregorianCalendar();
+		calendar.set(Calendar.HOUR_OF_DAY, 0);
+		calendar.set(Calendar.MINUTE, 0);
+		calendar.set(Calendar.SECOND, 0);
+		return (GregorianCalendar) calendar;
+	}
+	
+	public static GregorianCalendar convertToCalendarWithoutHourMinutesSeconds(GregorianCalendar calendar) {
+		Calendar cal = calendar;
+		
+		cal.set(Calendar.HOUR_OF_DAY, 0);
+		cal.set(Calendar.MINUTE, 0);
+		cal.set(Calendar.SECOND, 0);
+		
+		return cal;
+	}
+}

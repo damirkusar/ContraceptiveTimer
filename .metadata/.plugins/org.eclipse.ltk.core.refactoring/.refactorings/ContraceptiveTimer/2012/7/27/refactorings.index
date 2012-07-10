@@ -1,0 +1,6 @@
+1341769716277	Rename package 'ch.kusar.contraceptivetimer.objects'
+1341769731542	Rename package 'ch.kusar.contraceptivetimer.data'
+1341770126355	Encapsulate field 'contraceptiveType'
+1341770271049	Encapsulate field 'startTime'
+1341770280528	Encapsulate field 'alarmTime'
+1341770287066	Encapsulate field 'intervalDays'

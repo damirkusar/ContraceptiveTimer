@@ -1,0 +1,46 @@
+package ch.kusar.contraceptivetimer.test.businessobjects;
+
+import static org.junit.Assert.*;
+
+import java.util.Date;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import ch.kusar.contraceptivetimer.businessobjects.AlarmData;
+import ch.kusar.contraceptivetimer.businessobjects.ContraceptiveType;
+import ch.kusar.contraceptivetimer.wrapper.InternalStorageWrapper;
+
+public class AlarmDataTest {
+	
+	AlarmData alarmData;
+	InternalStorageWrapper internalStorageWrapper;
+
+	@Before
+	public void setUp() throws Exception {
+		Date date = new Date();
+		long startTime = date.getTime();
+		date.setMinutes(date.getMinutes() + 1);
+		long alarmTime = startTime + date.getTime();
+		
+		this.internalStorageWrapper = new InternalStorageWrapper();
+		
+		this.alarmData = new AlarmData();
+		this.alarmData.setStartTime(startTime);
+		this.alarmData.setContraceptiveType(ContraceptiveType.CONTRACEPTION_RING);
+		this.alarmData.setAlarmTime(alarmTime);
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		this.alarmData = null;
+		this.internalStorageWrapper = null;
+	}
+
+	@Test
+	public void GetIntervalDays_TypeIsRing_Returns21() {
+		fail("Not yet implemented");
+	}
+
+}

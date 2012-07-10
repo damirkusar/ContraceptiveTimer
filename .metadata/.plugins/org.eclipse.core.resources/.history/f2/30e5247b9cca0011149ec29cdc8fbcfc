@@ -1,0 +1,78 @@
+package ch.kusar.contraceptivetimer.businessobjects;
+
+import java.io.Serializable;
+import java.util.Date;
+
+public class AlarmData implements Serializable {
+
+	private static final long serialVersionUID = 5921434769798781785L;
+	private static final int millisecondsInDay = 1000 * 60 * 60 * 24;
+	private ContraceptiveType contraceptiveType;
+	private long startTime;
+	private long lastBreak;
+	private long alarmTime;
+	private static final int numberOfDaysToMakeSevenDaysBreak = 21;
+
+	public AlarmData() {
+		super();
+	}
+
+	public AlarmData(ContraceptiveType contraceptiveType, long startTime,
+			long alarmTime) {
+		super();
+		this.contraceptiveType = contraceptiveType;
+		this.startTime = startTime;
+		this.alarmTime = alarmTime;
+	}
+
+	public ContraceptiveType getContraceptiveType() {
+		return this.contraceptiveType;
+	}
+
+	public void setContraceptiveType(ContraceptiveType contraceptiveType) {
+		this.contraceptiveType = contraceptiveType;
+	}
+
+	public long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(long startTime) {
+		this.startTime = startTime;
+	}
+
+	public long getLastBreak() {
+		return this.lastBreak;
+	}
+
+	public void setLastBreak(long lastBreak) {
+		this.lastBreak = lastBreak;
+	}
+
+	public long getAlarmTime() {
+		return this.alarmTime;
+	}
+
+	public static int getNumberOfDaysToMakeSevenDaysBreak() {
+		return AlarmData.numberOfDaysToMakeSevenDaysBreak;
+	}
+
+	public void setAlarmTime(long alarmTime) {
+		this.alarmTime = alarmTime;
+	}
+
+	public int getIntervalDays() {
+		return this.contraceptiveType.getMask();
+	}
+
+	public int getNumberOfDaysSinceLastBreak() {
+		Date lastBreakDate = new Date(this.lastBreak);
+		Date nowDate = new Date();
+
+		return (int) ((lastBreakDate.getTime() - nowDate.getTime()) / AlarmData.millisecondsInDay);
+
+	}
+
+	public void setNumberOfDaysSinceLastBreak(int numberOfDaysSinceLastBreak) {
+	}
+}

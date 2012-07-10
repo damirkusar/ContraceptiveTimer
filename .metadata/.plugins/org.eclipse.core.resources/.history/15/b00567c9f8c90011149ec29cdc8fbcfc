@@ -1,0 +1,38 @@
+package ch.kusar.contraceptivetimer.wrapper;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
+import android.content.Context;
+import ch.kusar.contraceptivetimer.businessobjects.AlarmData;
+
+public class InternalStorageWrapper {
+		
+	private static final String FILENAME = "ContraceptiveTimerData";
+	private Context fileContext;
+	
+	public InternalStorageWrapper(Context fileContext){
+		
+	}
+
+	public boolean saveToStorage(AlarmData alarmData) {
+		try{
+			FileOutputStream fos = fileContext.getApplicationContext().openFileOutput(this.FILENAME, Context.MODE_PRIVATE);	 
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			oos.writeObject(alarmData);
+			oos.close();
+			return true;
+		} catch(IOException e){
+        	String msg = String.format("%s: IOException with error: %s", this.toString(), e.getMessage());
+        	LoggerWrapper.LogError(msg);
+        	e.printStackTrace();
+        }
+		return false;		
+	}
+
+	@Override
+	public String toString() {
+		return getClass().getName();
+	}
+}

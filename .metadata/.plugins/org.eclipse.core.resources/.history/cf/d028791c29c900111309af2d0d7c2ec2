@@ -1,0 +1,41 @@
+package ch.kusar.contraceptivetimer.test.wrapper;
+
+import static org.junit.Assert.*;
+import junit.framework.TestCase;
+import ch.kusar.contraceptivetimer.businessobjects.AlarmData;
+
+import com.google.android.testing.mocking.AndroidMock;
+import com.google.android.testing.mocking.UsesMocks;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class InternalStorageWrapperTest{
+
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@UsesMocks(AlarmData.class)
+	@Before
+	public void setUp() throws Exception {
+		AlarmData h;
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

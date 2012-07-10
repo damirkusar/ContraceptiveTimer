@@ -1,0 +1,10 @@
+package ch.kusar.contraceptivetimer.businessobjects;
+
+public class AlarmMessage {
+
+	public static String getPillChangeMessage() {
+		String msg = String.format("%s: IOException with error: %s",
+				this.toString(), e.getStackTrace());
+	}
+
+}

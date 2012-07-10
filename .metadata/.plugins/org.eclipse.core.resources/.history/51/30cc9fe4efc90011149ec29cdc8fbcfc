@@ -1,0 +1,10 @@
+package ch.kusar.contraceptivetimer.wrapper;
+
+public class LoggerWrapper {
+	private static final String TAG = "ch.kusar.contraceptiveTimer";
+	
+	public static void LogError(String msg){
+		
+	}
+
+}

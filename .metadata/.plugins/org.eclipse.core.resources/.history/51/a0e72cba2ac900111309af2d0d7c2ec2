@@ -1,0 +1,49 @@
+package ch.kusar.contraceptivetimer.test.wrapper;
+
+import static org.junit.Assert.*;
+
+import java.util.Date;
+
+import junit.framework.TestCase;
+import ch.kusar.contraceptivetimer.businessobjects.AlarmData;
+import ch.kusar.contraceptivetimer.businessobjects.ContraceptiveType;
+
+import com.google.android.testing.mocking.AndroidMock;
+import com.google.android.testing.mocking.UsesMocks;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class InternalStorageWrapperTest{
+	AlarmData alarmDataMock;
+
+	@UsesMocks(AlarmData.class)
+	@Before
+	public void setUp() throws Exception {
+		Date date = new Date();
+		long startTime = date.getTime();
+		date.setMinutes(date.getMinutes() + 1);
+		long alarmTime = startTime + date.getTime();
+		
+		this.alarmDataMock = AndroidMock.createMock(AlarmData.class);		
+		
+		AndroidMock.expect(this.alarmDataMock.getContraceptiveType()).andReturn(ContraceptiveType.CONTRACEPTION_RING);
+		AndroidMock.expect(this.alarmDataMock.getIntervalDays()).andReturn(21);
+		AndroidMock.expect(this.alarmDataMock.getStartTime()).andReturn(startTime);
+		AndroidMock.expect(this.alarmDataMock.getAlarmTime()).andReturn(alarmTime);			
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		this.alarmDataMock = null;
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

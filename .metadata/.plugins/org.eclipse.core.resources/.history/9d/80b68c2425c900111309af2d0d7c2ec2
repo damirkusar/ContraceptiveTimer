@@ -1,0 +1,5 @@
+package ch.kusar.contraceptivetimer.objects;
+
+public class AlarmData {
+
+}

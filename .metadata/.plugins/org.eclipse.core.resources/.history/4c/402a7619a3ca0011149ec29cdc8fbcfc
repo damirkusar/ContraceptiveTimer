@@ -1,0 +1,10 @@
+package ch.kusar.calendarWrapper;
+
+import java.util.GregorianCalendar;
+
+public class CalendarWrapper {
+
+	public static GregorianCalendar getActualCalendar() {
+		return new GregorianCalendar();
+	}
+}

@@ -1,0 +1,12 @@
+package ch.kusar.contraceptivetimer.wrapper;
+
+import ch.kusar.contraceptivetimer.businessobjects.AlarmData;
+
+public class InternalStorageWrapper {
+
+	public boolean saveToInternalStorage(AlarmData alarmDataMock) {
+		System.console().writer().write("SaveToInternalStorageCalled");	
+		return true;
+	}
+
+}

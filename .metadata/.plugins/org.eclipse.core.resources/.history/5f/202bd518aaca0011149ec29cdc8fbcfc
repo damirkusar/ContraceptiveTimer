@@ -1,0 +1,20 @@
+package ch.kusar.contraceptivetimer.businessobjects;
+
+public class AlarmMessage {
+
+	public static String getPillChangeMessage() {
+		String msg = String.format("It's time, please change your pill");
+		return msg;
+	}
+	
+	public static String getPatchChangeMessage() {
+		String msg = String.format("It's time, please change your patch");
+		return msg;
+	}
+	
+	public static String getRingChangeMessage() {
+		String msg = String.format("It's time, please change your ring");
+		return msg;
+	}
+
+}

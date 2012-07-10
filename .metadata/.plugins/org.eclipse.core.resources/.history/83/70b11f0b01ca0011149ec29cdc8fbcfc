@@ -1,0 +1,57 @@
+package ch.kusar.contraceptivetimer.wrapper;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OptionalDataException;
+
+import android.content.Context;
+import ch.kusar.contraceptivetimer.businessobjects.AlarmData;
+
+public class InternalStorageWrapper {
+		
+	private static final String FILENAME = "ContraceptiveTimerData";
+	private Context fileContext;
+	
+	public InternalStorageWrapper(Context fileContext){
+		this.fileContext = fileContext;
+	}
+
+	public boolean saveToStorage(AlarmData alarmData) {
+		try{
+			FileOutputStream fos = fileContext.openFileOutput(this.FILENAME, Context.MODE_PRIVATE);	 
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			oos.writeObject(alarmData);
+			oos.close();
+			return true;
+		} catch(IOException e){
+			String msg = String.format("%s: IOException with error: %s", this.toString(), e.getStackTrace());
+        	LoggerWrapper.LogError(msg);
+        	e.printStackTrace();
+        }
+		return false;		
+	}
+	
+	public AlarmData loadFromStorage() {
+		try {
+			FileInputStream fis = fileContext.openFileInput(this.FILENAME);
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			AlarmData alarmData = (AlarmData) ois.readObject();
+			return alarmData;
+		} catch (ClassNotFoundException e) {
+			
+		} catch(IOException e){
+			String msg = String.format("%s: IOException with error: %s", this.toString(), e.getStackTrace());
+        	LoggerWrapper.LogError(msg);
+        	e.printStackTrace();
+        } 
+		return null;
+	}
+
+	@Override
+	public String toString() {
+		return getClass().getName();
+	}
+}
