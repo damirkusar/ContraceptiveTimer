@@ -26,4 +26,5 @@ public class AlarmMessage {
 		String msg = String.format("It's time, please remove your ring");
 		return msg;
 	}
+
 }
