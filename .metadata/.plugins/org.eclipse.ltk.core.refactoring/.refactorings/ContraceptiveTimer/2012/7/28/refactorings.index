@@ -2,3 +2,6 @@
 1341856422756	Rename local variable 'alarmDataMock'
 1341929023624	Rename field 'numberOfChangedTimes'
 1342093320298	Rename method 'getNumberOfAlarmsBeforeBreak'
+1342105068166	Rename local variable 'oneWeek'
+1342105198710	Rename local variable 'threeWeeks'
+1342106474622	Rename local variable 'twoWeeks'

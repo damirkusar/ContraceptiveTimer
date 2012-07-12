@@ -254,13 +254,13 @@ public class AlarmDataTest extends AndroidTestCase {
 
 		Calendar actualCalendarDay = CalendarWrapper.getActualCalendar();
 		actualCalendarDay.set(Calendar.DAY_OF_YEAR,
-				actualCalendarDay.get(Calendar.DAY_OF_YEAR) + 28);
+				actualCalendarDay.get(Calendar.DAY_OF_YEAR));
 
 		Assert.assertEquals(actualCalendarDay.get(Calendar.DAY_OF_YEAR),
 				lastAlarmCalendarDay.get(Calendar.DAY_OF_YEAR));
 	}
 
-	public void testGetFirstAlarmCalendarDayAfterBreak_LastBreakIs6DaysAgoAndTypeIsRing_ExpectedCalendarIsToday() {
+	public void testGetLastAlarmCalendarDay_LastBreakIs6DaysAgoAndTypeIsRing_ExpectedCalendarIsTomorrow() {
 		this.setupCalendarWithLastBreakAgoInDays(6,
 				ContraceptiveType.CONTRACEPTION_RING);
 
@@ -269,14 +269,29 @@ public class AlarmDataTest extends AndroidTestCase {
 
 		Calendar actualCalendarDay = CalendarWrapper.getActualCalendar();
 		actualCalendarDay.set(Calendar.DAY_OF_YEAR,
-				actualCalendarDay.get(Calendar.DAY_OF_YEAR) + 29);
+				actualCalendarDay.get(Calendar.DAY_OF_YEAR) + 1);
 
 		Assert.assertEquals(actualCalendarDay.get(Calendar.DAY_OF_YEAR),
 				lastAlarmCalendarDay.get(Calendar.DAY_OF_YEAR));
 	}
 
-	public void testGetFirstAlarmCalendarDayAfterBreak_LastBreakIs21DaysAgoAndTypeIsPatch_ExpectedCalendarIsIn14Days() {
+	public void testGetLastAlarmCalendarDay_LastBreakIs21DaysAgoAndTypeIsPatch_ExpectedCalendarIsToday() {
 		this.setupCalendarWithLastBreakAgoInDays(21,
+				ContraceptiveType.CONTRACEPTION_PATCH);
+
+		Calendar lastAlarmCalendarDay = this.alarmData
+				.getFirstAlarmCalendarDayAfterBreak();
+
+		Calendar actualCalendarDay = CalendarWrapper.getActualCalendar();
+		actualCalendarDay.set(Calendar.DAY_OF_YEAR,
+				actualCalendarDay.get(Calendar.DAY_OF_YEAR));
+
+		Assert.assertEquals(actualCalendarDay.get(Calendar.DAY_OF_YEAR),
+				lastAlarmCalendarDay.get(Calendar.DAY_OF_YEAR));
+	}
+
+	public void testGetLastAlarmCalendarDay_LastBreakIs7DaysAgoAndTypeIsPatch_ExpectedCalendarIsIn2Weeks() {
+		this.setupCalendarWithLastBreakAgoInDays(7,
 				ContraceptiveType.CONTRACEPTION_PATCH);
 
 		Calendar lastAlarmCalendarDay = this.alarmData
@@ -290,22 +305,7 @@ public class AlarmDataTest extends AndroidTestCase {
 				lastAlarmCalendarDay.get(Calendar.DAY_OF_YEAR));
 	}
 
-	public void testGetFirstAlarmCalendarDayAfterBreak_LastBreakIs7DaysAgoAndTypeIsPatch_ExpectedCalendarIsToday() {
-		this.setupCalendarWithLastBreakAgoInDays(7,
-				ContraceptiveType.CONTRACEPTION_PATCH);
-
-		Calendar lastAlarmCalendarDay = this.alarmData
-				.getFirstAlarmCalendarDayAfterBreak();
-
-		Calendar actualCalendarDay = CalendarWrapper.getActualCalendar();
-		actualCalendarDay.set(Calendar.DAY_OF_YEAR,
-				actualCalendarDay.get(Calendar.DAY_OF_YEAR) + 28);
-
-		Assert.assertEquals(actualCalendarDay.get(Calendar.DAY_OF_YEAR),
-				lastAlarmCalendarDay.get(Calendar.DAY_OF_YEAR));
-	}
-
-	public void testGetFirstAlarmCalendarDayAfterBreak_LastBreakIs21DaysAgoAndTypeIsPill_ExpectedCalendarIsIn14Days() {
+	public void testGetLastAlarmCalendarDay_LastBreakIs21DaysAgoAndTypeIsPill_ExpectedCalendarIsIn7Days() {
 		this.setupCalendarWithLastBreakAgoInDays(21,
 				ContraceptiveType.CONTRACEPTION_PILL);
 
@@ -314,13 +314,13 @@ public class AlarmDataTest extends AndroidTestCase {
 
 		Calendar actualCalendarDay = CalendarWrapper.getActualCalendar();
 		actualCalendarDay.set(Calendar.DAY_OF_YEAR,
-				actualCalendarDay.get(Calendar.DAY_OF_YEAR) + 14);
+				actualCalendarDay.get(Calendar.DAY_OF_YEAR) + 7);
 
 		Assert.assertEquals(actualCalendarDay.get(Calendar.DAY_OF_YEAR),
 				lastAlarmCalendarDay.get(Calendar.DAY_OF_YEAR));
 	}
 
-	public void testGetFirstAlarmCalendarDayAfterBreak_LastBreakIs7DaysAgoAndTypeIsPill_ExpectedCalendarIsIn4Weeks() {
+	public void testGetLastAlarmCalendarDay_LastBreakIs7DaysAgoAndTypeIsPill_ExpectedCalendarIsIn3Weeks() {
 		this.setupCalendarWithLastBreakAgoInDays(7,
 				ContraceptiveType.CONTRACEPTION_PILL);
 
@@ -329,7 +329,7 @@ public class AlarmDataTest extends AndroidTestCase {
 
 		Calendar actualCalendarDay = CalendarWrapper.getActualCalendar();
 		actualCalendarDay.set(Calendar.DAY_OF_YEAR,
-				actualCalendarDay.get(Calendar.DAY_OF_YEAR) + 28);
+				actualCalendarDay.get(Calendar.DAY_OF_YEAR) + 21);
 
 		Assert.assertEquals(actualCalendarDay.get(Calendar.DAY_OF_YEAR),
 				lastAlarmCalendarDay.get(Calendar.DAY_OF_YEAR));

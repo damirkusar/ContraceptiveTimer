@@ -122,11 +122,14 @@ public class AlarmData implements Serializable {
 	}
 
 	public Calendar getFirstAlarmCalendarDayAfterBreak() {
-		Calendar firstAlarmCalendarDayForAlarm = this.lastBreak;
+		int twoWeeks = 14;
 
-		int fourWeeks = 35;
+		Calendar firstAlarmCalendarDayForAlarm = this
+				.getLastCalendarDayForAlarm();
+
 		firstAlarmCalendarDayForAlarm.set(Calendar.DAY_OF_YEAR,
-				this.lastBreak.get(Calendar.DAY_OF_YEAR) + fourWeeks);
+				firstAlarmCalendarDayForAlarm.get(Calendar.DAY_OF_YEAR)
+						+ twoWeeks);
 
 		return firstAlarmCalendarDayForAlarm;
 	}
