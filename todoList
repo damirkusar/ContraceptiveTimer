@@ -1,3 +1,5 @@
 - Alarm für verhütungsmittel einnehmen mit korrekter nachricht mit einnehmen, wechseln, pause
 - Bei bootUp daten auslesen und Alarme neu setzen
-- Liste mit zukünftigen Alarmen und Nachrichten um diese dann setzen zu können
+-(Liste mit zukünftigen Alarmen und Nachrichten um diese dann setzen zu können)
+- Last day of alarm before 7 days break
+- Next day of alarm

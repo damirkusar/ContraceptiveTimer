@@ -1,3 +1,4 @@
 1341853161965	Rename method 'saveToInternalStorage'
 1341856422756	Rename local variable 'alarmDataMock'
 1341929023624	Rename field 'numberOfChangedTimes'
+1342093320298	Rename method 'getNumberOfAlarmsBeforeBreak'

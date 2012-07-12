@@ -2,6 +2,7 @@ package ch.kusar.contraceptivetimer.businessobjects;
 
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 import ch.kusar.calendarWrapper.CalendarWrapper;
 
@@ -84,8 +85,40 @@ public class AlarmData implements Serializable {
 		return false;
 	}
 
-	public int getNumberOfAlarmsBeforeBreak() {
-		return (AlarmData.numberOfDaysToMakeSevenDaysBreak - this
-				.getNumberOfDaysSinceLastBreak()) / this.getIntervalDays();
+	public Calendar getNextCalendarDayForAlarm() {
+		Calendar actulCalendar = CalendarWrapper.getActualCalendar();
+
+		Calendar lastBreakCalendar = this.lastBreak;
+
+		long subtratedCalendarInMillis = actulCalendar.getTimeInMillis()
+				- lastBreakCalendar.getTimeInMillis();
+		Calendar subtratedCalendar = new GregorianCalendar();
+		subtratedCalendar.setTimeInMillis(subtratedCalendarInMillis);
+
+		// todo
+
+		return null;
+
+	}
+
+	public Calendar getLastCalendarDayForAlarm() {
+		Calendar lastAlarmCalendarDay = this.lastBreak;
+
+		if (this.contraceptiveType == ContraceptiveType.CONTRACEPTION_RING) {
+			int oneWeek = 7;
+			lastAlarmCalendarDay.set(Calendar.DAY_OF_YEAR,
+					this.lastBreak.get(Calendar.DAY_OF_YEAR) + oneWeek);
+		}
+		if (this.contraceptiveType == ContraceptiveType.CONTRACEPTION_PATCH) {
+			int threeWeeks = 21;
+			lastAlarmCalendarDay.set(Calendar.DAY_OF_YEAR,
+					this.lastBreak.get(Calendar.DAY_OF_YEAR) + threeWeeks);
+		}
+		if (this.contraceptiveType == ContraceptiveType.CONTRACEPTION_PILL) {
+			int fourWeeks = 28;
+			lastAlarmCalendarDay.set(Calendar.DAY_OF_YEAR,
+					this.lastBreak.get(Calendar.DAY_OF_YEAR) + fourWeeks);
+		}
+		return lastAlarmCalendarDay;
 	}
 }

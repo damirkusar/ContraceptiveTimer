@@ -33,7 +33,6 @@ public class AlarmDataTest extends AndroidTestCase {
 
 		this.internalStorageWrapper = new InternalStorageWrapper(this
 				.getContext().getApplicationContext());
-
 	}
 
 	@Override
@@ -65,12 +64,8 @@ public class AlarmDataTest extends AndroidTestCase {
 	}
 
 	public void testNumberOfDaysSinceLastBreak_StartTimeAndLastBreakIs1DayAgo_Expected1() {
-		this.calendar.set(Calendar.DAY_OF_YEAR,
-				this.calendar.get(Calendar.DAY_OF_YEAR) - 1);
-		this.calendar.set(Calendar.MINUTE,
-				this.calendar.get(Calendar.MINUTE) - 5);
-
-		this.alarmData.setLastBreak(this.calendar);
+		this.setupCalendarWithLastBreakAgoInDays(1,
+				ContraceptiveType.CONTRACEPTION_PILL);
 
 		int numberOfDaysSinceLastBreak = this.alarmData
 				.getNumberOfDaysSinceLastBreak();
@@ -79,10 +74,8 @@ public class AlarmDataTest extends AndroidTestCase {
 	}
 
 	public void testNumberOfDaysSinceLastBreak_StartTimeAndLastBreakIs7DaysAgo_Expected7() {
-		this.calendar.set(Calendar.DAY_OF_YEAR,
-				this.calendar.get(Calendar.DAY_OF_YEAR) - 7);
-		this.calendar.set(Calendar.MINUTE,
-				this.calendar.get(Calendar.MINUTE) - 5);
+		this.setupCalendarWithLastBreakAgoInDays(7,
+				ContraceptiveType.CONTRACEPTION_PATCH);
 
 		this.alarmData.setLastBreak(this.calendar);
 
@@ -93,12 +86,8 @@ public class AlarmDataTest extends AndroidTestCase {
 	}
 
 	public void testNumberOfDaysSinceLastBreak_StartTimeAndLastBreakIs21DaysAgo_Expected21() {
-		this.calendar.set(Calendar.DAY_OF_YEAR,
-				this.calendar.get(Calendar.DAY_OF_YEAR) - 21);
-		this.calendar.set(Calendar.MINUTE,
-				this.calendar.get(Calendar.MINUTE) - 5);
-
-		this.alarmData.setLastBreak(this.calendar);
+		this.setupCalendarWithLastBreakAgoInDays(21,
+				ContraceptiveType.CONTRACEPTION_RING);
 
 		int numberOfDaysSinceLastBreak = this.alarmData
 				.getNumberOfDaysSinceLastBreak();
@@ -107,179 +96,137 @@ public class AlarmDataTest extends AndroidTestCase {
 	}
 
 	public void testIsTimeToMakeSevenDaysBreak_LastBreakIs21DaysAgo_ExpectedTrue() {
-		this.calendar.set(Calendar.DAY_OF_YEAR,
-				this.calendar.get(Calendar.DAY_OF_YEAR) - 21);
-		this.calendar.set(Calendar.MINUTE,
-				this.calendar.get(Calendar.MINUTE) - 5);
-
-		this.alarmData.setLastBreak(this.calendar);
-		this.alarmData
-				.setContraceptiveType(ContraceptiveType.CONTRACEPTION_RING);
+		this.setupCalendarWithLastBreakAgoInDays(21,
+				ContraceptiveType.CONTRACEPTION_RING);
 
 		this.alarmData.getNumberOfDaysSinceLastBreak();
 
 		Assert.assertTrue(this.alarmData.isTimeToMakeSevenDaysBreak());
 	}
 
-	public void testGetNumbersOfAlarmsBeforeBreak_LastBreakIs21DaysAgoAndTypeIsRing_Expected0() {
-		this.calendar.set(Calendar.DAY_OF_YEAR,
-				this.calendar.get(Calendar.DAY_OF_YEAR) - 21);
-
-		this.alarmData.setLastBreak(this.calendar);
-		this.alarmData
-				.setContraceptiveType(ContraceptiveType.CONTRACEPTION_RING);
-
-		int numberOfAlarmsBeforeBreak = this.alarmData
-				.getNumberOfAlarmsBeforeBreak();
-
-		Assert.assertEquals(0, numberOfAlarmsBeforeBreak);
+	public void testGetNextCalendarForAlarm_LastBreakIs21DaysAgoAndTypeIsRing_ExpectedCalendar21DaysAgo() {
+		this.setupCalendarWithLastBreakAgoInDays(21,
+				ContraceptiveType.CONTRACEPTION_RING);
+		// Calendar nextCalendarDay =
+		// this.alarmData.getNextCalendarDayForAlarm();
+		//
+		// Assert.assertEquals(CalendarWrapper.getActualCalendar(),
+		// nextCalendarDay);
 	}
 
-	public void testGetNumbersOfAlarmsBeforeBreak_LastBreakIs20DaysAgoAndTypeIsRing_Expected0() {
-		this.calendar.set(Calendar.DAY_OF_YEAR,
-				this.calendar.get(Calendar.DAY_OF_YEAR) - 20);
+	public void testGetLastAlarmCalendarDay_LastBreakIs21DaysAgoAndTypeIsRing_ExpectedCalendarIs14DaysAgo() {
+		this.setupCalendarWithLastBreakAgoInDays(21,
+				ContraceptiveType.CONTRACEPTION_RING);
 
-		this.alarmData.setLastBreak(this.calendar);
-		this.alarmData
-				.setContraceptiveType(ContraceptiveType.CONTRACEPTION_RING);
+		Calendar lastAlarmCalendarDay = this.alarmData
+				.getLastCalendarDayForAlarm();
 
-		int numberOfAlarmsBeforeBreak = this.alarmData
-				.getNumberOfAlarmsBeforeBreak();
+		Calendar actualCalendarDay = CalendarWrapper.getActualCalendar();
+		actualCalendarDay.set(Calendar.DAY_OF_YEAR,
+				actualCalendarDay.get(Calendar.DAY_OF_YEAR) - 14);
 
-		Assert.assertEquals(0, numberOfAlarmsBeforeBreak);
+		Assert.assertEquals(actualCalendarDay.get(Calendar.DAY_OF_YEAR),
+				lastAlarmCalendarDay.get(Calendar.DAY_OF_YEAR));
 	}
 
-	public void testGetNumbersOfAlarmsBeforeBreak_LastBreakIs7DaysAgoAndTypeIsPatch_Expected2() {
+	public void testGetLastAlarmCalendarDay_LastBreakIs7DaysAgoAndTypeIsRing_ExpectedCalendarIs0DaysAgo() {
+		this.setupCalendarWithLastBreakAgoInDays(7,
+				ContraceptiveType.CONTRACEPTION_RING);
+
+		Calendar lastAlarmCalendarDay = this.alarmData
+				.getLastCalendarDayForAlarm();
+
+		Calendar actualCalendarDay = CalendarWrapper.getActualCalendar();
+		actualCalendarDay.set(Calendar.DAY_OF_YEAR,
+				actualCalendarDay.get(Calendar.DAY_OF_YEAR));
+
+		Assert.assertEquals(actualCalendarDay.get(Calendar.DAY_OF_YEAR),
+				lastAlarmCalendarDay.get(Calendar.DAY_OF_YEAR));
+	}
+
+	public void testGetLastAlarmCalendarDay_LastBreakIs6DaysAgoAndTypeIsRing_ExpectedCalendarIsTomorrow() {
+		this.setupCalendarWithLastBreakAgoInDays(6,
+				ContraceptiveType.CONTRACEPTION_RING);
+
+		Calendar lastAlarmCalendarDay = this.alarmData
+				.getLastCalendarDayForAlarm();
+
+		Calendar actualCalendarDay = CalendarWrapper.getActualCalendar();
+		actualCalendarDay.set(Calendar.DAY_OF_YEAR,
+				actualCalendarDay.get(Calendar.DAY_OF_YEAR) + 1);
+
+		Assert.assertEquals(actualCalendarDay.get(Calendar.DAY_OF_YEAR),
+				lastAlarmCalendarDay.get(Calendar.DAY_OF_YEAR));
+	}
+
+	public void testGetLastAlarmCalendarDay_LastBreakIs21DaysAgoAndTypeIsPatch_ExpectedCalendarIsToday() {
+		this.setupCalendarWithLastBreakAgoInDays(21,
+				ContraceptiveType.CONTRACEPTION_PATCH);
+
+		Calendar lastAlarmCalendarDay = this.alarmData
+				.getLastCalendarDayForAlarm();
+
+		Calendar actualCalendarDay = CalendarWrapper.getActualCalendar();
+		actualCalendarDay.set(Calendar.DAY_OF_YEAR,
+				actualCalendarDay.get(Calendar.DAY_OF_YEAR));
+
+		Assert.assertEquals(actualCalendarDay.get(Calendar.DAY_OF_YEAR),
+				lastAlarmCalendarDay.get(Calendar.DAY_OF_YEAR));
+	}
+
+	public void testGetLastAlarmCalendarDay_LastBreakIs7DaysAgoAndTypeIsPatch_ExpectedCalendarIsIn2Weeks() {
+		this.setupCalendarWithLastBreakAgoInDays(7,
+				ContraceptiveType.CONTRACEPTION_PATCH);
+
+		Calendar lastAlarmCalendarDay = this.alarmData
+				.getLastCalendarDayForAlarm();
+
+		Calendar actualCalendarDay = CalendarWrapper.getActualCalendar();
+		actualCalendarDay.set(Calendar.DAY_OF_YEAR,
+				actualCalendarDay.get(Calendar.DAY_OF_YEAR) + 14);
+
+		Assert.assertEquals(actualCalendarDay.get(Calendar.DAY_OF_YEAR),
+				lastAlarmCalendarDay.get(Calendar.DAY_OF_YEAR));
+	}
+
+	public void testGetLastAlarmCalendarDay_LastBreakIs21DaysAgoAndTypeIsPill_ExpectedCalendarIsIn7Days() {
+		this.setupCalendarWithLastBreakAgoInDays(21,
+				ContraceptiveType.CONTRACEPTION_PILL);
+
+		Calendar lastAlarmCalendarDay = this.alarmData
+				.getLastCalendarDayForAlarm();
+
+		Calendar actualCalendarDay = CalendarWrapper.getActualCalendar();
+		actualCalendarDay.set(Calendar.DAY_OF_YEAR,
+				actualCalendarDay.get(Calendar.DAY_OF_YEAR) + 7);
+
+		Assert.assertEquals(actualCalendarDay.get(Calendar.DAY_OF_YEAR),
+				lastAlarmCalendarDay.get(Calendar.DAY_OF_YEAR));
+	}
+
+	public void testGetLastAlarmCalendarDay_LastBreakIs7DaysAgoAndTypeIsPill_ExpectedCalendarIsIn3Weeks() {
+		this.setupCalendarWithLastBreakAgoInDays(7,
+				ContraceptiveType.CONTRACEPTION_PILL);
+
+		Calendar lastAlarmCalendarDay = this.alarmData
+				.getLastCalendarDayForAlarm();
+
+		Calendar actualCalendarDay = CalendarWrapper.getActualCalendar();
+		actualCalendarDay.set(Calendar.DAY_OF_YEAR,
+				actualCalendarDay.get(Calendar.DAY_OF_YEAR) + 21);
+
+		Assert.assertEquals(actualCalendarDay.get(Calendar.DAY_OF_YEAR),
+				lastAlarmCalendarDay.get(Calendar.DAY_OF_YEAR));
+	}
+
+	private void setupCalendarWithLastBreakAgoInDays(int lastBreakAgoInDays,
+			ContraceptiveType contraceptiveType) {
 		this.calendar.set(Calendar.DAY_OF_YEAR,
-				this.calendar.get(Calendar.DAY_OF_YEAR) - 7);
+				this.calendar.get(Calendar.DAY_OF_YEAR) - lastBreakAgoInDays);
 		this.calendar.set(Calendar.MINUTE,
 				this.calendar.get(Calendar.MINUTE) - 5);
 
 		this.alarmData.setLastBreak(this.calendar);
-		this.alarmData
-				.setContraceptiveType(ContraceptiveType.CONTRACEPTION_PATCH);
-
-		int numberOfAlarmsBeforeBreak = this.alarmData
-				.getNumberOfAlarmsBeforeBreak();
-
-		Assert.assertEquals(2, numberOfAlarmsBeforeBreak);
-	}
-
-	public void testGetNumbersOfAlarmsBeforeBreak_LastBreakIs8DaysAgoAndTypeIsPatch_Expected2() {
-		this.calendar.set(Calendar.DAY_OF_YEAR,
-				this.calendar.get(Calendar.DAY_OF_YEAR) - 8);
-		this.calendar.set(Calendar.MINUTE,
-				this.calendar.get(Calendar.MINUTE) - 5);
-
-		this.alarmData.setLastBreak(this.calendar);
-		this.alarmData
-				.setContraceptiveType(ContraceptiveType.CONTRACEPTION_PATCH);
-
-		int numberOfAlarmsBeforeBreak = this.alarmData
-				.getNumberOfAlarmsBeforeBreak();
-
-		Assert.assertEquals(1, numberOfAlarmsBeforeBreak);
-	}
-
-	public void testGetNumbersOfAlarmsBeforeBreak_LastBreakIs1DaysAgoAndTypeIsPill_Expected20() {
-		this.calendar.set(Calendar.DAY_OF_YEAR,
-				this.calendar.get(Calendar.DAY_OF_YEAR) - 1);
-		this.calendar.set(Calendar.MINUTE,
-				this.calendar.get(Calendar.MINUTE) - 5);
-
-		this.alarmData.setLastBreak(this.calendar);
-		this.alarmData
-				.setContraceptiveType(ContraceptiveType.CONTRACEPTION_PILL);
-
-		int numberOfAlarmsBeforeBreak = this.alarmData
-				.getNumberOfAlarmsBeforeBreak();
-
-		Assert.assertEquals(20, numberOfAlarmsBeforeBreak);
-	}
-
-	public void testGetNumbersOfAlarmsBeforeBreak_LastBreakIs29DaysAgoAndTypeIsRing_Expected0() {
-		this.calendar.set(Calendar.DAY_OF_YEAR,
-				this.calendar.get(Calendar.DAY_OF_YEAR) - 29);
-
-		this.alarmData.setLastBreak(this.calendar);
-		this.alarmData
-				.setContraceptiveType(ContraceptiveType.CONTRACEPTION_RING);
-
-		int numberOfAlarmsBeforeBreak = this.alarmData
-				.getNumberOfAlarmsBeforeBreak();
-
-		Assert.assertEquals(0, numberOfAlarmsBeforeBreak);
-	}
-
-	public void testGetNumbersOfAlarmsBeforeBreak_LastBreakIs15DaysAgoAndTypeIsRing_Expected0() {
-		this.calendar.set(Calendar.DAY_OF_YEAR,
-				this.calendar.get(Calendar.DAY_OF_YEAR) - 15);
-
-		this.alarmData.setLastBreak(this.calendar);
-		this.alarmData
-				.setContraceptiveType(ContraceptiveType.CONTRACEPTION_RING);
-
-		int numberOfAlarmsBeforeBreak = this.alarmData
-				.getNumberOfAlarmsBeforeBreak();
-
-		Assert.assertEquals(0, numberOfAlarmsBeforeBreak);
-	}
-
-	public void testGetNumbersOfAlarmsBeforeBreak_LastBreakIs5DaysAgoAndTypeIsPatch_Expected2() {
-		this.calendar.set(Calendar.DAY_OF_YEAR,
-				this.calendar.get(Calendar.DAY_OF_YEAR) - 5);
-
-		this.alarmData.setLastBreak(this.calendar);
-		this.alarmData
-				.setContraceptiveType(ContraceptiveType.CONTRACEPTION_PATCH);
-
-		int numberOfAlarmsBeforeBreak = this.alarmData
-				.getNumberOfAlarmsBeforeBreak();
-
-		Assert.assertEquals(2, numberOfAlarmsBeforeBreak);
-	}
-
-	public void testGetNumbersOfAlarmsBeforeBreak_LastBreakIs17DaysAgoAndTypeIsPatch_Expected0() {
-		this.calendar.set(Calendar.DAY_OF_YEAR,
-				this.calendar.get(Calendar.DAY_OF_YEAR) - 17);
-
-		this.alarmData.setLastBreak(this.calendar);
-		this.alarmData
-				.setContraceptiveType(ContraceptiveType.CONTRACEPTION_PATCH);
-
-		int numberOfAlarmsBeforeBreak = this.alarmData
-				.getNumberOfAlarmsBeforeBreak();
-
-		Assert.assertEquals(0, numberOfAlarmsBeforeBreak);
-	}
-
-	public void testGetNumbersOfAlarmsBeforeBreak_LastBreakIs0DaysAgoAndTypeIsPill_Expected21() {
-		this.calendar.set(Calendar.DAY_OF_YEAR,
-				this.calendar.get(Calendar.DAY_OF_YEAR) - 0);
-
-		this.alarmData.setLastBreak(this.calendar);
-		this.alarmData
-				.setContraceptiveType(ContraceptiveType.CONTRACEPTION_PILL);
-
-		int numberOfAlarmsBeforeBreak = this.alarmData
-				.getNumberOfAlarmsBeforeBreak();
-
-		Assert.assertEquals(21, numberOfAlarmsBeforeBreak);
-	}
-
-	public void testGetNumbersOfAlarmsBeforeBreak_LastBreakIs21DaysAgoAndTypeIsPill_Expected0() {
-		this.calendar.set(Calendar.DAY_OF_YEAR,
-				this.calendar.get(Calendar.DAY_OF_YEAR) - 21);
-		this.calendar.set(Calendar.MINUTE,
-				this.calendar.get(Calendar.MINUTE) - 5);
-
-		this.alarmData.setLastBreak(this.calendar);
-		this.alarmData
-				.setContraceptiveType(ContraceptiveType.CONTRACEPTION_PILL);
-
-		int numberOfAlarmsBeforeBreak = this.alarmData
-				.getNumberOfAlarmsBeforeBreak();
-
-		Assert.assertEquals(0, numberOfAlarmsBeforeBreak);
+		this.alarmData.setContraceptiveType(contraceptiveType);
 	}
 }

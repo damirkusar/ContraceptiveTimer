@@ -4,3 +4,7 @@
 1341932489426	Move package
 1341932669643	Rename field 'date'
 1341933258067	Rename field 'date'
+1342096581814	Extract method 'setupCalendarForTypeRingWithLastBreakAgo'
+1342096692646	Rename method 'setupCalendarForTypeRingWithLastBreakAgo'
+1342096718207	Rename method 'setupCalendarWithSpecificTypeAndWithLastBreakAgo'
+1342096724939	Rename method 'setupCalendarWithLastBreakAgo'
