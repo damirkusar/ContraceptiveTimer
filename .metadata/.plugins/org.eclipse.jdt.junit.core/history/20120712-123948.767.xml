@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testrun name="ContraceptiveTimerTest (1)" project="ContraceptiveTimerTest" tests="13" started="13" failures="1" errors="0" ignored="0">
+  <testsuite name="ch.kusar.contraceptivetimer.test.businessobjects.AlarmDataTest" time="1.687">
+    <testcase name="testGetIntervalDays_TypeIsPatch_Returns7" classname="ch.kusar.contraceptivetimer.test.businessobjects.AlarmDataTest" time="0.14"/>
+    <testcase name="testGetIntervalDays_TypeIsPill_Returns1" classname="ch.kusar.contraceptivetimer.test.businessobjects.AlarmDataTest" time="0.647"/>
+    <testcase name="testGetIntervalDays_TypeIsRing_Returns21" classname="ch.kusar.contraceptivetimer.test.businessobjects.AlarmDataTest" time="0.105"/>
+    <testcase name="testGetNumbersOfAlarmsBeforeBreak_LastBreakIs21DaysAgo_Expected1" classname="ch.kusar.contraceptivetimer.test.businessobjects.AlarmDataTest" time="0.052"/>
+    <testcase name="testGetNumbersOfAlarmsBeforeBreak_LastBreakIs7DaysAgo_Expected1" classname="ch.kusar.contraceptivetimer.test.businessobjects.AlarmDataTest" time="0.21">
+      <failure>junit.framework.AssertionFailedError: expected:&lt;1&gt; but was:&lt;0&gt;&#13;
+at ch.kusar.contraceptivetimer.test.businessobjects.AlarmDataTest.testGetNumbersOfAlarmsBeforeBreak_LastBreakIs7DaysAgo_Expected1(AlarmDataTest.java:141)&#13;
+at java.lang.reflect.Method.invokeNative(Native Method)&#13;
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:169)&#13;
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:154)&#13;
+at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:520)&#13;
+at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1447)&#13;
+
+</failure>
+    </testcase>
+    <testcase name="testIsTimeToMakeSevenDaysBreak_LastBreakIs21DaysAgo_ExpectedTrue" classname="ch.kusar.contraceptivetimer.test.businessobjects.AlarmDataTest" time="0.0"/>
+    <testcase name="testNumberOfDaysSinceLastBreak_StartTimeAndLastBreakIs1DayAgo_Expected1" classname="ch.kusar.contraceptivetimer.test.businessobjects.AlarmDataTest" time="0.131"/>
+    <testcase name="testNumberOfDaysSinceLastBreak_StartTimeAndLastBreakIs21DaysAgo_Expected21" classname="ch.kusar.contraceptivetimer.test.businessobjects.AlarmDataTest" time="0.235"/>
+    <testcase name="testNumberOfDaysSinceLastBreak_StartTimeAndLastBreakIs7DaysAgo_Expected7" classname="ch.kusar.contraceptivetimer.test.businessobjects.AlarmDataTest" time="0.0"/>
+    <testcase name="testAndroidTestCaseSetupProperly" classname="ch.kusar.contraceptivetimer.test.businessobjects.AlarmDataTest" time="0.156"/>
+  </testsuite>
+  <testsuite name="ch.kusar.contraceptivetimer.test.wrapper.InternalStorageWrapperTest" time="0.39">
+    <testcase name="testLoadFromStorage_LoadsStoredFileIntoObject_ShouldLoadTheSavedDataCorrectly" classname="ch.kusar.contraceptivetimer.test.wrapper.InternalStorageWrapperTest" time="0.078"/>
+    <testcase name="testSaveToStorage_StoresTheFileToInternalStorage_ShouldBeSavedToStorageWithoutError" classname="ch.kusar.contraceptivetimer.test.wrapper.InternalStorageWrapperTest" time="0.156"/>
+    <testcase name="testAndroidTestCaseSetupProperly" classname="ch.kusar.contraceptivetimer.test.wrapper.InternalStorageWrapperTest" time="0.156"/>
+  </testsuite>
+</testrun>

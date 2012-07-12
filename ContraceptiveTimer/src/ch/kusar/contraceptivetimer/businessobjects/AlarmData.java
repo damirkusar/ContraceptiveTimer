@@ -68,11 +68,9 @@ public class AlarmData implements Serializable {
 	}
 
 	public int getNumberOfDaysSinceLastBreak() {
-		Calendar actulCalendar = CalendarWrapper
-				.getActualCalendarWithoutHourMinutesSeconds();
+		Calendar actulCalendar = CalendarWrapper.getActualCalendar();
 
-		Calendar lastBreakCalendar = CalendarWrapper
-				.convertToCalendarWithoutHourMinutesSeconds(this.lastBreak);
+		Calendar lastBreakCalendar = this.lastBreak;
 
 		return (int) ((actulCalendar.getTimeInMillis() - lastBreakCalendar
 				.getTimeInMillis()) / AlarmData.millisecondsInDay);
@@ -84,5 +82,10 @@ public class AlarmData implements Serializable {
 			return true;
 		}
 		return false;
+	}
+
+	public int getNumberOfAlarmsBeforeBreak() {
+		return (AlarmData.numberOfDaysToMakeSevenDaysBreak - this
+				.getNumberOfDaysSinceLastBreak()) / this.getIntervalDays();
 	}
 }
