@@ -2,15 +2,13 @@ package ch.kusar.contraceptivetimer.businessobjects;
 
 import java.io.Serializable;
 import java.util.Calendar;
-import java.util.GregorianCalendar;
-
-import ch.kusar.calendarWrapper.CalendarWrapper;
 
 public class AlarmData implements Serializable {
 
 	private static final long serialVersionUID = 5921434769798781785L;
-	private static final int millisecondsInDay = 1000 * 60 * 60 * 24;
-	private static final int numberOfDaysToMakeSevenDaysBreak = 21;
+	private final int millisecondsInDay = 1000 * 60 * 60 * 24;
+	private final int numberOfDaysToMakeSevenDaysBreak = 21;
+
 	private ContraceptiveType contraceptiveType;
 	private Calendar startTime;
 	private Calendar lastBreak;
@@ -56,8 +54,8 @@ public class AlarmData implements Serializable {
 		return this.alarmTime;
 	}
 
-	public static int getNumberOfDaysToMakeSevenDaysBreak() {
-		return AlarmData.numberOfDaysToMakeSevenDaysBreak;
+	public int getNumberOfDaysToMakeSevenDaysBreak() {
+		return this.numberOfDaysToMakeSevenDaysBreak;
 	}
 
 	public void setAlarmTime(Calendar alarmTime) {
@@ -68,66 +66,7 @@ public class AlarmData implements Serializable {
 		return this.contraceptiveType.getMask();
 	}
 
-	public int getNumberOfDaysSinceLastBreak() {
-		Calendar actulCalendar = CalendarWrapper.getActualCalendar();
-
-		Calendar lastBreakCalendar = this.lastBreak;
-
-		return (int) ((actulCalendar.getTimeInMillis() - lastBreakCalendar
-				.getTimeInMillis()) / AlarmData.millisecondsInDay);
-	}
-
-	public boolean isTimeToMakeSevenDaysBreak() {
-		if (this.getNumberOfDaysSinceLastBreak()
-				- AlarmData.numberOfDaysToMakeSevenDaysBreak == 0) {
-			return true;
-		}
-		return false;
-	}
-
-	public Calendar getNextCalendarDayForAlarm() {
-		Calendar actulCalendar = CalendarWrapper.getActualCalendar();
-
-		Calendar lastBreakCalendar = this.lastBreak;
-
-		long subtratedCalendarInMillis = actulCalendar.getTimeInMillis()
-				- lastBreakCalendar.getTimeInMillis();
-		Calendar subtratedCalendar = new GregorianCalendar();
-		subtratedCalendar.setTimeInMillis(subtratedCalendarInMillis);
-
-		// todo
-
-		return null;
-	}
-
-	public Calendar getLastCalendarDayForAlarm() {
-		Calendar lastAlarmCalendarDay = this.lastBreak;
-
-		if (this.contraceptiveType == ContraceptiveType.CONTRACEPTION_RING) {
-			int oneWeek = 7;
-			lastAlarmCalendarDay.set(Calendar.DAY_OF_YEAR,
-					this.lastBreak.get(Calendar.DAY_OF_YEAR) + oneWeek);
-		}
-		if (this.contraceptiveType == ContraceptiveType.CONTRACEPTION_PATCH) {
-			int threeWeeks = 21;
-			lastAlarmCalendarDay.set(Calendar.DAY_OF_YEAR,
-					this.lastBreak.get(Calendar.DAY_OF_YEAR) + threeWeeks);
-		}
-		if (this.contraceptiveType == ContraceptiveType.CONTRACEPTION_PILL) {
-			int fourWeeks = 28;
-			lastAlarmCalendarDay.set(Calendar.DAY_OF_YEAR,
-					this.lastBreak.get(Calendar.DAY_OF_YEAR) + fourWeeks);
-		}
-		return lastAlarmCalendarDay;
-	}
-
-	public Calendar getFirstAlarmCalendarDayAfterBreak() {
-		Calendar firstAlarmCalendarDayForAlarm = this.lastBreak;
-
-		int fourWeeks = 35;
-		firstAlarmCalendarDayForAlarm.set(Calendar.DAY_OF_YEAR,
-				this.lastBreak.get(Calendar.DAY_OF_YEAR) + fourWeeks);
-
-		return firstAlarmCalendarDayForAlarm;
+	public int getMillisecondsinday() {
+		return this.millisecondsInDay;
 	}
 }

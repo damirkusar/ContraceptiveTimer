@@ -23,10 +23,10 @@
 <fullyQualifiedTypeName name="ch.kusar.unittest.SpecialAsserts"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="java.lang.Runnable"/>
-<fullyQualifiedTypeName name="junit.framework.Assert"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
-<fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="junit.framework.Assert"/>
 <fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
-<fullyQualifiedTypeName name="ch.kusar.calendarWrapper.CalendarWrapper"/>
 <fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.businessobjects.ContraceptiveType"/>
+<fullyQualifiedTypeName name="ch.kusar.calendarWrapper.CalendarWrapper"/>
+<fullyQualifiedTypeName name="java.util.Calendar"/>
 </qualifiedTypeNameHistroy>

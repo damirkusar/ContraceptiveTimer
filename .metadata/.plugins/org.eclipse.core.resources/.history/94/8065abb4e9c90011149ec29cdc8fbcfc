@@ -1,8 +1,0 @@
-package ch.kusar.contraceptivetimer.businessobjects;
-
-public class ContraceptiveType {
-	
-	public static int CONTRACEPTION_PILL = 1;
-	public static int CONTRACEPTION_PATCH = 7;
-	public static int CONTRACEPTION_RING = 21;
-}

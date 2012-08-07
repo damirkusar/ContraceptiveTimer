@@ -1,7 +1,0 @@
-package ch.kusar.contraceptivetimer.businessobjects;
-
-public enum ContraceptiveType {
-	CONTRACEPTION_RING,
-	CONTRACEPTION_PATCH,
-	CONTRACEPTION_PILL
-}

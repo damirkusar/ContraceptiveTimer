@@ -1,0 +1,5 @@
+package ch.kusar.contraceptivetimer.businessobjects;
+
+public class AlarmDataCalculator {
+
+}
