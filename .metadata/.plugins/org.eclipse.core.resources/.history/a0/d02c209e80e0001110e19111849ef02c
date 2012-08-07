@@ -1,0 +1,29 @@
+package ch.kusar.contraceptivetimer.businessobjects;
+
+import java.util.Calendar;
+
+public class AlarmEventData {
+
+	private String alarmMessage;
+	private Calendar alarm;
+	
+	public AlarmEventData() {
+		
+	}
+
+	public String getAlarmMessage() {
+		return alarmMessage;
+	}
+
+	public void setAlarmMessage(String alarmMessage) {
+		this.alarmMessage = alarmMessage;
+	}
+
+	public Calendar getAlarm() {
+		return alarm;
+	}
+
+	public void setAlarm(Calendar alarm) {
+		this.alarm = alarm;
+	}	
+}

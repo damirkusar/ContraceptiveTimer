@@ -1,0 +1,72 @@
+package ch.kusar.contraceptivetimer.businessobjects;
+
+import java.io.Serializable;
+import java.util.Calendar;
+
+public class AlarmData implements Serializable {
+
+	private static final long serialVersionUID = 5921434769798781785L;
+	private final int millisecondsInDay = 1000 * 60 * 60 * 24;
+	private final int numberOfDaysToMakeSevenDaysBreak = 21;
+
+	private ContraceptiveType contraceptiveType;
+	private Calendar startTime;
+	private Calendar lastBreakWasAtCalendar;
+	private Calendar alarmTime;
+
+	public AlarmData() {
+		super();
+	}
+
+	public AlarmData(ContraceptiveType contraceptiveType, Calendar startTime,
+			Calendar alarmTime) {
+		super();
+		this.contraceptiveType = contraceptiveType;
+		this.startTime = startTime;
+		this.alarmTime = alarmTime;
+	}
+
+	public ContraceptiveType getContraceptiveType() {
+		return this.contraceptiveType;
+	}
+
+	public void setContraceptiveType(ContraceptiveType contraceptiveType) {
+		this.contraceptiveType = contraceptiveType;
+	}
+
+	public Calendar getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Calendar startTime) {
+		this.startTime = startTime;
+	}
+
+	public Calendar getLastBreak() {
+		return this.lastBreakWasAtCalendar;
+	}
+
+	public void setLastBreak(Calendar lastBreak) {
+		this.lastBreakWasAtCalendar = lastBreak;
+	}
+
+	public Calendar getAlarmTime() {
+		return this.alarmTime;
+	}
+
+	public int getNumberOfDaysToMakeSevenDaysBreak() {
+		return this.numberOfDaysToMakeSevenDaysBreak;
+	}
+
+	public void setAlarmTime(Calendar alarmTime) {
+		this.alarmTime = alarmTime;
+	}
+
+	public int getIntervalDays() {
+		return this.contraceptiveType.getMask();
+	}
+
+	public int getMillisecondsinday() {
+		return this.millisecondsInDay;
+	}
+}

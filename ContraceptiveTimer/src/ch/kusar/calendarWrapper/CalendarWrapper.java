@@ -24,4 +24,35 @@ public class CalendarWrapper {
 
 		return (GregorianCalendar) cal;
 	}
+
+	public static GregorianCalendar getTomorrowCalendarWithoutHourMinutesSeconds() {
+		Calendar calendar = CalendarWrapper.getActualCalendar();
+		calendar.set(Calendar.DAY_OF_YEAR,
+				calendar.get(Calendar.DAY_OF_YEAR) + 1);
+
+		return CalendarWrapper
+				.convertToCalendarWithoutHourMinutesSeconds(calendar);
+	}
+
+	public static GregorianCalendar getOneWeekLaterCalendarWithoutHourMinutesSeconds() {
+		Calendar calendar = CalendarWrapper.getActualCalendar();
+		calendar.set(Calendar.DAY_OF_YEAR,
+				calendar.get(Calendar.DAY_OF_YEAR) + 7);
+
+		return CalendarWrapper
+				.convertToCalendarWithoutHourMinutesSeconds(calendar);
+	}
+
+	public static GregorianCalendar getThreeWeeksLaterCalendarWithoutHourMinutesSeconds() {
+		Calendar calendar = CalendarWrapper.getActualCalendar();
+		calendar.set(Calendar.DAY_OF_YEAR,
+				calendar.get(Calendar.DAY_OF_YEAR) + 21);
+
+		return CalendarWrapper
+				.convertToCalendarWithoutHourMinutesSeconds(calendar);
+	}
+
+	public static int getTodaysDayOfYear() {
+		return CalendarWrapper.getActualCalendar().get(Calendar.DAY_OF_YEAR);
+	}
 }

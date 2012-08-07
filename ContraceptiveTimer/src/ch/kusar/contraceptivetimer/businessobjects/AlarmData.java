@@ -7,22 +7,25 @@ public class AlarmData implements Serializable {
 
 	private static final long serialVersionUID = 5921434769798781785L;
 	private final int millisecondsInDay = 1000 * 60 * 60 * 24;
-	private final int numberOfDaysToMakeSevenDaysBreak = 21;
+	private final int numberOfDaysToMakeSevenDaysBreakAfterBreak = 28;
+	private final int numberOfDaysToMakeSevenDaysBreakAfterFirstContraceptive = 21;
 
 	private ContraceptiveType contraceptiveType;
-	private Calendar startTime;
+
+	private Calendar lastUseOfContraceptive;
 	private Calendar lastBreak;
+
 	private Calendar alarmTime;
+
+	private boolean isAlarmActive;
 
 	public AlarmData() {
 		super();
 	}
 
-	public AlarmData(ContraceptiveType contraceptiveType, Calendar startTime,
-			Calendar alarmTime) {
+	public AlarmData(ContraceptiveType contraceptiveType, Calendar alarmTime) {
 		super();
 		this.contraceptiveType = contraceptiveType;
-		this.startTime = startTime;
 		this.alarmTime = alarmTime;
 	}
 
@@ -32,14 +35,6 @@ public class AlarmData implements Serializable {
 
 	public void setContraceptiveType(ContraceptiveType contraceptiveType) {
 		this.contraceptiveType = contraceptiveType;
-	}
-
-	public Calendar getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Calendar startTime) {
-		this.startTime = startTime;
 	}
 
 	public Calendar getLastBreak() {
@@ -54,8 +49,8 @@ public class AlarmData implements Serializable {
 		return this.alarmTime;
 	}
 
-	public int getNumberOfDaysToMakeSevenDaysBreak() {
-		return this.numberOfDaysToMakeSevenDaysBreak;
+	public int getNumberOfDaysToMakeSevenDaysBreakAfterBreak() {
+		return this.numberOfDaysToMakeSevenDaysBreakAfterBreak;
 	}
 
 	public void setAlarmTime(Calendar alarmTime) {
@@ -68,5 +63,25 @@ public class AlarmData implements Serializable {
 
 	public int getMillisecondsinday() {
 		return this.millisecondsInDay;
+	}
+
+	public boolean isAlarmActive() {
+		return this.isAlarmActive;
+	}
+
+	public void setAlarmActive(boolean isAlarmActive) {
+		this.isAlarmActive = isAlarmActive;
+	}
+
+	public int getNumberOfDaysToMakeSevenDaysBreakAfterFirstContraceptive() {
+		return this.numberOfDaysToMakeSevenDaysBreakAfterFirstContraceptive;
+	}
+
+	public Calendar getLastUseOfContraceptive() {
+		return this.lastUseOfContraceptive;
+	}
+
+	public void setLastUseOfContraceptive(Calendar lastUseOfContraceptive) {
+		this.lastUseOfContraceptive = lastUseOfContraceptive;
 	}
 }

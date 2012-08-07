@@ -1,0 +1,89 @@
+package ch.kusar.contraceptivetimer.businessobjects;
+
+import java.util.Calendar;
+
+import ch.kusar.calendarWrapper.CalendarWrapper;
+
+public class AlarmDataCalculator {
+
+	private AlarmData alarmData;
+
+	public AlarmDataCalculator(AlarmData alarmData) {
+		this.setAlarmData(alarmData);
+	}
+
+	public AlarmData getAlarmData() {
+		return this.alarmData;
+	}
+
+	public void setAlarmData(AlarmData alarmData) {
+		this.alarmData = alarmData;
+	}
+
+	public int getNumberOfDaysSinceLastBreak() {
+		Calendar actulCalendar = CalendarWrapper.getActualCalendar();
+
+		Calendar lastBreakCalendar = this.alarmData.getLastBreak();
+
+		return (int) ((actulCalendar.getTimeInMillis() - lastBreakCalendar
+				.getTimeInMillis()) / this.alarmData.getMillisecondsinday());
+	}
+
+	public boolean isTimeToMakeSevenDaysBreak() {
+		if (this.getNumberOfDaysSinceLastBreak()
+				- this.alarmData.getNumberOfDaysToMakeSevenDaysBreak() == 0) {
+			return true;
+		}
+		return false;
+	}
+
+	public AlarmEventData getNextAlarmEvent(Calendar nextAlarmEventFromThisDay) {
+
+		if (this.isTimeToMakeSevenDaysBreak()) {
+			if (this.alarmData.getContraceptiveType() == ContraceptiveType.CONTRACEPTION_RING) {
+
+			}
+			if (this.alarmData.getContraceptiveType() == ContraceptiveType.CONTRACEPTION_PATCH) {
+
+			}
+			if (this.alarmData.getContraceptiveType() == ContraceptiveType.CONTRACEPTION_PILL) {
+
+			}
+		}
+
+		// todo
+
+		return null;
+	}
+
+	public Calendar getLastCalendarDayForAlarm() {
+		Calendar lastBreakCalendarDay = this.alarmData.getLastBreak();
+
+		if (this.alarmData.getContraceptiveType() == ContraceptiveType.CONTRACEPTION_RING) {
+			int oneWeek = 7;
+			lastBreakCalendarDay.set(Calendar.DAY_OF_YEAR, this.alarmData
+					.getLastBreak().get(Calendar.DAY_OF_YEAR) + oneWeek);
+		}
+		if (this.alarmData.getContraceptiveType() == ContraceptiveType.CONTRACEPTION_PATCH) {
+			int threeWeeks = 21;
+			lastBreakCalendarDay.set(Calendar.DAY_OF_YEAR, this.alarmData
+					.getLastBreak().get(Calendar.DAY_OF_YEAR) + threeWeeks);
+		}
+		if (this.alarmData.getContraceptiveType() == ContraceptiveType.CONTRACEPTION_PILL) {
+			int fourWeeks = 28;
+			lastBreakCalendarDay.set(Calendar.DAY_OF_YEAR, this.alarmData
+					.getLastBreak().get(Calendar.DAY_OF_YEAR) + fourWeeks);
+		}
+		return lastBreakCalendarDay;
+	}
+
+	public Calendar getFirstAlarmCalendarDayAfterBreak() {
+		Calendar firstAlarmCalendarDayForAlarm = this.alarmData.getLastBreak();
+
+		int fourWeeks = 35;
+		firstAlarmCalendarDayForAlarm.set(Calendar.DAY_OF_YEAR, this.alarmData
+				.getLastBreak().get(Calendar.DAY_OF_YEAR) + fourWeeks);
+
+		return firstAlarmCalendarDayForAlarm;
+	}
+}
