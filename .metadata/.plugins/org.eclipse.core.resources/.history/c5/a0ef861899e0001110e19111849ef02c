@@ -39,7 +39,7 @@ public class AlarmDataCalculator {
 		return (int) ((actulCalendar.getTimeInMillis() - lastBreakCalendar
 				.getTimeInMillis()) / this.alarmData.getMillisecondsinday());
 	}
-
+	
 	private AlarmEventData getNextAlarmEventAfterBreak() {
 		AlarmEventData alarmEventData = new AlarmEventData();
 

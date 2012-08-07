@@ -31,15 +31,6 @@ public class AlarmDataCalculator {
 		}
 	}
 
-	public int getNumberOfDaysSinceLastBreak() {
-		Calendar actulCalendar = CalendarWrapper.getActualCalendar();
-
-		Calendar lastBreakCalendar = this.alarmData.getLastBreak();
-
-		return (int) ((actulCalendar.getTimeInMillis() - lastBreakCalendar
-				.getTimeInMillis()) / this.alarmData.getMillisecondsinday());
-	}
-
 	private AlarmEventData getNextAlarmEventAfterBreak() {
 		AlarmEventData alarmEventData = new AlarmEventData();
 
@@ -65,6 +56,15 @@ public class AlarmDataCalculator {
 				this.alarmData.getAlarmTime().get(Calendar.DAY_OF_YEAR) + 7);
 
 		return alarmEventData;
+	}
+
+	public int getNumberOfDaysSinceLastBreak() {
+		Calendar actulCalendar = CalendarWrapper.getActualCalendar();
+
+		Calendar lastBreakCalendar = this.alarmData.getLastBreak();
+
+		return (int) ((actulCalendar.getTimeInMillis() - lastBreakCalendar
+				.getTimeInMillis()) / this.alarmData.getMillisecondsinday());
 	}
 
 	private AlarmEventData getNextBreakAlarmEvent() {
