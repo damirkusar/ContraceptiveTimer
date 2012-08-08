@@ -24,9 +24,16 @@
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="java.lang.Runnable"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.businessobjects.AlarmData"/>
+<fullyQualifiedTypeName name="ch.kusar.calendarWrapperForTest.CalendarWrapperForTest"/>
+<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.businessobjects.AlarmDataCalculator"/>
+<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.businessobjects.AlarmEventData"/>
+<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.businessobjects.AlarmMessage"/>
+<fullyQualifiedTypeName name="ch.kusar.calendarWrapper.CalendarWrapper"/>
+<fullyQualifiedTypeName name="ch.kusar.calendarWrapper.CalendarWrapperForTest"/>
+<fullyQualifiedTypeName name="ch.kusar.test.calendarWrapper.CalendarWrapperForTest"/>
+<fullyQualifiedTypeName name="java.util.Calendar"/>
 <fullyQualifiedTypeName name="junit.framework.Assert"/>
 <fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
 <fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.businessobjects.ContraceptiveType"/>
-<fullyQualifiedTypeName name="ch.kusar.calendarWrapper.CalendarWrapper"/>
-<fullyQualifiedTypeName name="java.util.Calendar"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testrun name="AlarmDataCalculatorTest.testNextAlarmEvent_LastUseWasLastSundayAndLastBreakWasLastSundayThreeWeeksAgoAndContraceptiveTypeIsPill_ExpectedMessageForRemovePillAndCalendarDayIsOneDayAfterLastUse" project="ContraceptiveTimerTest" tests="1" started="1" failures="1" errors="0" ignored="0">
+  <testsuite name="ch.kusar.contraceptivetimer.test.businessobjects.AlarmDataCalculatorTest" time="421.655">
+    <testcase name="testNextAlarmEvent_LastUseWasLastSundayAndLastBreakWasLastSundayThreeWeeksAgoAndContraceptiveTypeIsPill_ExpectedMessageForRemovePillAndCalendarDayIsOneDayAfterLastUse" classname="ch.kusar.contraceptivetimer.test.businessobjects.AlarmDataCalculatorTest" time="421.655">
+      <failure>junit.framework.AssertionFailedError: expected:&lt;218&gt; but was:&lt;225&gt;&#13;
+at ch.kusar.contraceptivetimer.test.businessobjects.AlarmDataCalculatorTest.testNextAlarmEvent_LastUseWasLastSundayAndLastBreakWasLastSundayThreeWeeksAgoAndContraceptiveTypeIsPill_ExpectedMessageForRemovePillAndCalendarDayIsOneDayAfterLastUse(AlarmDataCalculatorTest.java:324)&#13;
+at java.lang.reflect.Method.invokeNative(Native Method)&#13;
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:169)&#13;
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:154)&#13;
+at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:520)&#13;
+at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1447)&#13;
+
+</failure>
+    </testcase>
+  </testsuite>
+</testrun>

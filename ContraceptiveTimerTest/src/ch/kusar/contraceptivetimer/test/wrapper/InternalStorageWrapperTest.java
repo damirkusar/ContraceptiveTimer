@@ -1,6 +1,5 @@
 package ch.kusar.contraceptivetimer.test.wrapper;
 
-import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import junit.framework.Assert;
@@ -12,8 +11,8 @@ import ch.kusar.contraceptivetimer.wrapper.InternalStorageWrapper;
 public class InternalStorageWrapperTest extends AndroidTestCase {
 
 	private AlarmData alarmData;
-	private Calendar alarmTime;
-	private Calendar calendar;
+	private GregorianCalendar alarmTime;
+	private GregorianCalendar calendar;
 	private InternalStorageWrapper internalStorageWrapper;
 
 	@Override
@@ -27,6 +26,7 @@ public class InternalStorageWrapperTest extends AndroidTestCase {
 		this.alarmData = new AlarmData();
 		this.alarmData
 				.setContraceptiveType(ContraceptiveType.CONTRACEPTION_RING);
+		this.alarmData.setAlarmActive(true);
 		this.alarmData.setAlarmTime(this.alarmTime);
 	}
 
@@ -45,6 +45,7 @@ public class InternalStorageWrapperTest extends AndroidTestCase {
 		Assert.assertEquals(this.alarmData.getContraceptiveType(),
 				ContraceptiveType.CONTRACEPTION_RING);
 		Assert.assertEquals(28, alarmDataLoaded.getIntervalDays());
+		Assert.assertTrue(this.alarmData.isAlarmActive());
 	}
 
 	public void testSaveToStorage_StoresTheFileToInternalStorage_ShouldBeSavedToStorageWithoutError() {

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testrun name="AlarmDataCalculatorTest.testNextAlarmEvent_LastUseWasLastSundayAndLastBreakWasLastSundayThreeWeeksAgoAndContraceptiveTypeIsPill_ExpectedMessageForRemovePillAndCalendarDayIsOneDayAfterLastUse" project="ContraceptiveTimerTest" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="ch.kusar.contraceptivetimer.test.businessobjects.AlarmDataCalculatorTest" time="37.121">
+    <testcase name="testNextAlarmEvent_LastUseWasLastSundayAndLastBreakWasLastSundayThreeWeeksAgoAndContraceptiveTypeIsPill_ExpectedMessageForRemovePillAndCalendarDayIsOneDayAfterLastUse" classname="ch.kusar.contraceptivetimer.test.businessobjects.AlarmDataCalculatorTest" time="37.121">
+      <error>Test failed to run to completion. Reason: 'Instrumentation run failed due to 'Process crashed.''. Check device logcat for details
+</error>
+    </testcase>
+  </testsuite>
+</testrun>

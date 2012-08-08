@@ -4,9 +4,9 @@ import java.util.Calendar;
 
 import junit.framework.Assert;
 import android.test.AndroidTestCase;
-import ch.kusar.calendarWrapper.CalendarWrapper;
 import ch.kusar.contraceptivetimer.businessobjects.AlarmData;
 import ch.kusar.contraceptivetimer.businessobjects.ContraceptiveType;
+import ch.kusar.test.calendarWrapper.CalendarWrapperForTest;
 
 public class AlarmDataTest extends AndroidTestCase {
 
@@ -18,7 +18,8 @@ public class AlarmDataTest extends AndroidTestCase {
 		super.setUp();
 
 		this.alarmData = new AlarmData();
-		this.alarmData.setAlarmTime(CalendarWrapper.getActualCalendar());
+		this.alarmData.setAlarmTime(CalendarWrapperForTest
+				.getActualCalendarWithoutHourMinutesSeconds());
 	}
 
 	@Override

@@ -5,7 +5,7 @@ import java.util.GregorianCalendar;
 
 public class CalendarWrapper {
 
-	public static GregorianCalendar getActualCalendar() {
+	private static GregorianCalendar getActualCalendar() {
 		return new GregorianCalendar();
 	}
 

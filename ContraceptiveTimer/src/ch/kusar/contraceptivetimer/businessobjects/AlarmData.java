@@ -1,7 +1,7 @@
 package ch.kusar.contraceptivetimer.businessobjects;
 
 import java.io.Serializable;
-import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class AlarmData implements Serializable {
 
@@ -12,21 +12,15 @@ public class AlarmData implements Serializable {
 
 	private ContraceptiveType contraceptiveType;
 
-	private Calendar lastUseOfContraceptive;
-	private Calendar lastBreak;
+	private GregorianCalendar lastUseOfContraceptive;
+	private GregorianCalendar lastBreak;
 
-	private Calendar alarmTime;
+	private GregorianCalendar alarmTime;
 
 	private boolean isAlarmActive;
 
 	public AlarmData() {
 		super();
-	}
-
-	public AlarmData(ContraceptiveType contraceptiveType, Calendar alarmTime) {
-		super();
-		this.contraceptiveType = contraceptiveType;
-		this.alarmTime = alarmTime;
 	}
 
 	public ContraceptiveType getContraceptiveType() {
@@ -37,15 +31,15 @@ public class AlarmData implements Serializable {
 		this.contraceptiveType = contraceptiveType;
 	}
 
-	public Calendar getLastBreak() {
+	public GregorianCalendar getLastBreak() {
 		return this.lastBreak;
 	}
 
-	public void setLastBreak(Calendar lastBreak) {
+	public void setLastBreak(GregorianCalendar lastBreak) {
 		this.lastBreak = lastBreak;
 	}
 
-	public Calendar getAlarmTime() {
+	public GregorianCalendar getAlarmTime() {
 		return this.alarmTime;
 	}
 
@@ -53,7 +47,7 @@ public class AlarmData implements Serializable {
 		return this.numberOfDaysToMakeSevenDaysBreakAfterBreak;
 	}
 
-	public void setAlarmTime(Calendar alarmTime) {
+	public void setAlarmTime(GregorianCalendar alarmTime) {
 		this.alarmTime = alarmTime;
 	}
 
@@ -77,11 +71,12 @@ public class AlarmData implements Serializable {
 		return this.numberOfDaysToMakeSevenDaysBreakAfterFirstContraceptive;
 	}
 
-	public Calendar getLastUseOfContraceptive() {
+	public GregorianCalendar getLastUseOfContraceptive() {
 		return this.lastUseOfContraceptive;
 	}
 
-	public void setLastUseOfContraceptive(Calendar lastUseOfContraceptive) {
+	public void setLastUseOfContraceptive(
+			GregorianCalendar lastUseOfContraceptive) {
 		this.lastUseOfContraceptive = lastUseOfContraceptive;
 	}
 }

@@ -1,11 +1,11 @@
 package ch.kusar.contraceptivetimer.businessobjects;
 
-import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class AlarmEventData {
 
 	private String alarmMessage;
-	private Calendar alarm;
+	private GregorianCalendar alarm;
 
 	public AlarmEventData() {
 
@@ -19,11 +19,14 @@ public class AlarmEventData {
 		this.alarmMessage = alarmMessage;
 	}
 
-	public Calendar getAlarm() {
+	public GregorianCalendar getAlarm() {
+		if (this.alarm == null) {
+			this.alarm = new GregorianCalendar();
+		}
 		return this.alarm;
 	}
 
-	public void setAlarm(Calendar alarm) {
+	public void setAlarm(GregorianCalendar alarm) {
 		this.alarm = alarm;
 	}
 }

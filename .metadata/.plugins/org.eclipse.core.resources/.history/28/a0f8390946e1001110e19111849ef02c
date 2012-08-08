@@ -1,0 +1,64 @@
+package ch.kusar.calendarWrapper;
+
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+public class CalendarWrapperForTest {
+
+	public static GregorianCalendar getActualCalendar() {
+		return new GregorianCalendar();
+	}
+
+	public static GregorianCalendar getActualCalendarWithoutHourMinutesSeconds() {
+		return CalendarWrapperForTest
+				.convertToCalendarWithoutHourMinutesSeconds(new GregorianCalendar());
+	}
+
+	public static GregorianCalendar convertToCalendarWithoutHourMinutesSeconds(
+			Calendar calendar) {
+		Calendar cal = calendar;
+
+		cal.set(Calendar.HOUR_OF_DAY, 0);
+		cal.set(Calendar.MINUTE, 0);
+		cal.set(Calendar.SECOND, 0);
+
+		return (GregorianCalendar) cal;
+	}
+
+	public static GregorianCalendar getTomorrowCalendarWithoutHourMinutesSeconds() {
+		Calendar calendar = CalendarWrapperForTest.getActualCalendar();
+		calendar.set(Calendar.DAY_OF_YEAR,
+				calendar.get(Calendar.DAY_OF_YEAR) + 1);
+
+		return CalendarWrapperForTest
+				.convertToCalendarWithoutHourMinutesSeconds(calendar);
+	}
+
+	public static GregorianCalendar getOneWeekLaterCalendarWithoutHourMinutesSeconds() {
+		Calendar calendar = CalendarWrapperForTest.getActualCalendar();
+		calendar.set(Calendar.DAY_OF_YEAR,
+				calendar.get(Calendar.DAY_OF_YEAR) + 7);
+
+		return CalendarWrapperForTest
+				.convertToCalendarWithoutHourMinutesSeconds(calendar);
+	}
+
+	public static GregorianCalendar getThreeWeeksLaterCalendarWithoutHourMinutesSeconds() {
+		Calendar calendar = CalendarWrapperForTest.getActualCalendar();
+		calendar.set(Calendar.DAY_OF_YEAR,
+				calendar.get(Calendar.DAY_OF_YEAR) + 21);
+
+		return CalendarWrapperForTest
+				.convertToCalendarWithoutHourMinutesSeconds(calendar);
+	}
+
+	public static int getTodaysDayOfYear() {
+		return CalendarWrapperForTest.getActualCalendar().get(Calendar.DAY_OF_YEAR);
+	}
+	
+	public static int getLastSunday() {
+		int todaysWeekDay = CalendarWrapper.getActualCalendar().get(
+				Calendar.DAY_OF_WEEK);
+		return todaysWeekDay;
+	}
+}
