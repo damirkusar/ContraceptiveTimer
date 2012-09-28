@@ -1,9 +1,0 @@
-- Alarm für verhütungsmittel einnehmen mit korrekter nachricht mit einnehmen, wechseln, pause
-- Bei bootUp daten auslesen und Alarme neu setzen
--(Liste mit zukünftigen Alarmen und Nachrichten um diese dann setzen zu können)
-- Next Event -> Alarm for change or to remove for break    
-   - Last day of alarm before 7 days break
-   - Next day of alarm
-- change alarmtime from calendar to something other.. maybe datetime?
-- teste calendar day bei jahres wechsel
-- tests for testNextAlarmEvent()
