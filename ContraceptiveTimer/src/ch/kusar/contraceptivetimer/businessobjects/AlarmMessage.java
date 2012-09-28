@@ -17,14 +17,21 @@ public class AlarmMessage {
 		return msg;
 	}
 
-	public static String getPatchMessage() {
-		String msg = String.format("It's time, please remove your patch");
+	public static String getPatchRemoveMessage() {
+		String msg = String
+				.format("It's time for a break, please remove your patch");
 		return msg;
 	}
 
 	public static String getRingRemoveMessage() {
-		String msg = String.format("It's time, please remove your ring");
+		String msg = String
+				.format("It's time for a break, please remove your ring");
 		return msg;
 	}
 
+	public static String getPillRemoveMessage() {
+		String msg = String
+				.format("It's time for a break, DO NOT Take a new Pill");
+		return msg;
+	}
 }

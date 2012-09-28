@@ -1,20 +1,16 @@
 package ch.kusar.contraceptivetimer.businessobjects;
 
 public enum ContraceptiveType {
-	
-	CONTRACEPTION_PILL(1),
-	CONTRACEPTION_PATCH(7),
-	CONTRACEPTION_RING(21);
-	
+
+	CONTRACEPTION_PILL(1), CONTRACEPTION_PATCH(7), CONTRACEPTION_RING(28);
+
 	private final int mask;
 
-    private ContraceptiveType(int mask)
-    {
-        this.mask = mask;
-    }
+	private ContraceptiveType(int mask) {
+		this.mask = mask;
+	}
 
-    public int getMask()
-    {
-        return mask;
-    }
+	public int getMask() {
+		return this.mask;
+	}
 }

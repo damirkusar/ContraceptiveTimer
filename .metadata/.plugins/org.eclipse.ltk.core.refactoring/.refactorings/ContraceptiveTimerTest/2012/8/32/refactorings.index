@@ -1,0 +1,12 @@
+1344334302288	Rename type 'AlarmDataTest'
+1344334407249	Copy compilation unit
+1344422461580	Rename type 'CalendarWrapper'
+1344424906137	Rename package 'ch.kusar.calendarWrapper'
+1344437776502	Rename method 'getSundayWeekAgo'
+1344440178992	Rename local variable 'lastSunday'
+1344440739339	Rename local variable 'lastSunday'
+1344441359723	Rename local variable 'nextBreakFromLastUse'
+1344441671322	Rename local variable 'sundayOneWeekAgo'
+1344441880953	Rename local variable 'lastSunday'
+1344443407022	Rename local variable 'sundayThreeWeeksAgo'
+1344444056521	Rename local variable 'sundayFourWeeksAgo'

@@ -1,30 +1,26 @@
 package ch.kusar.contraceptivetimer.businessobjects;
 
 import java.io.Serializable;
-import java.util.Calendar;
-
-import ch.kusar.calendarWrapper.CalendarWrapper;
+import java.util.GregorianCalendar;
 
 public class AlarmData implements Serializable {
 
 	private static final long serialVersionUID = 5921434769798781785L;
-	private static final int millisecondsInDay = 1000 * 60 * 60 * 24;
-	private static final int numberOfDaysToMakeSevenDaysBreak = 21;
+	private final int millisecondsInDay = 1000 * 60 * 60 * 24;
+	private final int numberOfDaysToMakeSevenDaysBreakAfterBreak = 28;
+	private final int numberOfDaysToMakeSevenDaysBreakAfterFirstContraceptive = 21;
+
 	private ContraceptiveType contraceptiveType;
-	private Calendar startTime;
-	private Calendar lastBreak;
-	private Calendar alarmTime;
+
+	private GregorianCalendar lastUseOfContraceptive;
+	private GregorianCalendar lastBreak;
+
+	private GregorianCalendar alarmTime;
+
+	private boolean isAlarmActive;
 
 	public AlarmData() {
 		super();
-	}
-
-	public AlarmData(ContraceptiveType contraceptiveType, Calendar startTime,
-			Calendar alarmTime) {
-		super();
-		this.contraceptiveType = contraceptiveType;
-		this.startTime = startTime;
-		this.alarmTime = alarmTime;
 	}
 
 	public ContraceptiveType getContraceptiveType() {
@@ -35,31 +31,23 @@ public class AlarmData implements Serializable {
 		this.contraceptiveType = contraceptiveType;
 	}
 
-	public Calendar getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Calendar startTime) {
-		this.startTime = startTime;
-	}
-
-	public Calendar getLastBreak() {
+	public GregorianCalendar getLastBreak() {
 		return this.lastBreak;
 	}
 
-	public void setLastBreak(Calendar lastBreak) {
+	public void setLastBreak(GregorianCalendar lastBreak) {
 		this.lastBreak = lastBreak;
 	}
 
-	public Calendar getAlarmTime() {
+	public GregorianCalendar getAlarmTime() {
 		return this.alarmTime;
 	}
 
-	public static int getNumberOfDaysToMakeSevenDaysBreak() {
-		return AlarmData.numberOfDaysToMakeSevenDaysBreak;
+	public int getNumberOfDaysToMakeSevenDaysBreakAfterBreak() {
+		return this.numberOfDaysToMakeSevenDaysBreakAfterBreak;
 	}
 
-	public void setAlarmTime(Calendar alarmTime) {
+	public void setAlarmTime(GregorianCalendar alarmTime) {
 		this.alarmTime = alarmTime;
 	}
 
@@ -67,22 +55,28 @@ public class AlarmData implements Serializable {
 		return this.contraceptiveType.getMask();
 	}
 
-	public int getNumberOfDaysSinceLastBreak() {
-		Calendar actulCalendar = CalendarWrapper
-				.getActualCalendarWithoutHourMinutesSeconds();
-
-		Calendar lastBreakCalendar = CalendarWrapper
-				.convertToCalendarWithoutHourMinutesSeconds(this.lastBreak);
-
-		return (int) ((actulCalendar.getTimeInMillis() - lastBreakCalendar
-				.getTimeInMillis()) / AlarmData.millisecondsInDay);
+	public int getMillisecondsinday() {
+		return this.millisecondsInDay;
 	}
 
-	public boolean isTimeToMakeSevenDaysBreak() {
-		if (this.getNumberOfDaysSinceLastBreak()
-				- AlarmData.numberOfDaysToMakeSevenDaysBreak == 0) {
-			return true;
-		}
-		return false;
+	public boolean isAlarmActive() {
+		return this.isAlarmActive;
+	}
+
+	public void setAlarmActive(boolean isAlarmActive) {
+		this.isAlarmActive = isAlarmActive;
+	}
+
+	public int getNumberOfDaysToMakeSevenDaysBreakAfterFirstContraceptive() {
+		return this.numberOfDaysToMakeSevenDaysBreakAfterFirstContraceptive;
+	}
+
+	public GregorianCalendar getLastUseOfContraceptive() {
+		return this.lastUseOfContraceptive;
+	}
+
+	public void setLastUseOfContraceptive(
+			GregorianCalendar lastUseOfContraceptive) {
+		this.lastUseOfContraceptive = lastUseOfContraceptive;
 	}
 }
