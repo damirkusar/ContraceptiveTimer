@@ -1,0 +1,55 @@
+package ch.kusar.contraceptivetimer.wrapper;
+
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.TimeZone;
+
+public class CalendarWrapper {
+	private int hourOfDay;
+	private int minuteOfDay;
+	private int dayOfYear;
+
+	private static GregorianCalendar getGregorianCalendarInstance() {
+		return (GregorianCalendar) Calendar.getInstance(TimeZone.getDefault());
+	}
+
+	// private GregorianCalendar convertToCalendarWithoutHourMinutesSeconds(
+	// Calendar calendar) {
+	// Calendar cal = calendar;
+	//
+	// cal.set(Calendar.HOUR_OF_DAY, 0);
+	// cal.set(Calendar.MINUTE, 0);
+	// cal.set(Calendar.SECOND, 0);
+	//
+	// return (GregorianCalendar) cal;
+	// }
+
+	public static int getTodayAsDayOfYear() {
+		GregorianCalendar cal = CalendarWrapper.getGregorianCalendarInstance();
+		return cal.get(Calendar.DAY_OF_YEAR);
+	}
+
+	public int getHourOfDay() {
+		return this.hourOfDay;
+	}
+
+	public void setHourOfDay(int hourOfDay) {
+		this.hourOfDay = hourOfDay;
+	}
+
+	public int getMinuteOfDay() {
+		return this.minuteOfDay;
+	}
+
+	public void setMinuteOfDay(int minuteOfDay) {
+		this.minuteOfDay = minuteOfDay;
+	}
+
+	public int getDayOfYear() {
+		return this.dayOfYear;
+	}
+
+	public void setDayOfYear(int dayOfYear) {
+		this.dayOfYear = dayOfYear;
+	}
+}

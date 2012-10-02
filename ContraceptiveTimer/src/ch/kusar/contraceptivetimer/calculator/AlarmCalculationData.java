@@ -1,28 +1,40 @@
 package ch.kusar.contraceptivetimer.calculator;
 
 import java.io.Serializable;
-import java.util.GregorianCalendar;
 
 import ch.kusar.contraceptivetimer.businessobjects.ContraceptiveType;
 
 public class AlarmCalculationData implements Serializable {
 
 	private static final long serialVersionUID = 5921434769798781785L;
-	private final int millisecondsInDay = 1000 * 60 * 60 * 24;
 	private final int numberOfDaysToMakeSevenDaysBreakAfterBreak = 28;
 	private final int numberOfDaysToMakeSevenDaysBreakAfterFirstContraceptive = 21;
 
 	private ContraceptiveType contraceptiveType;
-
-	private GregorianCalendar lastUseOfContraceptive;
-	private GregorianCalendar lastBreak;
-
-	private GregorianCalendar alarmTime;
-
+	private int lastUseOfContraceptiveDayOfYear;
+	private int lastBreakDayOfYear;
+	private AlarmTime alarmTime;
 	private boolean isAlarmActive;
 
 	public AlarmCalculationData() {
 		super();
+		this.alarmTime = new AlarmTime();
+	}
+
+	public void setAlarmTimeHourOfDay(int hourOfDay) {
+		this.alarmTime.setHourOfDay(hourOfDay);
+	}
+
+	public int getAlarmTimeHourOfDay() {
+		return this.alarmTime.getHourOfDay();
+	}
+
+	public void setAlarmTimeMinuteOfDay(int minuteOfDay) {
+		this.alarmTime.setMinuteOfDay(minuteOfDay);
+	}
+
+	public int getAlarmTimeMinutes() {
+		return this.alarmTime.getMinutes();
 	}
 
 	public ContraceptiveType getContraceptiveType() {
@@ -33,15 +45,15 @@ public class AlarmCalculationData implements Serializable {
 		this.contraceptiveType = contraceptiveType;
 	}
 
-	public GregorianCalendar getLastBreak() {
-		return this.lastBreak;
+	public int getLastBreakDayOfYear() {
+		return this.lastBreakDayOfYear;
 	}
 
-	public void setLastBreak(GregorianCalendar lastBreak) {
-		this.lastBreak = lastBreak;
+	public void setLastBreakDayOfYear(int lastBreak) {
+		this.lastBreakDayOfYear = lastBreak;
 	}
 
-	public GregorianCalendar getAlarmTime() {
+	public AlarmTime getAlarmTime() {
 		return this.alarmTime;
 	}
 
@@ -49,16 +61,12 @@ public class AlarmCalculationData implements Serializable {
 		return this.numberOfDaysToMakeSevenDaysBreakAfterBreak;
 	}
 
-	public void setAlarmTime(GregorianCalendar alarmTime) {
+	public void setAlarmTime(AlarmTime alarmTime) {
 		this.alarmTime = alarmTime;
 	}
 
 	public int getIntervalDays() {
 		return this.contraceptiveType.getMask();
-	}
-
-	public int getMillisecondsinday() {
-		return this.millisecondsInDay;
 	}
 
 	public boolean isAlarmActive() {
@@ -73,12 +81,11 @@ public class AlarmCalculationData implements Serializable {
 		return this.numberOfDaysToMakeSevenDaysBreakAfterFirstContraceptive;
 	}
 
-	public GregorianCalendar getLastUseOfContraceptive() {
-		return this.lastUseOfContraceptive;
+	public int getLastUseOfContraceptiveDayOfYear() {
+		return this.lastUseOfContraceptiveDayOfYear;
 	}
 
-	public void setLastUseOfContraceptive(
-			GregorianCalendar lastUseOfContraceptive) {
-		this.lastUseOfContraceptive = lastUseOfContraceptive;
+	public void setLastUseOfContraceptiveDayOfYear(int lastUseOfContraceptive) {
+		this.lastUseOfContraceptiveDayOfYear = lastUseOfContraceptive;
 	}
 }

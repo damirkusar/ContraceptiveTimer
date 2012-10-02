@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testrun name="ContraceptiveTimerTest (1)" project="ContraceptiveTimerTest" tests="26" started="26" failures="5" errors="0" ignored="0">
+  <testsuite name="ch.kusar.contraceptivetimer.test.calculator.AlarmCalculationDataTest" time="0.001">
+    <testcase name="testAndroidTestCaseSetupProperly" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmCalculationDataTest" time="0.0"/>
+    <testcase name="testGetIntervalDays_TypeIsPatch_Returns7" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmCalculationDataTest" time="0.0"/>
+    <testcase name="testGetIntervalDays_TypeIsPill_Returns1" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmCalculationDataTest" time="0.001"/>
+    <testcase name="testGetIntervalDays_TypeIsRing_Returns28" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmCalculationDataTest" time="0.0"/>
+  </testsuite>
+  <testsuite name="ch.kusar.contraceptivetimer.test.wrapper.InternalStorageWrapperTest" time="0.237">
+    <testcase name="testAndroidTestCaseSetupProperly" classname="ch.kusar.contraceptivetimer.test.wrapper.InternalStorageWrapperTest" time="0.027"/>
+    <testcase name="testLoadFromStorage_LoadsStoredFileIntoObjectWithAnotherStorageWrapperInstance_ShouldLoadTheSavedDataCorrectly" classname="ch.kusar.contraceptivetimer.test.wrapper.InternalStorageWrapperTest" time="0.0">
+      <failure>junit.framework.AssertionFailedError: expected:&lt;0&gt; but was:&lt;20&gt;&#13;
+at ch.kusar.contraceptivetimer.test.wrapper.InternalStorageWrapperTest.testLoadFromStorage_LoadsStoredFileIntoObjectWithAnotherStorageWrapperInstance_ShouldLoadTheSavedDataCorrectly(InternalStorageWrapperTest.java:66)&#13;
+at java.lang.reflect.Method.invokeNative(Native Method)&#13;
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:169)&#13;
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:154)&#13;
+at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:545)&#13;
+at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1575)&#13;
+
+</failure>
+    </testcase>
+    <testcase name="testLoadFromStorage_LoadsStoredFileIntoObject_ShouldLoadTheSavedDataCorrectly" classname="ch.kusar.contraceptivetimer.test.wrapper.InternalStorageWrapperTest" time="0.053">
+      <failure>junit.framework.AssertionFailedError: expected:&lt;0&gt; but was:&lt;20&gt;&#13;
+at ch.kusar.contraceptivetimer.test.wrapper.InternalStorageWrapperTest.testLoadFromStorage_LoadsStoredFileIntoObject_ShouldLoadTheSavedDataCorrectly(InternalStorageWrapperTest.java:47)&#13;
+at java.lang.reflect.Method.invokeNative(Native Method)&#13;
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:169)&#13;
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:154)&#13;
+at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:545)&#13;
+at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1575)&#13;
+
+</failure>
+    </testcase>
+    <testcase name="testLoadFromStorage_TryToLoadNotSavedFileFromStorage_ObjectIsNull" classname="ch.kusar.contraceptivetimer.test.wrapper.InternalStorageWrapperTest" time="0.0"/>
+    <testcase name="testSaveToStorage_StoresTheFileToInternalStorage_ShouldBeSavedToStorageWithoutError" classname="ch.kusar.contraceptivetimer.test.wrapper.InternalStorageWrapperTest" time="0.157"/>
+  </testsuite>
+  <testsuite name="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.0">
+    <testcase name="testAndroidTestCaseSetupProperly" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.0"/>
+    <testcase name="testLastSunday" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.0"/>
+    <testcase name="testLastSundayWeekAgo" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.0"/>
+    <testcase name="testNextAlarmEvent_LastUseWasLastSaturdayAndLastBreakWasLastSundayAndContraceptiveTypeIsPill_ExpectedMessageForChangePillAndCalendarDayIsNextSunday" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.0"/>
+    <testcase name="testNextAlarmEvent_LastUseWasLastSaturdayAndLastBreakWasLastSundayThreeWeeksAgoAndContraceptiveTypeIsPill_ExpectedMessageForRemovePillAndCalendarDayIsOneDayAfterLastUse" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.0"/>
+    <testcase name="testNextAlarmEvent_LastUseWasLastSundayAndLastBreakSundayAWeekAgoAndContraceptiveTypeIsPatch_ExpectedMessageForChangePatchAndCalendarDayIsNextSunday" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.0"/>
+    <testcase name="testNextAlarmEvent_LastUseWasLastSundayAndLastBreakSundayAWeekAgoAndContraceptiveTypeIsRing_ExpectedMessageForRemoveRingAndCalendarDayIsLastSundayIn21Days" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.0"/>
+    <testcase name="testNextAlarmEvent_LastUseWasLastSundayAndLastBreakWasLastSundayAndContraceptiveTypeIsRing_ExpectedMessageForRemoveRingAndCalendarDayIsNextSunday" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.0"/>
+    <testcase name="testNextAlarmEvent_LastUseWasLastSundayOneWeeksAgoAndLastBreakWasLastSundayAndContraceptiveTypeIsPatch_ExpectedMessageForChangePatchAndCalendarDayIsNextSunday" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.0"/>
+    <testcase name="testNextAlarmEvent_LastUseWasLastSundayThreeWeeksAgoAndLastBreakWasLastSundayAndContraceptiveTypeIsRing_ExpectedMessageForChangeRingAndCalendarDayIsNextSunday" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.0"/>
+    <testcase name="testNextAlarmEvent_LastUseWasLastSundayTwoWeeksAgoAndLastBreakWasLastSundayThreeWeeksAgoAndContraceptiveTypeIsRing_ExpectedMessageForRemoveRingAndCalendarDayIsNextSunday" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.0"/>
+    <testcase name="testNextAlarmEvent_LastUseWasYesterdayAndLastBreakWasSundayAWeekAgoAndContraceptiveTypeIsPill_ExpectedMessageForChangePillAndCalendarDayIsToday" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.0"/>
+    <testcase name="testNumberOfDaysSinceLastBreak_StartTimeAndLastBreakIs1DayAgo_Expected1" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.0">
+      <failure>junit.framework.AssertionFailedError: expected:&lt;1&gt; but was:&lt;2&gt;&#13;
+at ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest.testNumberOfDaysSinceLastBreak_StartTimeAndLastBreakIs1DayAgo_Expected1(AlarmDataCalculatorTest.java:78)&#13;
+at java.lang.reflect.Method.invokeNative(Native Method)&#13;
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:169)&#13;
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:154)&#13;
+at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:545)&#13;
+at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1575)&#13;
+
+</failure>
+    </testcase>
+    <testcase name="testNumberOfDaysSinceLastBreak_StartTimeAndLastBreakIs21DaysAgo_Expected21" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.0">
+      <failure>junit.framework.AssertionFailedError: expected:&lt;21&gt; but was:&lt;22&gt;&#13;
+at ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest.testNumberOfDaysSinceLastBreak_StartTimeAndLastBreakIs21DaysAgo_Expected21(AlarmDataCalculatorTest.java:101)&#13;
+at java.lang.reflect.Method.invokeNative(Native Method)&#13;
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:169)&#13;
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:154)&#13;
+at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:545)&#13;
+at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1575)&#13;
+
+</failure>
+    </testcase>
+    <testcase name="testNumberOfDaysSinceLastBreak_StartTimeAndLastBreakIs7DaysAgo_Expected7" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.0">
+      <failure>junit.framework.AssertionFailedError: expected:&lt;7&gt; but was:&lt;8&gt;&#13;
+at ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest.testNumberOfDaysSinceLastBreak_StartTimeAndLastBreakIs7DaysAgo_Expected7(AlarmDataCalculatorTest.java:91)&#13;
+at java.lang.reflect.Method.invokeNative(Native Method)&#13;
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:169)&#13;
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:154)&#13;
+at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:545)&#13;
+at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1575)&#13;
+
+</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="ch.kusar.contraceptivetimer.test.retriever.AlarmEventRetrieverTest" time="0.008">
+    <testcase name="testAndroidTestCaseSetupProperly" classname="ch.kusar.contraceptivetimer.test.retriever.AlarmEventRetrieverTest" time="0.008"/>
+    <testcase name="testRetrieveAlarmEventData_WithValidData_ShouldReturnExpectedObjectData" classname="ch.kusar.contraceptivetimer.test.retriever.AlarmEventRetrieverTest" time="0.0"/>
+  </testsuite>
+</testrun>

@@ -1,0 +1,4 @@
+package ch.kusar.contraceptivetimer.calculator;
+
+public class AlarmTime {
+}

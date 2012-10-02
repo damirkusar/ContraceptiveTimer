@@ -11,25 +11,26 @@ import ch.kusar.contraceptivetimer.businessobjects.ContraceptiveType;
 import ch.kusar.contraceptivetimer.businessobjects.EventType;
 import ch.kusar.contraceptivetimer.calculator.AlarmCalculationData;
 import ch.kusar.contraceptivetimer.calculator.AlarmDataCalculator;
+import ch.kusar.contraceptivetimer.calculator.AlarmTime;
 import ch.kusar.test.calendarWrapper.CalendarWrapperForTest;
 
 public class AlarmDataCalculatorTest extends AndroidTestCase {
 
-	AlarmCalculationData alarmData;
-	AlarmDataCalculator alarmDataCalculator;
-	GregorianCalendar calendar;
+	private AlarmCalculationData alarmCalculationData;
+	private AlarmDataCalculator alarmDataCalculator;
+	private GregorianCalendar calendar;
 
 	@Override
 	public void setUp() throws Exception {
 		super.setUp();
 
-		this.alarmData = new AlarmCalculationData();
+		this.alarmCalculationData = new AlarmCalculationData();
 	}
 
 	@Override
 	public void tearDown() throws Exception {
 		super.tearDown();
-		this.alarmData = null;
+		this.alarmCalculationData = null;
 		this.alarmDataCalculator = null;
 	}
 
@@ -41,30 +42,28 @@ public class AlarmDataCalculatorTest extends AndroidTestCase {
 
 		this.calendar.set(Calendar.DAY_OF_YEAR,
 				this.calendar.get(Calendar.DAY_OF_YEAR) - lastBreakAgoInDays);
-		this.calendar.set(Calendar.MINUTE,
-				this.calendar.get(Calendar.MINUTE) - 5);
 
-		this.alarmData.setLastBreak(this.calendar);
-		this.alarmData.setContraceptiveType(contraceptiveType);
+		this.alarmCalculationData.setLastBreakDayOfYear(this.calendar
+				.get(Calendar.DAY_OF_YEAR));
+		this.alarmCalculationData.setContraceptiveType(contraceptiveType);
 
-		GregorianCalendar alarmCalendar = this.calendar;
+		this.alarmCalculationData.setAlarmTime(new AlarmTime(20, 0));
 
-		this.alarmData.setAlarmTime(alarmCalendar);
-
-		this.alarmDataCalculator = new AlarmDataCalculator(this.alarmData);
+		this.alarmDataCalculator = new AlarmDataCalculator(
+				this.alarmCalculationData);
 	}
 
 	private void setupAlarmData(ContraceptiveType contraceptiveType,
-			GregorianCalendar lastUseOfContraceptive,
-			GregorianCalendar lastBreak, GregorianCalendar alarmTime,
-			boolean isAlarmActive) {
-		this.alarmData.setContraceptiveType(contraceptiveType);
-		this.alarmData.setLastUseOfContraceptive(lastUseOfContraceptive);
-		this.alarmData.setLastBreak(lastBreak);
-		this.alarmData.setAlarmTime(alarmTime);
-		this.alarmData.setAlarmActive(isAlarmActive);
+			int lastUseOfContraceptive, int lastBreak, boolean isAlarmActive) {
+		this.alarmCalculationData.setContraceptiveType(contraceptiveType);
+		this.alarmCalculationData
+				.setLastUseOfContraceptiveDayOfYear(lastUseOfContraceptive);
+		this.alarmCalculationData.setLastBreakDayOfYear(lastBreak);
+		this.alarmCalculationData.setAlarmTime(new AlarmTime(20, 0));
+		this.alarmCalculationData.setAlarmActive(isAlarmActive);
 
-		this.alarmDataCalculator = new AlarmDataCalculator(this.alarmData);
+		this.alarmDataCalculator = new AlarmDataCalculator(
+				this.alarmCalculationData);
 	}
 
 	public void testNumberOfDaysSinceLastBreak_StartTimeAndLastBreakIs1DayAgo_Expected1() {
@@ -81,7 +80,8 @@ public class AlarmDataCalculatorTest extends AndroidTestCase {
 		this.setupCalendarWithLastBreakAgoInDays(7,
 				ContraceptiveType.CONTRACEPTION_PATCH);
 
-		this.alarmData.setLastBreak(this.calendar);
+		this.alarmCalculationData.setLastBreakDayOfYear(this.calendar
+				.get(Calendar.DAY_OF_YEAR));
 
 		int numberOfDaysSinceLastBreak = this.alarmDataCalculator
 				.getNumberOfDaysSinceLastBreak();
@@ -105,8 +105,8 @@ public class AlarmDataCalculatorTest extends AndroidTestCase {
 				.getSundayThreeWeekAgo();
 
 		this.setupAlarmData(ContraceptiveType.CONTRACEPTION_RING,
-				sundayThreeWeeksAgo, sundayThreeWeeksAgo,
-				CalendarWrapperForTest.getAlarmTimeAt8PM(), true);
+				sundayThreeWeeksAgo.get(Calendar.DAY_OF_YEAR),
+				sundayThreeWeeksAgo.get(Calendar.DAY_OF_YEAR), true);
 
 		GregorianCalendar nextBreakFromLastUse = (GregorianCalendar) sundayThreeWeeksAgo
 				.clone();
@@ -137,8 +137,9 @@ public class AlarmDataCalculatorTest extends AndroidTestCase {
 		GregorianCalendar sundayWeekAgo = CalendarWrapperForTest
 				.getSundayOneWeekAgo();
 
-		this.setupAlarmData(ContraceptiveType.CONTRACEPTION_RING, lastSunday,
-				sundayWeekAgo, CalendarWrapperForTest.getAlarmTimeAt8PM(), true);
+		this.setupAlarmData(ContraceptiveType.CONTRACEPTION_RING,
+				lastSunday.get(Calendar.DAY_OF_YEAR),
+				sundayWeekAgo.get(Calendar.DAY_OF_YEAR), true);
 
 		GregorianCalendar nextBreakFromLastUse = (GregorianCalendar) lastSunday
 				.clone();
@@ -171,8 +172,8 @@ public class AlarmDataCalculatorTest extends AndroidTestCase {
 				.getSundayThreeWeekAgo();
 
 		this.setupAlarmData(ContraceptiveType.CONTRACEPTION_RING,
-				sundayTwoWeeksAgo, sundayThreeWeekAgo,
-				CalendarWrapperForTest.getAlarmTimeAt8PM(), true);
+				sundayTwoWeeksAgo.get(Calendar.DAY_OF_YEAR),
+				sundayThreeWeekAgo.get(Calendar.DAY_OF_YEAR), true);
 
 		GregorianCalendar nextEventFromLastUse = (GregorianCalendar) sundayTwoWeeksAgo
 				.clone();
@@ -204,8 +205,8 @@ public class AlarmDataCalculatorTest extends AndroidTestCase {
 				.getSundayThreeWeekAgo();
 
 		this.setupAlarmData(ContraceptiveType.CONTRACEPTION_RING,
-				sundayThreeWeekAgo, lastSunday,
-				CalendarWrapperForTest.getAlarmTimeAt8PM(), true);
+				sundayThreeWeekAgo.get(Calendar.DAY_OF_YEAR),
+				lastSunday.get(Calendar.DAY_OF_YEAR), true);
 
 		GregorianCalendar nextEventFromLastUse = (GregorianCalendar) sundayThreeWeekAgo
 				.clone();
@@ -230,19 +231,15 @@ public class AlarmDataCalculatorTest extends AndroidTestCase {
 				alarmEventData.getAlarm());
 	}
 
-	public void testLastTodaysDayOfYear() {
-		int today = CalendarWrapperForTest.getTodaysDayOfYear();
-		Assert.assertEquals(today, CalendarWrapperForTest.getTodaysDayOfYear());
-	}
-
 	public void testNextAlarmEvent_LastUseWasLastSundayAndLastBreakSundayAWeekAgoAndContraceptiveTypeIsPatch_ExpectedMessageForChangePatchAndCalendarDayIsNextSunday() {
 
 		GregorianCalendar lastSunday = CalendarWrapperForTest.getLastSunday();
 		GregorianCalendar sundayWeekAgo = CalendarWrapperForTest
 				.getSundayOneWeekAgo();
 
-		this.setupAlarmData(ContraceptiveType.CONTRACEPTION_PATCH, lastSunday,
-				sundayWeekAgo, CalendarWrapperForTest.getAlarmTimeAt8PM(), true);
+		this.setupAlarmData(ContraceptiveType.CONTRACEPTION_PATCH,
+				lastSunday.get(Calendar.DAY_OF_YEAR),
+				sundayWeekAgo.get(Calendar.DAY_OF_YEAR), true);
 
 		GregorianCalendar nextBreakFromLastUse = (GregorianCalendar) lastSunday
 				.clone();
@@ -274,8 +271,8 @@ public class AlarmDataCalculatorTest extends AndroidTestCase {
 				.getSundayOneWeekAgo();
 
 		this.setupAlarmData(ContraceptiveType.CONTRACEPTION_PATCH,
-				sundayOneWeekAgo, lastSunday,
-				CalendarWrapperForTest.getAlarmTimeAt8PM(), true);
+				sundayOneWeekAgo.get(Calendar.DAY_OF_YEAR),
+				lastSunday.get(Calendar.DAY_OF_YEAR), true);
 
 		GregorianCalendar nextEventFromLastUse = (GregorianCalendar) sundayOneWeekAgo
 				.clone();
@@ -314,8 +311,9 @@ public class AlarmDataCalculatorTest extends AndroidTestCase {
 		GregorianCalendar sundayWeekAgo = CalendarWrapperForTest
 				.getSundayOneWeekAgo();
 
-		this.setupAlarmData(ContraceptiveType.CONTRACEPTION_PILL, yesterday,
-				sundayWeekAgo, CalendarWrapperForTest.getAlarmTimeAt8PM(), true);
+		this.setupAlarmData(ContraceptiveType.CONTRACEPTION_PILL,
+				yesterday.get(Calendar.DAY_OF_YEAR),
+				sundayWeekAgo.get(Calendar.DAY_OF_YEAR), true);
 
 		GregorianCalendar nextEventFromLastUse = (GregorianCalendar) yesterday
 				.clone();
@@ -339,9 +337,9 @@ public class AlarmDataCalculatorTest extends AndroidTestCase {
 		GregorianCalendar sundayFourWeeksAgo = CalendarWrapperForTest
 				.getSundayFourWeekAgo();
 
-		this.setupAlarmData(ContraceptiveType.CONTRACEPTION_PILL, lastSaturday,
-				sundayFourWeeksAgo, CalendarWrapperForTest.getAlarmTimeAt8PM(),
-				true);
+		this.setupAlarmData(ContraceptiveType.CONTRACEPTION_PILL,
+				lastSaturday.get(Calendar.DAY_OF_YEAR),
+				sundayFourWeeksAgo.get(Calendar.DAY_OF_YEAR), true);
 
 		GregorianCalendar nextEventFromLastUse = (GregorianCalendar) lastSaturday
 				.clone();
@@ -372,8 +370,9 @@ public class AlarmDataCalculatorTest extends AndroidTestCase {
 				.getLastSaturday();
 		GregorianCalendar lastSunday = CalendarWrapperForTest.getLastSunday();
 
-		this.setupAlarmData(ContraceptiveType.CONTRACEPTION_PILL, lastSaturday,
-				lastSunday, CalendarWrapperForTest.getAlarmTimeAt8PM(), true);
+		this.setupAlarmData(ContraceptiveType.CONTRACEPTION_PILL,
+				lastSaturday.get(Calendar.DAY_OF_YEAR),
+				lastSunday.get(Calendar.DAY_OF_YEAR), true);
 
 		GregorianCalendar nextEventFromLastUse = (GregorianCalendar) lastSaturday
 				.clone();

@@ -3,8 +3,6 @@ package ch.kusar.test.calendarWrapper;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-import ch.kusar.contraceptivetimer.wrapper.CalendarWrapper;
-
 public class CalendarWrapperForTest {
 
 	public static GregorianCalendar getActualCalendarWithoutHourMinutesSeconds() {
@@ -127,18 +125,6 @@ public class CalendarWrapperForTest {
 								.convertFromCalendarDayToNormal7DaysScale(todaysWeekDay)
 						- 28);
 		return (GregorianCalendar) calendar;
-	}
-
-	public static GregorianCalendar getAlarmTimeAt8PM() {
-		Calendar calendar = CalendarWrapperForTest
-				.getActualCalendarWithoutHourMinutesSeconds();
-		calendar.set(Calendar.HOUR_OF_DAY, 20);
-		return (GregorianCalendar) calendar;
-	}
-
-	public static int getTodaysDayOfYear() {
-		return CalendarWrapper.getActualCalendarWithoutHourMinutesSeconds()
-				.get(Calendar.DAY_OF_YEAR);
 	}
 
 	public static int convertFromCalendarDayToNormal7DaysScale(int dayOfWeek) {

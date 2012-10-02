@@ -2,26 +2,22 @@ package ch.kusar.contraceptivetimer.test.wrapper;
 
 import java.math.BigInteger;
 import java.security.SecureRandom;
-import java.util.GregorianCalendar;
 
 import junit.framework.Assert;
 import android.test.AndroidTestCase;
 import ch.kusar.contraceptivetimer.businessobjects.ContraceptiveType;
 import ch.kusar.contraceptivetimer.calculator.AlarmCalculationData;
+import ch.kusar.contraceptivetimer.calculator.AlarmTime;
 import ch.kusar.contraceptivetimer.wrapper.InternalStorageWrapper;
 
 public class InternalStorageWrapperTest extends AndroidTestCase {
 
 	private AlarmCalculationData alarmData;
-	private GregorianCalendar alarmTime;
-	private GregorianCalendar calendar;
 	private InternalStorageWrapper internalStorageWrapper;
 	private SecureRandom random;
 
 	@Override
 	public void setUp() throws Exception {
-		this.calendar = new GregorianCalendar();
-		this.alarmTime = this.calendar;
 		this.random = new SecureRandom();
 
 		this.internalStorageWrapper = new InternalStorageWrapper(this
@@ -31,7 +27,7 @@ public class InternalStorageWrapperTest extends AndroidTestCase {
 		this.alarmData
 				.setContraceptiveType(ContraceptiveType.CONTRACEPTION_RING);
 		this.alarmData.setAlarmActive(true);
-		this.alarmData.setAlarmTime(this.alarmTime);
+		this.alarmData.setAlarmTime(new AlarmTime(20, 0));
 	}
 
 	@Override
@@ -46,7 +42,8 @@ public class InternalStorageWrapperTest extends AndroidTestCase {
 		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper
 				.loadFromStorage();
 
-		Assert.assertEquals(this.alarmTime, alarmDataLoaded.getAlarmTime());
+		Assert.assertEquals(20, alarmDataLoaded.getAlarmTimeHourOfDay());
+		Assert.assertEquals(0, alarmDataLoaded.getAlarmTimeMinutes());
 		Assert.assertEquals(this.alarmData.getContraceptiveType(),
 				ContraceptiveType.CONTRACEPTION_RING);
 		Assert.assertEquals(28, alarmDataLoaded.getIntervalDays());
@@ -62,7 +59,8 @@ public class InternalStorageWrapperTest extends AndroidTestCase {
 		AlarmCalculationData alarmDataLoaded = internalStorageWrapperLoader
 				.loadFromStorage();
 
-		Assert.assertEquals(this.alarmTime, alarmDataLoaded.getAlarmTime());
+		Assert.assertEquals(20, alarmDataLoaded.getAlarmTimeHourOfDay());
+		Assert.assertEquals(0, alarmDataLoaded.getAlarmTimeMinutes());
 		Assert.assertEquals(this.alarmData.getContraceptiveType(),
 				ContraceptiveType.CONTRACEPTION_RING);
 		Assert.assertEquals(28, alarmDataLoaded.getIntervalDays());

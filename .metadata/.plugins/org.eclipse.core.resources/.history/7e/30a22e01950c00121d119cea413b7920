@@ -1,0 +1,12 @@
+package ch.kusar.contraceptivetimer.calculator;
+
+public class AlarmTime {
+	private int hourOfDay;
+	private int minuteOfDay;
+	public int getHourOfDay() {
+		return hourOfDay;
+	}
+	public void setHourOfDay(int hourOfDay) {
+		this.hourOfDay = hourOfDay;
+	}
+}
