@@ -1,0 +1,11 @@
+1349101314021	Rename type 'AutoStartAlarm'
+1349168127973	Move compilation unit
+1349168140443	Delete element
+1349168230120	Move compilation units
+1349168275126	Rename type 'AlarmData'
+1349170353615	Rename method 'getActualCalendar'
+1349171132035	Encapsulate field 'eventType'
+1349171860352	Rename local variable 'next'
+1349171870922	Rename local variable 'nextBreakDay'
+1349171884114	Rename local variable 'nextStartDay'
+1349171943748	Extract method 'setAlarmEventData'

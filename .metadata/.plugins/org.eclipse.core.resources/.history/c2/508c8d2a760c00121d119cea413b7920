@@ -1,0 +1,159 @@
+package ch.kusar.contraceptivetimer.calculator;
+
+import java.util.Calendar;
+
+import ch.kusar.contraceptivetimer.businessobjects.AlarmEventData;
+import ch.kusar.contraceptivetimer.businessobjects.AlarmMessage;
+import ch.kusar.contraceptivetimer.businessobjects.ContraceptiveType;
+import ch.kusar.contraceptivetimer.businessobjects.EventType;
+import ch.kusar.contraceptivetimer.wrapper.CalendarWrapper;
+
+public class AlarmDataCalculator {
+
+	private AlarmCalculationData alarmData;
+
+	public AlarmDataCalculator(AlarmCalculationData alarmData) {
+		this.setAlarmData(alarmData);
+	}
+
+	public AlarmCalculationData getAlarmData() {
+		return this.alarmData;
+	}
+
+	public void setAlarmData(AlarmCalculationData alarmData) {
+		this.alarmData = alarmData;
+	}
+
+	public AlarmEventData getNextAlarmEvent() {
+		if (this.isNextEventABreakAlarmEvent()) {
+			return this.getNextBreakAlarmEvent();
+		} else {
+			if (this.getNumberOfDaysSinceLastBreak() <= 7) {
+				return this.getNextAlarmEventAfterBreak();
+			}
+			return this.getNextChangeAlarmEvent();
+		}
+	}
+
+	private boolean isNextEventABreakAlarmEvent() {
+		int breakAlarmEventDataDayOfYear = this.alarmData.getLastBreak().get(
+				Calendar.DAY_OF_YEAR);
+		int changeAlarmEventDataDayOfYear = this.alarmData
+				.getLastUseOfContraceptive().get(Calendar.DAY_OF_YEAR);
+
+		if (breakAlarmEventDataDayOfYear == changeAlarmEventDataDayOfYear) {
+			return true;
+		}
+		if (breakAlarmEventDataDayOfYear < changeAlarmEventDataDayOfYear
+				&& this.alarmData.getContraceptiveType() == ContraceptiveType.CONTRACEPTION_RING) {
+			return true;
+		}
+		if (this.getNumberOfDaysSinceLastBreak() >= 21) {
+			return true;
+		}
+
+		return false;
+	}
+
+	public int getNumberOfDaysSinceLastBreak() {
+		Calendar actulCalendar = CalendarWrapper
+				.getActualCalendarWithoutHourMinutesSeconds();
+
+		Calendar lastBreakCalendar = CalendarWrapper
+				.convertToCalendarWithoutHourMinutesSeconds(this.alarmData
+						.getLastBreak());
+
+		return (int) ((actulCalendar.getTimeInMillis() - lastBreakCalendar
+				.getTimeInMillis()) / this.alarmData.getMillisecondsinday());
+	}
+
+	private AlarmEventData getNextAlarmEventAfterBreak() {
+		AlarmEventData alarmEventData = new AlarmEventData();
+
+		if (this.alarmData.getContraceptiveType() == ContraceptiveType.CONTRACEPTION_RING) {
+			alarmEventData.setAlarmMessage(AlarmMessage.getRingChangeMessage());
+		}
+		if (this.alarmData.getContraceptiveType() == ContraceptiveType.CONTRACEPTION_PATCH) {
+			alarmEventData
+					.setAlarmMessage(AlarmMessage.getPatchChangeMessage());
+		}
+		if (this.alarmData.getContraceptiveType() == ContraceptiveType.CONTRACEPTION_PILL) {
+			alarmEventData.setAlarmMessage(AlarmMessage.getPillChangeMessage());
+		}
+
+		int nextStartDay = this.alarmData.getLastBreak().get(
+				Calendar.DAY_OF_YEAR) + 7;
+
+		alarmEventData.getAlarm().set(Calendar.DAY_OF_YEAR, nextStartDay);
+
+		alarmEventData.getAlarm().set(Calendar.HOUR_OF_DAY,
+				this.alarmData.getAlarmTime().get(Calendar.HOUR_OF_DAY));
+		alarmEventData.getAlarm().set(Calendar.MINUTE,
+				this.alarmData.getAlarmTime().get(Calendar.MINUTE));
+		
+		alarmEventData.setEventType(EventType.EVENT_AFTER_BREAK);
+
+		return alarmEventData;
+	}
+
+	private AlarmEventData getNextBreakAlarmEvent() {
+		AlarmEventData alarmEventData = new AlarmEventData();
+
+		if (this.alarmData.getContraceptiveType() == ContraceptiveType.CONTRACEPTION_RING) {
+			alarmEventData.setAlarmMessage(AlarmMessage.getRingRemoveMessage());
+		}
+		if (this.alarmData.getContraceptiveType() == ContraceptiveType.CONTRACEPTION_PATCH) {
+			alarmEventData
+					.setAlarmMessage(AlarmMessage.getPatchRemoveMessage());
+		}
+		if (this.alarmData.getContraceptiveType() == ContraceptiveType.CONTRACEPTION_PILL) {
+			alarmEventData.setAlarmMessage(AlarmMessage.getPillRemoveMessage());
+		}
+
+		int nextBreakDay = this.alarmData.getLastBreak().get(
+				Calendar.DAY_OF_YEAR) + 28;
+
+		alarmEventData.getAlarm().set(Calendar.DAY_OF_YEAR, nextBreakDay);
+
+		alarmEventData.getAlarm().set(Calendar.HOUR_OF_DAY,
+				this.alarmData.getAlarmTime().get(Calendar.HOUR_OF_DAY));
+		alarmEventData.getAlarm().set(Calendar.MINUTE,
+				this.alarmData.getAlarmTime().get(Calendar.MINUTE));
+		
+
+		alarmEventData.setEventType(EventType.EVENT_BREAK_ALARM);
+		
+		return alarmEventData;
+	}
+
+	private AlarmEventData getNextChangeAlarmEvent() {
+		AlarmEventData alarmEventData = new AlarmEventData();
+
+		if (this.alarmData.getContraceptiveType() == ContraceptiveType.CONTRACEPTION_RING) {
+			alarmEventData.setAlarmMessage(AlarmMessage.getRingChangeMessage());
+		}
+		if (this.alarmData.getContraceptiveType() == ContraceptiveType.CONTRACEPTION_PATCH) {
+			alarmEventData
+					.setAlarmMessage(AlarmMessage.getPatchChangeMessage());
+		}
+		if (this.alarmData.getContraceptiveType() == ContraceptiveType.CONTRACEPTION_PILL) {
+			alarmEventData.setAlarmMessage(AlarmMessage.getPillChangeMessage());
+		}
+
+		int nextStartDay = this.alarmData.getLastUseOfContraceptive().get(
+				Calendar.DAY_OF_YEAR)
+				+ this.alarmData.getIntervalDays();
+
+		alarmEventData.getAlarm().set(Calendar.DAY_OF_YEAR, nextStartDay);
+
+		alarmEventData.getAlarm().set(Calendar.HOUR_OF_DAY,
+				this.alarmData.getAlarmTime().get(Calendar.HOUR_OF_DAY));
+		alarmEventData.getAlarm().set(Calendar.MINUTE,
+				this.alarmData.getAlarmTime().get(Calendar.MINUTE));
+		
+
+		alarmEventData.setEventType(EventType.EVENT_CHANGE);
+
+		return alarmEventData;
+	}
+}

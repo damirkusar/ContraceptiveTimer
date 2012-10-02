@@ -3,13 +3,14 @@ package ch.kusar.test.calendarWrapper;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-import ch.kusar.calendarWrapper.CalendarWrapper;
+import ch.kusar.contraceptivetimer.wrapper.CalendarWrapper;
 
 public class CalendarWrapperForTest {
 
 	public static GregorianCalendar getActualCalendarWithoutHourMinutesSeconds() {
 		return CalendarWrapperForTest
-				.convertToCalendarWithoutHourMinutesSeconds(new GregorianCalendar());
+				.convertToCalendarWithoutHourMinutesSeconds(Calendar
+						.getInstance());
 	}
 
 	private static GregorianCalendar convertToCalendarWithoutHourMinutesSeconds(
@@ -19,6 +20,7 @@ public class CalendarWrapperForTest {
 		cal.set(Calendar.HOUR_OF_DAY, 0);
 		cal.set(Calendar.MINUTE, 0);
 		cal.set(Calendar.SECOND, 0);
+		cal.set(Calendar.MILLISECOND, 0);
 
 		return (GregorianCalendar) cal;
 	}

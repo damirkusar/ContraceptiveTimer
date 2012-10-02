@@ -7,22 +7,27 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 import android.content.Context;
-import ch.kusar.contraceptivetimer.businessobjects.AlarmData;
+import ch.kusar.contraceptivetimer.calculator.AlarmCalculationData;
 
 public class InternalStorageWrapper {
 
-	private static final String FILENAME = "ContraceptiveTimerData";
+	private String fileName = "ContraceptiveTimerData";
 	private final Context fileContext;
 
 	public InternalStorageWrapper(Context fileContext) {
 		this.fileContext = fileContext;
 	}
 
-	public AlarmData loadFromStorage() {
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
+	public AlarmCalculationData loadFromStorage() {
 		try {
-			FileInputStream fis = fileContext.openFileInput(this.FILENAME);
+			FileInputStream fis = this.fileContext.openFileInput(this.fileName);
 			ObjectInputStream ois = new ObjectInputStream(fis);
-			AlarmData alarmData = (AlarmData) ois.readObject();
+			AlarmCalculationData alarmData = (AlarmCalculationData) ois
+					.readObject();
 			ois.close();
 			return alarmData;
 		} catch (ClassNotFoundException e) {
@@ -40,10 +45,10 @@ public class InternalStorageWrapper {
 		return null;
 	}
 
-	public boolean saveToStorage(AlarmData alarmData) {
+	public boolean saveToStorage(AlarmCalculationData alarmData) {
 		try {
-			FileOutputStream fos = fileContext.openFileOutput(this.FILENAME,
-					Context.MODE_PRIVATE);
+			FileOutputStream fos = this.fileContext.openFileOutput(
+					this.fileName, Context.MODE_PRIVATE);
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
 			oos.writeObject(alarmData);
 			oos.close();
@@ -59,6 +64,6 @@ public class InternalStorageWrapper {
 
 	@Override
 	public String toString() {
-		return getClass().getName();
+		return this.getClass().getName();
 	}
 }

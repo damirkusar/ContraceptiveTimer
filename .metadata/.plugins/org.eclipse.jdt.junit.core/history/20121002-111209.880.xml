@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testrun name="InternalStorageWrapperTest.testLoadFromStorage_TryToLoadNotSavedFileFromStorage_ObjectIsNull" project="ContraceptiveTimerTest" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="ch.kusar.contraceptivetimer.test.wrapper.InternalStorageWrapperTest" time="27.782">
+    <testcase name="testLoadFromStorage_TryToLoadNotSavedFileFromStorage_ObjectIsNull" classname="ch.kusar.contraceptivetimer.test.wrapper.InternalStorageWrapperTest" time="27.782"/>
+  </testsuite>
+</testrun>

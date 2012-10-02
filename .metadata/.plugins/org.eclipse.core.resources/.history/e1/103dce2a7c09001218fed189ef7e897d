@@ -1,0 +1,40 @@
+package ch.kusar.contraceptivetimer.test.businessobjects;
+
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+import ch.kusar.contraceptivetimer.businessobjects.AlarmData;
+import ch.kusar.contraceptivetimer.businessobjects.AlarmDataCalculator;
+import ch.kusar.test.calendarWrapper.CalendarWrapperForTest;
+
+public class FakeAlarmData extends AlarmData {
+
+	private static final long serialVersionUID = 1L;
+	AlarmData alarmData;
+	AlarmDataCalculator alarmDataCalculator;
+	GregorianCalendar calendar;
+
+	public FakeAlarmData() {
+
+	}
+	
+	public FakeAlarmData create() {
+		this.calendar = CalendarWrapperForTest
+				.getActualCalendarWithoutHourMinutesSeconds();
+
+		this.calendar.set(Calendar.DAY_OF_YEAR,
+				this.calendar.get(Calendar.DAY_OF_YEAR) - lastBreakAgoInDays);
+		this.calendar.set(Calendar.MINUTE,
+				this.calendar.get(Calendar.MINUTE) - 5);
+
+		this.alarmData.setLastBreak(this.calendar);
+		this.alarmData.setContraceptiveType(contraceptiveType);
+
+		GregorianCalendar alarmCalendar = this.calendar;
+
+		this.alarmData.setAlarmTime(alarmCalendar);
+
+		this.alarmDataCalculator = new AlarmDataCalculator(this.alarmData);
+	}
+
+}

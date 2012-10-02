@@ -1,0 +1,37 @@
+package ch.kusar.contraceptivetimer.businessobjects;
+
+import java.util.GregorianCalendar;
+
+public class AlarmEventData {
+
+	private String alarmMessage;
+	private int alarmInMilliSeconds;
+	private EventType eventType;
+
+	public AlarmEventData() {
+	}
+
+	public String getAlarmMessage() {
+		return this.alarmMessage;
+	}
+
+	public void setAlarmMessage(String alarmMessage) {
+		this.alarmMessage = alarmMessage;
+	}
+
+	public int getAlarm() {
+		return this.alarmInMilliSeconds;
+	}
+
+	public void setAlarm(int alarmInMilliSeconds) {
+		this.alarmInMilliSeconds = alarmInMilliSeconds;
+	}
+
+	public EventType getEventType() {
+		return this.eventType;
+	}
+
+	public void setEventType(EventType eventType) {
+		this.eventType = eventType;
+	}
+}

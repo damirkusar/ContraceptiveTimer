@@ -3,5 +3,5 @@ com.android.ide.eclipse.adt.eclipseIndent=true
 com.android.ide.eclipse.adt.fixLegacyEditors=1
 com.android.ide.eclipse.adt.formatOnSave=true
 com.android.ide.eclipse.adt.removeEmpty=true
-com.android.ide.eclipse.adt.sdk=/Volumes/Data/cognisy/90_DevLibrary/Android/_sdk/android-sdk-macosx
+com.android.ide.eclipse.adt.sdk=/Volumes/Data/softver/DevLibrary/Android/_sdk/android-sdk-macosx
 eclipse.preferences.version=1

@@ -1,0 +1,11 @@
+package ch.kusar.contraceptivetimer.test.businessobjects;
+
+import ch.kusar.contraceptivetimer.businessobjects.AlarmData;
+
+public class FakeAlarmData extends AlarmData {
+
+	public FakeAlarmData() {
+
+	}
+
+}

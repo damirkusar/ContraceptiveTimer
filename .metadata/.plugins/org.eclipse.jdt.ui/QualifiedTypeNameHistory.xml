@@ -11,7 +11,6 @@
 <fullyQualifiedTypeName name="android.util.Log"/>
 <fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.wrapper.LoggerWrapper"/>
 <fullyQualifiedTypeName name="android.test.mock.MockContext"/>
-<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.wrapper.InternalStorageWrapper"/>
 <fullyQualifiedTypeName name="android.content.Context"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
 <fullyQualifiedTypeName name="java.io.FileInputStream"/>
@@ -31,9 +30,11 @@
 <fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.businessobjects.AlarmMessage"/>
 <fullyQualifiedTypeName name="ch.kusar.calendarWrapper.CalendarWrapper"/>
 <fullyQualifiedTypeName name="ch.kusar.calendarWrapper.CalendarWrapperForTest"/>
-<fullyQualifiedTypeName name="ch.kusar.test.calendarWrapper.CalendarWrapperForTest"/>
-<fullyQualifiedTypeName name="java.util.Calendar"/>
 <fullyQualifiedTypeName name="junit.framework.Assert"/>
-<fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
 <fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.businessobjects.ContraceptiveType"/>
+<fullyQualifiedTypeName name="ch.kusar.test.calendarWrapper.CalendarWrapperForTest"/>
+<fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
+<fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.wrapper.AlarmWrapper"/>
+<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.wrapper.InternalStorageWrapper"/>
 </qualifiedTypeNameHistroy>
