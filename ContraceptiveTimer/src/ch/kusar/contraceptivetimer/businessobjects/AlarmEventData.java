@@ -17,11 +17,11 @@ public class AlarmEventData {
 		this.alarmMessage = alarmMessage;
 	}
 
-	public long getAlarm() {
+	public long getAlarmTimeInMilliSeconds() {
 		return this.alarmInMilliSeconds;
 	}
 
-	public void setAlarm(long alarmInMilliSeconds) {
+	public void setAlarmTimeInMilliSeconds(long alarmInMilliSeconds) {
 		this.alarmInMilliSeconds = alarmInMilliSeconds;
 	}
 

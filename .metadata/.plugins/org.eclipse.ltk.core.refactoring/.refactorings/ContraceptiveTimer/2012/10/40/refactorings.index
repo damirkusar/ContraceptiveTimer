@@ -30,3 +30,7 @@
 1349187416443	Rename method 'getAlarmTimeMinuteOfDay'
 1349187711734	Rename method 'setLastBreak'
 1349187732736	Rename method 'setLastUseOfContraceptive'
+1349199682027	Rename method 'getAlarm'
+1349199686608	Rename method 'getAlarmTimeInMilliSecond'
+1349199699118	Rename method 'setAlarm'
+1349203526780	Rename local variable 'lastBreakAsDayOfYear'

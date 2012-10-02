@@ -1,0 +1,14 @@
+package ch.kusar.contraceptivetimer.retriever;
+
+import ch.kusar.contraceptivetimer.businessobjects.AlarmEventData;
+import ch.kusar.contraceptivetimer.wrapper.InternalStorageWrapper;
+
+public class AlarmEventRetriever {
+
+	public AlarmEventData retrieveAlarmEventData() {
+		InternalStorageWrapper internalStorageWrapper = new InternalStorageWrapper(
+				this.getBaseContext().getApplicationContext());
+
+	}
+
+}

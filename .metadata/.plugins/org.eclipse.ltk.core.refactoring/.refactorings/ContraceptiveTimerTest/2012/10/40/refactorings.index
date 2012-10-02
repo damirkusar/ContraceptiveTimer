@@ -4,3 +4,6 @@
 1349170632902	Rename type 'RetrieveAlarmEventData'
 1349170805075	Rename compilation unit 'RetrieveAlarmEventDataTest.java'
 1349185839893	Rename field 'alarmData'
+1349202354099	Rename local variable 'lastSaturday'
+1349202370920	Rename local variable 'lastSunday'
+1349202519574	Rename local variable 'todayAsCalendar'

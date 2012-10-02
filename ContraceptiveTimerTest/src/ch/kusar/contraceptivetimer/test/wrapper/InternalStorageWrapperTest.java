@@ -5,6 +5,7 @@ import java.security.SecureRandom;
 
 import junit.framework.Assert;
 import android.test.AndroidTestCase;
+import ch.kusar.contraceptivetimer.MainApplicationContext;
 import ch.kusar.contraceptivetimer.businessobjects.ContraceptiveType;
 import ch.kusar.contraceptivetimer.calculator.AlarmCalculationData;
 import ch.kusar.contraceptivetimer.calculator.AlarmTime;
@@ -12,7 +13,7 @@ import ch.kusar.contraceptivetimer.wrapper.InternalStorageWrapper;
 
 public class InternalStorageWrapperTest extends AndroidTestCase {
 
-	private AlarmCalculationData alarmData;
+	private AlarmCalculationData alarmCalculationData;
 	private InternalStorageWrapper internalStorageWrapper;
 	private SecureRandom random;
 
@@ -20,38 +21,38 @@ public class InternalStorageWrapperTest extends AndroidTestCase {
 	public void setUp() throws Exception {
 		this.random = new SecureRandom();
 
-		this.internalStorageWrapper = new InternalStorageWrapper(this
-				.getContext().getApplicationContext());
+		this.internalStorageWrapper = new InternalStorageWrapper(
+				MainApplicationContext.getAppContext());
 
-		this.alarmData = new AlarmCalculationData();
-		this.alarmData
+		this.alarmCalculationData = new AlarmCalculationData();
+		this.alarmCalculationData
 				.setContraceptiveType(ContraceptiveType.CONTRACEPTION_RING);
-		this.alarmData.setAlarmActive(true);
-		this.alarmData.setAlarmTime(new AlarmTime(20, 0));
+		this.alarmCalculationData.setAlarmActive(true);
+		this.alarmCalculationData.setAlarmTime(new AlarmTime(20, 0));
 	}
 
 	@Override
 	public void tearDown() throws Exception {
-		this.alarmData = null;
+		this.alarmCalculationData = null;
 		this.internalStorageWrapper = null;
 		this.random = null;
 	}
 
 	public void testLoadFromStorage_LoadsStoredFileIntoObject_ShouldLoadTheSavedDataCorrectly() {
-		this.internalStorageWrapper.saveToStorage(this.alarmData);
+		this.internalStorageWrapper.saveToStorage(this.alarmCalculationData);
 		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper
 				.loadFromStorage();
 
 		Assert.assertEquals(20, alarmDataLoaded.getAlarmTimeHourOfDay());
 		Assert.assertEquals(0, alarmDataLoaded.getAlarmTimeMinutes());
-		Assert.assertEquals(this.alarmData.getContraceptiveType(),
+		Assert.assertEquals(this.alarmCalculationData.getContraceptiveType(),
 				ContraceptiveType.CONTRACEPTION_RING);
 		Assert.assertEquals(28, alarmDataLoaded.getIntervalDays());
-		Assert.assertTrue(this.alarmData.isAlarmActive());
+		Assert.assertTrue(this.alarmCalculationData.isAlarmActive());
 	}
 
 	public void testLoadFromStorage_LoadsStoredFileIntoObjectWithAnotherStorageWrapperInstance_ShouldLoadTheSavedDataCorrectly() {
-		this.internalStorageWrapper.saveToStorage(this.alarmData);
+		this.internalStorageWrapper.saveToStorage(this.alarmCalculationData);
 
 		InternalStorageWrapper internalStorageWrapperLoader = new InternalStorageWrapper(
 				this.getContext().getApplicationContext());
@@ -61,10 +62,10 @@ public class InternalStorageWrapperTest extends AndroidTestCase {
 
 		Assert.assertEquals(20, alarmDataLoaded.getAlarmTimeHourOfDay());
 		Assert.assertEquals(0, alarmDataLoaded.getAlarmTimeMinutes());
-		Assert.assertEquals(this.alarmData.getContraceptiveType(),
+		Assert.assertEquals(this.alarmCalculationData.getContraceptiveType(),
 				ContraceptiveType.CONTRACEPTION_RING);
 		Assert.assertEquals(28, alarmDataLoaded.getIntervalDays());
-		Assert.assertTrue(this.alarmData.isAlarmActive());
+		Assert.assertTrue(this.alarmCalculationData.isAlarmActive());
 	}
 
 	public void testLoadFromStorage_TryToLoadNotSavedFileFromStorage_ObjectIsNull() {
@@ -78,6 +79,6 @@ public class InternalStorageWrapperTest extends AndroidTestCase {
 
 	public void testSaveToStorage_StoresTheFileToInternalStorage_ShouldBeSavedToStorageWithoutError() {
 		Assert.assertTrue(this.internalStorageWrapper
-				.saveToStorage(this.alarmData));
+				.saveToStorage(this.alarmCalculationData));
 	}
 }
