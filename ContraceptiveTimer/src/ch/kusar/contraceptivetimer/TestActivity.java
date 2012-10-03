@@ -12,8 +12,6 @@ public class TestActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.activity_test);
-		// AlarmManagerWrapper alarmManagerWrapper = new AlarmManagerWrapper();
-		// alarmManagerWrapper.SetAlarm(this.getBaseContext());
 	}
 
 	@Override

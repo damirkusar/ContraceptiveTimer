@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import ch.kusar.contraceptivetimer.MainApplicationContext;
 import ch.kusar.contraceptivetimer.R;
+import ch.kusar.contraceptivetimer.TestActivity;
 import ch.kusar.contraceptivetimer.businessobjects.AlarmEventData;
 import ch.kusar.contraceptivetimer.businessobjects.EventType;
 import ch.kusar.contraceptivetimer.retriever.AlarmEventRetriever;
@@ -37,6 +38,7 @@ public class AlarmManagerWrapper extends BroadcastReceiver {
 		}
 
 		this.createNotification(context, alarmEventData.getAlarmMessage());
+		// TODO: use it when beta test.
 		// this.SetAlarm();
 	}
 
@@ -73,7 +75,7 @@ public class AlarmManagerWrapper extends BroadcastReceiver {
 		AlarmEventRetriever alarmEventRetriever = new AlarmEventRetriever();
 		AlarmEventData alarmEventData = alarmEventRetriever.retrieveAlarmEventData();
 
-		if (alarmEventData != null) {
+		if (alarmEventData == null) {
 			LoggerWrapper.LogInfo("ContraceptiveTimer is now trying to setup alarm from file..");
 
 			AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
@@ -82,20 +84,21 @@ public class AlarmManagerWrapper extends BroadcastReceiver {
 			intent.putExtra(AlarmEventData.getIntentname(), alarmEventData);
 
 			PendingIntent pi = PendingIntent.getBroadcast(context, 0, intent, 0);
+			// TODO: Comment it in.
 			// am.set(AlarmManager.RTC_WAKEUP,
 			// alarmEventData.getAlarmTimeInMilliSeconds(), pi);
 
-			// For Tests
+			// TODO: For Tests, remove it.
 			GregorianCalendar gregorianCalendar = (GregorianCalendar) Calendar.getInstance();
 			gregorianCalendar.add(Calendar.SECOND, 5);
 			am.set(AlarmManager.RTC_WAKEUP, gregorianCalendar.getTimeInMillis(), pi);
 		} else {
 			LoggerWrapper.LogInfo("ContraceptiveTimer is now starting the app because no file was detected.");
-			// Intent intent = new Intent(context, TestActivity.class);
-			// context.startActivity(intent);
+			// TODO: Change Activity to Main Activity
+			Intent intent = new Intent(context, TestActivity.class);
+			intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			context.startActivity(intent);
 		}
-		// Intent intent = new Intent(context, TestActivity.class);
-		// context.startActivity(intent);
 		LoggerWrapper.LogInfo("ContraceptiveTimer is now finishing the setAlarm Method.");
 	}
 

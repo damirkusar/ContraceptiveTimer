@@ -2,6 +2,7 @@ package ch.kusar.contraceptivetimer;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
 
 public class MainApplicationContext extends Application {
 
@@ -15,5 +16,10 @@ public class MainApplicationContext extends Application {
 
 	public static Context getAppContext() {
 		return MainApplicationContext.context;
+	}
+
+	public void startNewActivity(Class<?> cls) {
+		Intent intent = new Intent(this, cls);
+		this.startActivity(intent);
 	}
 }

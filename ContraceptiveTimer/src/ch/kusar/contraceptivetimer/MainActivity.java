@@ -14,10 +14,12 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.activity_main);
 
+		// TODO Remove it when it goes live.
 		AlarmManagerWrapper alarmManagerWrapper = new AlarmManagerWrapper();
 		alarmManagerWrapper.SetAlarm();
 	}
 
+	// TODO: Remove Menu?!
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		this.getMenuInflater().inflate(R.menu.activity_main, menu);
