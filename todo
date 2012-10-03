@@ -1,12 +1,7 @@
-- Alarm für verhütungsmittel einnehmen mit korrekter nachricht mit einnehmen, wechseln, pause
-- Bei bootUp daten auslesen und Alarme neu setzen
 - Bei alarm auslösung, neuen alarm setzen und datei speichern
-- Next Event -> Alarm for change or to remove for break    
-   - Last day of alarm before 7 days break
-   - Next day of alarm
-- change alarmtime from calendar to something other.. maybe datetime?
+- Is AlarmActive implementieren
 - teste calendar day bei jahres wechsel
-- set and test lastUseOfContraceptive in AlarmData after an event occured
-- set and test lastBreak in AlarmData after an event occured
-- teste nach intervall days ob was neues gemacht werden muss
 - teste verschiedene zeitzonen
+- beim ersten mal einstellen, muss lastUse auf today gesetzt werden, und last break auf eine 
+woche vorher
+- 

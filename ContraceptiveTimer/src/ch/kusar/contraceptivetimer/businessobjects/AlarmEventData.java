@@ -1,7 +1,11 @@
 package ch.kusar.contraceptivetimer.businessobjects;
 
-public class AlarmEventData {
+import java.io.Serializable;
 
+public class AlarmEventData implements Serializable {
+
+	private static final long serialVersionUID = 6030101754400884480L;
+	private static final String intentName = "AlarmEventDataNameForIntent";
 	private String alarmMessage;
 	private long alarmInMilliSeconds;
 	private EventType eventType;
@@ -31,5 +35,9 @@ public class AlarmEventData {
 
 	public void setEventType(EventType eventType) {
 		this.eventType = eventType;
+	}
+
+	public static String getIntentname() {
+		return AlarmEventData.intentName;
 	}
 }

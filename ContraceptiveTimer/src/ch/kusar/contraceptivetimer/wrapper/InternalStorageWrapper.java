@@ -26,19 +26,15 @@ public class InternalStorageWrapper {
 		try {
 			FileInputStream fis = this.fileContext.openFileInput(this.fileName);
 			ObjectInputStream ois = new ObjectInputStream(fis);
-			AlarmCalculationData alarmData = (AlarmCalculationData) ois
-					.readObject();
+			AlarmCalculationData alarmData = (AlarmCalculationData) ois.readObject();
 			ois.close();
 			return alarmData;
 		} catch (ClassNotFoundException e) {
-			String msg = String.format(
-					"%s: ClassNotFoundException with error: %s",
-					this.toString(), e.getStackTrace());
+			String msg = String.format("%s: ClassNotFoundException with error: %s", this.toString(), e.getStackTrace());
 			LoggerWrapper.LogError(msg);
 			e.printStackTrace();
 		} catch (IOException e) {
-			String msg = String.format("%s: IOException with error: %s",
-					this.toString(), e.getStackTrace());
+			String msg = String.format("%s: IOException with error: %s", this.toString(), e.getStackTrace());
 			LoggerWrapper.LogError(msg);
 			e.printStackTrace();
 		}
@@ -47,19 +43,29 @@ public class InternalStorageWrapper {
 
 	public boolean saveToStorage(AlarmCalculationData alarmData) {
 		try {
-			FileOutputStream fos = this.fileContext.openFileOutput(
-					this.fileName, Context.MODE_PRIVATE);
+			FileOutputStream fos = this.fileContext.openFileOutput(this.fileName, Context.MODE_PRIVATE);
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
 			oos.writeObject(alarmData);
 			oos.close();
 			return true;
 		} catch (IOException e) {
-			String msg = String.format("%s: IOException with error: %s",
-					this.toString(), e.getStackTrace());
+			String msg = String.format("%s: IOException with error: %s", this.toString(), e.getStackTrace());
 			LoggerWrapper.LogError(msg);
 			e.printStackTrace();
 		}
 		return false;
+	}
+
+	public boolean saveUpdatedLastUseOfContraceptionToStorage(int lastUseOfContraception) {
+		AlarmCalculationData alarmCalculationData = this.loadFromStorage();
+		alarmCalculationData.setLastUseOfContraceptiveDayOfYear(lastUseOfContraception);
+		return this.saveToStorage(alarmCalculationData);
+	}
+
+	public boolean saveUpdatedLastBreakOfContraceptionToStorage(int lastBreakOfContraception) {
+		AlarmCalculationData alarmCalculationData = this.loadFromStorage();
+		alarmCalculationData.setLastBreakDayOfYear(lastBreakOfContraception);
+		return this.saveToStorage(alarmCalculationData);
 	}
 
 	@Override

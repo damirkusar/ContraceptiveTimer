@@ -34,3 +34,11 @@
 1349199686608	Rename method 'getAlarmTimeInMilliSecond'
 1349199699118	Rename method 'setAlarm'
 1349203526780	Rename local variable 'lastBreakAsDayOfYear'
+1349264374679	Rename type 'AlarmWrapper'
+1349264389380	Rename type 'AutoStartAlarmWrapper'
+1349265204982	Encapsulate field 'intentName'
+1349269495117	Copy compilation unit
+1349269547080	Copy file
+1349270451472	Rename local variable 'notify'
+1349271231913	Extract method 'createNotification'
+1349271735978	Rename local variable 'lastUseOfContraception'
