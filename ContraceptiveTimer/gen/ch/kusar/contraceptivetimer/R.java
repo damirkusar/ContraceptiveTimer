@@ -18,9 +18,19 @@ public final class R {
     public static final class drawable {
         public static final int ic_action_search=0x7f020000;
         public static final int ic_launcher=0x7f020001;
+        public static final int img_bg_app=0x7f020002;
     }
     public static final class id {
-        public static final int menu_settings=0x7f080000;
+        public static final int menu_settings=0x7f080009;
+        public static final int textView_AoD=0x7f080007;
+        public static final int textView_Head=0x7f080000;
+        public static final int textView_TimeChooser=0x7f080005;
+        public static final int textView_TypeChooser=0x7f080001;
+        public static final int timePicker=0x7f080006;
+        public static final int toggleButton1=0x7f080008;
+        public static final int toggleButton_Patch=0x7f080003;
+        public static final int toggleButton_Pill=0x7f080002;
+        public static final int toggleButton_Ring=0x7f080004;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -31,12 +41,29 @@ public final class R {
     }
     public static final class string {
         public static final int app_name=0x7f050000;
-        public static final int hello_world=0x7f050001;
-        public static final int hello_world2=0x7f050002;
-        public static final int menu_settings=0x7f050003;
-        public static final int title_activity_main=0x7f050004;
+        public static final int buttonMinus=0x7f05000a;
+        public static final int buttonPlus=0x7f050009;
+        public static final int menu_settings=0x7f050001;
+        public static final int msg_fileNotFoundOnSetAlarm=0x7f050002;
+        public static final int title_stepOne_chooseContraceptionType=0x7f050003;
+        public static final int title_stepThree_activateOrDeactivateAlarm=0x7f050005;
+        public static final int title_stepTwo_chooseAlarmTime=0x7f050004;
+        public static final int toggleButton_patch=0x7f050007;
+        public static final int toggleButton_pill=0x7f050006;
+        public static final int toggleButton_ring=0x7f050008;
     }
     public static final class style {
-        public static final int AppTheme=0x7f060000;
+        public static final int SV_ButtonSmall=0x7f060008;
+        public static final int SV_ButtonSmallMinus=0x7f06000a;
+        public static final int SV_ButtonSmallPlus=0x7f060009;
+        public static final int SV_EditText=0x7f06000b;
+        public static final int SV_TextView=0x7f060002;
+        public static final int SV_TextView_ChooserTitle=0x7f060004;
+        public static final int SV_TextView_Head=0x7f060003;
+        public static final int SV_Theme=0x7f060000;
+        public static final int SV_Theme_Layout=0x7f060001;
+        public static final int SV_ToggleButton=0x7f060005;
+        public static final int SV_ToggleButton_TypeChooser=0x7f060006;
+        public static final int SV_View_Separator=0x7f060007;
     }
 }

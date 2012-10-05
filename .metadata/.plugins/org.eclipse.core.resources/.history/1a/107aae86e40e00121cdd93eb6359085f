@@ -1,0 +1,7 @@
+<resources>
+	<style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar" />
+	<style name="MyTheme">
+		<item name="android:windowTitleSize">35dp</item>
+		<item name="android:windowTitleBackgroundStyle">@android:color/black</item>
+	</style>
+</resources>

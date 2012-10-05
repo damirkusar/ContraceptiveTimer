@@ -8,6 +8,5 @@
 		android:layout_centerHorizontal="true"
 		android:layout_centerVertical="true"
 		android:padding="@dimen/padding_medium"
-		android:text="@string/hello_world2"
 		tools:context=".MainActivity" />
 </RelativeLayout>

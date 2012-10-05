@@ -1,0 +1,69 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical" >
+	<TextView
+		android:id="@+id/textView_Head"
+		style="@style/SV_TextView_Head"
+		android:drawableLeft="@drawable/ic_launcher"
+		android:text="@string/app_name"
+		android:textAppearance="?android:attr/textAppearanceMedium" />
+	<View style="@style/SV_View_Separator" />
+	<TextView
+		android:id="@+id/textView_TypeChooser"
+		style="@style/SV_TextView_ChooserTitle"
+		android:text="@string/title_stepOne_chooseContraceptionType" />
+	<RelativeLayout style="@style/SV_Theme_Layout" >
+		<ToggleButton
+			android:id="@+id/toggleButton_Pill"
+			style="@style/SV_ToggleButton_TypeChooser"
+			android:layout_alignParentLeft="true"
+			android:layout_marginLeft="20dp"
+			android:text="@string/toggleButton_pill"
+			android:textOff="@string/toggleButton_pill"
+			android:textOn="@string/toggleButton_pill" />
+		<ToggleButton
+			android:id="@+id/toggleButton_Patch"
+			style="@style/SV_ToggleButton_TypeChooser"
+			android:layout_alignBottom="@+id/toggleButton_Pill"
+			android:layout_centerHorizontal="true"
+			android:text="@string/toggleButton_patch"
+			android:textOff="@string/toggleButton_patch"
+			android:textOn="@string/toggleButton_patch" />
+		<ToggleButton
+			android:id="@+id/toggleButton_Ring"
+			style="@style/SV_ToggleButton_TypeChooser"
+			android:layout_alignBottom="@+id/toggleButton_Patch"
+			android:layout_alignParentRight="true"
+			android:layout_marginRight="20dp"
+			android:text="@string/toggleButton_ring"
+			android:textOff="@string/toggleButton_ring"
+			android:textOn="@string/toggleButton_ring" />
+	</RelativeLayout>
+	<View style="@style/SV_View_Separator" />
+	<TextView
+		android:id="@+id/textView_TimeChooser"
+		style="@style/SV_TextView_ChooserTitle"
+		android:text="@string/title_stepTwo_chooseAlarmTime" />
+	<LinearLayout style="@style/SV_Theme_Layout" >
+		<TimePicker
+			android:id="@+id/timePicker"
+			android:layout_width="0dp"
+			android:layout_height="130dp"
+			android:layout_weight="10"
+			android:background="@android:color/transparent"
+			android:foreground="@android:color/transparent" />
+	</LinearLayout>
+	<View style="@style/SV_View_Separator" />
+	<TextView
+		android:id="@+id/textView_AoD"
+		style="@style/SV_TextView_ChooserTitle"
+		android:text="@string/title_stepThree_activateOrDeactivateAlarm" />
+	<RelativeLayout style="@style/SV_Theme_Layout" >
+		<ToggleButton
+			android:id="@+id/toggleButton1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="ToggleButton" />
+	</RelativeLayout>
+</LinearLayout>

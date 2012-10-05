@@ -11,6 +11,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 import ch.kusar.contraceptivetimer.MainApplicationContext;
 import ch.kusar.contraceptivetimer.R;
 import ch.kusar.contraceptivetimer.TestActivity;
@@ -47,6 +48,7 @@ public class AlarmManagerWrapper extends BroadcastReceiver {
 		String ns = Context.NOTIFICATION_SERVICE;
 		NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(ns);
 
+		// TODO: change icon
 		int icon = R.drawable.ic_launcher;
 		CharSequence tickerText = "Contraception Notification";
 		long when = System.currentTimeMillis();
@@ -75,7 +77,8 @@ public class AlarmManagerWrapper extends BroadcastReceiver {
 		AlarmEventRetriever alarmEventRetriever = new AlarmEventRetriever();
 		AlarmEventData alarmEventData = alarmEventRetriever.retrieveAlarmEventData();
 
-		if (alarmEventData == null) {
+		// TODO: Change to !=
+		if (alarmEventData != null) {
 			LoggerWrapper.LogInfo("ContraceptiveTimer is now trying to setup alarm from file..");
 
 			AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
@@ -94,6 +97,8 @@ public class AlarmManagerWrapper extends BroadcastReceiver {
 			am.set(AlarmManager.RTC_WAKEUP, gregorianCalendar.getTimeInMillis(), pi);
 		} else {
 			LoggerWrapper.LogInfo("ContraceptiveTimer is now starting the app because no file was detected.");
+			Toast.makeText(context, context.getString(R.string.msg_fileNotFoundOnSetAlarm), Toast.LENGTH_LONG).show();
+
 			// TODO: Change Activity to Main Activity
 			Intent intent = new Intent(context, TestActivity.class);
 			intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

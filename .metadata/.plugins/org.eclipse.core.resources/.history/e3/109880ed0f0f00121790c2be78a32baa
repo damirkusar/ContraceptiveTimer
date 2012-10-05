@@ -1,0 +1,94 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical" >
+	<TextView
+		android:id="@+id/textView_Head"
+		style="@style/SV_TextView_Head"
+		android:drawableLeft="@drawable/ic_launcher"
+		android:text="@string/app_name"
+		android:textAppearance="?android:attr/textAppearanceMedium" />
+	<View style="@style/SV_View_Separator" />
+	<TextView
+		android:id="@+id/textView_TypeChooser"
+		style="@style/SV_TextView_ChooserTitle"
+		android:text="@string/title_stepOne_chooseContraceptionType" />
+	<RelativeLayout style="@style/SV_Theme_Layout" >
+		<ToggleButton
+			android:id="@+id/toggleButton_Pill"
+			style="@style/SV_ToggleButton_TypeChooser"
+			android:layout_alignParentLeft="true"
+			android:layout_marginLeft="20dp"
+			android:text="@string/toggleButton_pill"
+			android:textOff="@string/toggleButton_pill"
+			android:textOn="@string/toggleButton_pill" />
+		<ToggleButton
+			android:id="@+id/toggleButton_Patch"
+			style="@style/SV_ToggleButton_TypeChooser"
+			android:layout_alignBottom="@+id/toggleButton_Pill"
+			android:layout_centerHorizontal="true"
+			android:text="@string/toggleButton_patch"
+			android:textOff="@string/toggleButton_patch"
+			android:textOn="@string/toggleButton_patch" />
+		<ToggleButton
+			android:id="@+id/toggleButton_Ring"
+			style="@style/SV_ToggleButton_TypeChooser"
+			android:layout_alignBottom="@+id/toggleButton_Patch"
+			android:layout_alignParentRight="true"
+			android:layout_marginRight="20dp"
+			android:text="@string/toggleButton_ring"
+			android:textOff="@string/toggleButton_ring"
+			android:textOn="@string/toggleButton_ring" />
+	</RelativeLayout>
+	<View style="@style/SV_View_Separator" />
+	<TextView
+		android:id="@+id/textView_TimeChooser"
+		style="@style/SV_TextView_ChooserTitle"
+		android:text="@string/title_stepOne_chooseContraceptionType" />
+	<RelativeLayout style="@style/SV_Theme_Layout" >
+		<RelativeLayout
+			style="@style/SV_Theme_Layout"
+			android:gravity="center_vertical" >
+			<Button
+				android:id="@+id/bPlusHour"
+				style="?android:attr/buttonStyleSmall"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Button" />
+			<Button
+				android:id="@+id/bPlusMinutes"
+				style="?android:attr/buttonStyleSmall"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Button" />
+			<EditText
+				android:id="@+id/editText1"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:ems="10"
+				android:inputType="number" >
+				<requestFocus />
+			</EditText>
+			<EditText
+				android:id="@+id/editText2"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:ems="10"
+				android:inputType="number" />
+			<Button
+				android:id="@+id/bMinusHours"
+				style="?android:attr/buttonStyleSmall"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Button" />
+			<Button
+				android:id="@+id/bMinusMinutes"
+				style="?android:attr/buttonStyleSmall"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Button" />
+		</RelativeLayout>
+	</RelativeLayout>
+</LinearLayout>

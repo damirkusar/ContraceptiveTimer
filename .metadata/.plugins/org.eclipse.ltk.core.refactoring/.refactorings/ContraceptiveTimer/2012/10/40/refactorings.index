@@ -42,3 +42,7 @@
 1349270451472	Rename local variable 'notify'
 1349271231913	Extract method 'createNotification'
 1349271735978	Rename local variable 'lastUseOfContraception'
+1349438073263	Delete element
+1349438545480	Delete element
+1349438551163	Delete element
+1349453234211	Extract Style

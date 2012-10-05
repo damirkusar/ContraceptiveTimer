@@ -1,0 +1,6 @@
+<resources>
+	<string name="app_name">ContraceptiveTimer</string>
+	<string name="menu_settings">Settings</string>
+	<string name="title_textviewhead">My Contraception</string>
+	<string name="msg_fileNotFoundOnSetAlarm">"Contraceptive could not set Alarm, please set a new alarm."</string>
+</resources>

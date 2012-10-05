@@ -13,12 +13,16 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="getYe" key="selection"/>
+		<item value="a" key="selection"/>
 		<list key="findhistory">
+			<item value="android"/>
+			<item value="androidNotStyled"/>
+			<item value="&#x09;&#x09;Context context = MainApplicationContext.getAppContext();"/>
 			<item value="getYe"/>
 			<item value="etNumbersOfAlarmsBeforeBreak"/>
 		</list>
 		<list key="replacehistory">
+			<item value="a"/>
 			<item value="etNumberOfAlarmsBeforeBreakCalculatedFromLastBreak"/>
 		</list>
 	</section>
