@@ -46,3 +46,17 @@
 1349438545480	Delete element
 1349438551163	Delete element
 1349453234211	Extract Style
+1349514241536	Rename resource 'color.xml'
+1349514694136	Rename resource 'orchid.xml'
+1349514715188	Rename resource 'SV_Color.xml'
+1349514782060	Move file
+1349514793794	Rename resource 'sv_color.xml'
+1349520725217	Extract method 'setAlarmCalculationData'
+1349521487671	Delete element
+1349521637445	Rename method 'setAlarmCalculationData'
+1349526983178	Encapsulate field 'intentNameAlarmMessage'
+1349526990477	Encapsulate field 'intentNameAlarmInMilliSeconds'
+1349527000924	Encapsulate field 'intentNameEventType'
+1349527462097	Rename method 'getIntentnameeventtype'
+1349528419663	Rename method 'getIntentNameAlarMmessage'
+1349529487279	Rename field 'HELLO_ID'

@@ -11,34 +11,38 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
 import ch.kusar.contraceptivetimer.MainApplicationContext;
 import ch.kusar.contraceptivetimer.R;
-import ch.kusar.contraceptivetimer.TestActivity;
 import ch.kusar.contraceptivetimer.businessobjects.AlarmEventData;
 import ch.kusar.contraceptivetimer.businessobjects.EventType;
 import ch.kusar.contraceptivetimer.retriever.AlarmEventRetriever;
 
 public class AlarmManagerWrapper extends BroadcastReceiver {
 
-	private static final int HELLO_ID = 1;
+	private static final int ID = 1;
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
-		LoggerWrapper.LogInfo("ContraceptiveTimer is now in onReceive Method of the AlarmManagerWrapper to handle the Event.");
+		LoggerWrapper.LogDebug("ContraceptiveTimer is now in onReceive Method of the AlarmManagerWrapper to handle the Event.");
 
 		Bundle bundle = intent.getExtras();
-		AlarmEventData alarmEventData = (AlarmEventData) bundle.get(AlarmEventData.getIntentname());
+		EventType eventType = (EventType) bundle.get(AlarmEventData.getIntentNameEventType());
+		String alarmMessage = bundle.getString(AlarmEventData.getIntentNameAlarmMmessage());
+
+		this.createNotification(context, alarmMessage);
+		LoggerWrapper.LogDebug(alarmMessage);
+		LoggerWrapper.LogDebug(eventType.name());
 
 		InternalStorageWrapper internalStorageWrapper = new InternalStorageWrapper(MainApplicationContext.getAppContext());
 
-		if (alarmEventData.getEventType() == EventType.EVENT_CHANGE || alarmEventData.getEventType() == EventType.EVENT_AFTER_BREAK) {
+		if (eventType == EventType.EVENT_CHANGE || eventType == EventType.EVENT_AFTER_BREAK) {
 			internalStorageWrapper.saveUpdatedLastUseOfContraceptionToStorage(CalendarWrapper.getTodayAsDayOfYear());
+			LoggerWrapper.LogDebug("EventType is EventChange or EventAfterBreak");
 		} else {
 			internalStorageWrapper.saveUpdatedLastBreakOfContraceptionToStorage(CalendarWrapper.getTodayAsDayOfYear());
+			LoggerWrapper.LogDebug("EventType is EventBreak");
 		}
 
-		this.createNotification(context, alarmEventData.getAlarmMessage());
 		// TODO: use it when beta test.
 		// this.SetAlarm();
 	}
@@ -48,7 +52,7 @@ public class AlarmManagerWrapper extends BroadcastReceiver {
 		String ns = Context.NOTIFICATION_SERVICE;
 		NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(ns);
 
-		// TODO: change icon
+		// TODO change icon
 		int icon = R.drawable.ic_launcher;
 		CharSequence tickerText = "Contraception Notification";
 		long when = System.currentTimeMillis();
@@ -66,27 +70,29 @@ public class AlarmManagerWrapper extends BroadcastReceiver {
 		notification.flags |= Notification.FLAG_SHOW_LIGHTS;
 		notification.defaults = Notification.DEFAULT_ALL;
 
-		mNotificationManager.notify(AlarmManagerWrapper.HELLO_ID, notification);
+		mNotificationManager.notify(AlarmManagerWrapper.ID, notification);
 	}
 
 	public void SetAlarm() {
-		LoggerWrapper.LogInfo("ContraceptiveTimer is now in setAlarm Method.");
-
 		Context context = MainApplicationContext.getAppContext();
+
+		LoggerWrapper.LogDebug("ContraceptiveTimer is now retrieving EventData.");
 
 		AlarmEventRetriever alarmEventRetriever = new AlarmEventRetriever();
 		AlarmEventData alarmEventData = alarmEventRetriever.retrieveAlarmEventData();
+		LoggerWrapper.LogDebug(alarmEventData.toString());
 
-		// TODO: Change to !=
 		if (alarmEventData != null) {
-			LoggerWrapper.LogInfo("ContraceptiveTimer is now trying to setup alarm from file..");
+			LoggerWrapper.LogDebug("ContraceptiveTimer is now trying to setup alarm from file..");
 
 			AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
 			Intent intent = new Intent(context, AlarmManagerWrapper.class);
-			intent.putExtra(AlarmEventData.getIntentname(), alarmEventData);
+			intent.putExtra(AlarmEventData.getIntentNameAlarmInMilliseconds(), alarmEventData.getAlarmTimeInMilliSeconds());
+			intent.putExtra(AlarmEventData.getIntentNameAlarmMmessage(), alarmEventData.getAlarmMessage());
+			intent.putExtra(AlarmEventData.getIntentNameEventType(), alarmEventData.getEventType());
 
-			PendingIntent pi = PendingIntent.getBroadcast(context, 0, intent, 0);
+			PendingIntent pi = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 			// TODO: Comment it in.
 			// am.set(AlarmManager.RTC_WAKEUP,
 			// alarmEventData.getAlarmTimeInMilliSeconds(), pi);
@@ -95,21 +101,20 @@ public class AlarmManagerWrapper extends BroadcastReceiver {
 			GregorianCalendar gregorianCalendar = (GregorianCalendar) Calendar.getInstance();
 			gregorianCalendar.add(Calendar.SECOND, 5);
 			am.set(AlarmManager.RTC_WAKEUP, gregorianCalendar.getTimeInMillis(), pi);
+			LoggerWrapper.LogDebug("ContraceptiveTimer is now finishing the setAlarm Method.");
+			// this.CancelAlarm();
 		} else {
-			LoggerWrapper.LogInfo("ContraceptiveTimer is now starting the app because no file was detected.");
-			Toast.makeText(context, context.getString(R.string.msg_fileNotFoundOnSetAlarm), Toast.LENGTH_LONG).show();
-
-			// TODO: Change Activity to Main Activity
-			Intent intent = new Intent(context, TestActivity.class);
-			intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-			context.startActivity(intent);
+			LoggerWrapper.LogDebug("ContraceptiveTimer Alarm not set.");
 		}
-		LoggerWrapper.LogInfo("ContraceptiveTimer is now finishing the setAlarm Method.");
 	}
 
-	public void CancelAlarm(Context context) {
+	public void CancelAlarm() {
+		LoggerWrapper.LogDebug("ContraceptiveTimer canceling alarm.");
+
+		Context context = MainApplicationContext.getAppContext();
+
 		Intent intent = new Intent(context, AlarmManagerWrapper.class);
-		PendingIntent sender = PendingIntent.getBroadcast(context, 0, intent, 0);
+		PendingIntent sender = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
 		AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 		alarmManager.cancel(sender);
 	}

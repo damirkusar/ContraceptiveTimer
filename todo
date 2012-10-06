@@ -2,6 +2,3 @@
 - Is AlarmActive implementieren
 - teste calendar day bei jahres wechsel
 - teste verschiedene zeitzonen
-- beim ersten mal einstellen, muss lastUse auf today gesetzt werden, und last break auf eine 
-woche vorher
-- teste cancel alarm

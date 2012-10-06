@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="android.provider.OpenableColumns"/>
-<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
-<fullyQualifiedTypeName name="java.io.ObjectOutputStream"/>
-<fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
-<fullyQualifiedTypeName name="android.util.Log"/>
 <fullyQualifiedTypeName name="android.test.mock.MockContext"/>
 <fullyQualifiedTypeName name="java.io.FileInputStream"/>
 <fullyQualifiedTypeName name="java.io.ObjectInputStream"/>
@@ -21,7 +16,6 @@
 <fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.businessobjects.AlarmDataCalculator"/>
 <fullyQualifiedTypeName name="ch.kusar.calendarWrapper.CalendarWrapper"/>
 <fullyQualifiedTypeName name="ch.kusar.calendarWrapper.CalendarWrapperForTest"/>
-<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.businessobjects.ContraceptiveType"/>
 <fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.wrapper.AlarmWrapper"/>
 <fullyQualifiedTypeName name="java.security.SecureRandom"/>
 <fullyQualifiedTypeName name="java.math.BigInteger"/>
@@ -32,11 +26,9 @@
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="ch.kusar.test.calendarWrapper.CalendarWrapperForTest"/>
 <fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.businessobjects.AlarmMessage"/>
-<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.businessobjects.EventType"/>
 <fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.retriever.AlarmEventRetriever"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
 <fullyQualifiedTypeName name="android.app.AlarmManager"/>
-<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.wrapper.LoggerWrapper"/>
 <fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
 <fullyQualifiedTypeName name="java.util.Calendar"/>
 <fullyQualifiedTypeName name="android.app.NotificationManager"/>
@@ -44,20 +36,28 @@
 <fullyQualifiedTypeName name="android.R"/>
 <fullyQualifiedTypeName name="android.os.Bundle"/>
 <fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.businessobjects.AlarmEventData"/>
-<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.calculator.AlarmCalculationData"/>
 <fullyQualifiedTypeName name="junit.framework.Assert"/>
-<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.wrapper.InternalStorageWrapper"/>
-<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.wrapper.CalendarWrapper"/>
 <fullyQualifiedTypeName name="android.graphics.Color"/>
-<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.wrapper.AlarmManagerWrapper"/>
 <fullyQualifiedTypeName name="android.app.Notification"/>
 <fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.MainActivity"/>
 <fullyQualifiedTypeName name="android.content.Context"/>
 <fullyQualifiedTypeName name="android.content.Intent"/>
-<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.MainApplicationContext"/>
 <fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.TestActivity"/>
 <fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.R.string"/>
 <fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.R"/>
+<fullyQualifiedTypeName name="android.view.View"/>
+<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.businessobjects.EventType"/>
+<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.wrapper.CalendarWrapper"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
 <fullyQualifiedTypeName name="android.widget.TimePicker"/>
+<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.wrapper.LoggerWrapper"/>
+<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.retriever.AlarmCalculationDataRetriever"/>
+<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.calculator.AlarmCalculationData"/>
+<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.wrapper.InternalStorageWrapper"/>
+<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.MainApplicationContext"/>
+<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.businessobjects.ContraceptiveType"/>
+<fullyQualifiedTypeName name="android.widget.ToggleButton"/>
 <fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.R.id"/>
+<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.wrapper.AlarmManagerWrapper"/>
 </qualifiedTypeNameHistroy>

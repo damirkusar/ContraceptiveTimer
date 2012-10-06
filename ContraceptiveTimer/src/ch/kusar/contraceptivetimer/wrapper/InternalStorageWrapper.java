@@ -27,7 +27,10 @@ public class InternalStorageWrapper {
 			FileInputStream fis = this.fileContext.openFileInput(this.fileName);
 			ObjectInputStream ois = new ObjectInputStream(fis);
 			AlarmCalculationData alarmData = (AlarmCalculationData) ois.readObject();
+
+			fis.close();
 			ois.close();
+
 			return alarmData;
 		} catch (ClassNotFoundException e) {
 			String msg = String.format("%s: ClassNotFoundException with error: %s", this.toString(), e.getStackTrace());
@@ -46,7 +49,10 @@ public class InternalStorageWrapper {
 			FileOutputStream fos = this.fileContext.openFileOutput(this.fileName, Context.MODE_PRIVATE);
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
 			oos.writeObject(alarmData);
+
+			fos.close();
 			oos.close();
+
 			return true;
 		} catch (IOException e) {
 			String msg = String.format("%s: IOException with error: %s", this.toString(), e.getStackTrace());
@@ -71,5 +77,11 @@ public class InternalStorageWrapper {
 	@Override
 	public String toString() {
 		return this.getClass().getName();
+	}
+
+	public void saveUpdatedAlarmActiveTo(boolean isAlarmActive) {
+		AlarmCalculationData alarmCalculationData = this.loadFromStorage();
+		alarmCalculationData.setAlarmActive(isAlarmActive);
+		this.saveToStorage(alarmCalculationData);
 	}
 }

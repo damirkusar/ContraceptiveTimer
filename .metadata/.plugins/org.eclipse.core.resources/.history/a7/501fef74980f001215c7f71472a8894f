@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- http://www.mediaevent.de/tutorial/farbcodes.html -->
+	<color name="pink">#ffc0cb</color>
+	<color name="lavenderblush">#ffF0F5</color>
+	<color name="hotpink">#ff69b4</color>
+	<color name="orchid">#da70d6</color>
+	<color name="violet">#ee82ee</color>
+	<color name="fuchsia">#ff00ff</color>
+	<color name="mediumorchid">#ba55d3</color>
+	<color name="white">#ffffff</color>
+	<color name="darkgray">#a9a9a9</color>
+	<color name="black">#000000</color>
+	<!-- Android Colors -->
+</resources>

@@ -12,9 +12,7 @@
 		android:icon="@drawable/ic_launcher"
 		android:label="@string/app_name"
 		android:theme="@style/SV_Theme" >
-		<receiver
-			android:name=".wrapper.AlarmManagerWrapper"
-			android:process=":remote" >
+		<receiver android:name=".wrapper.AlarmManagerWrapper" >
 		</receiver>
 		<receiver android:name=".wrapper.AutoStartAlarmManagerWrapper" >
 			<intent-filter>
