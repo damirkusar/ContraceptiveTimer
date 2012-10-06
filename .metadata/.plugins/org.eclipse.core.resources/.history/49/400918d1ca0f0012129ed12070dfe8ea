@@ -1,0 +1,5 @@
+package ch.kusar.contraceptivetimer.dialog;
+
+public interface CancelDialogListener {
+
+}

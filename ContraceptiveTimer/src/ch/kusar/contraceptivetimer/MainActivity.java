@@ -1,21 +1,24 @@
 package ch.kusar.contraceptivetimer;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TimePicker;
 import android.widget.ToggleButton;
 import ch.kusar.contraceptivetimer.businessobjects.ContraceptiveType;
 import ch.kusar.contraceptivetimer.calculator.AlarmCalculationData;
+import ch.kusar.contraceptivetimer.dialog.CancelDialog;
+import ch.kusar.contraceptivetimer.dialog.CancelDialogListener;
 import ch.kusar.contraceptivetimer.wrapper.AlarmManagerWrapper;
 import ch.kusar.contraceptivetimer.wrapper.CalendarWrapper;
 import ch.kusar.contraceptivetimer.wrapper.InternalStorageWrapper;
 import ch.kusar.contraceptivetimer.wrapper.LoggerWrapper;
 
 //import android.view.MenuItem;
-//import android.support.v4.app.NavUtils;
-public class MainActivity extends Activity {
+
+public class MainActivity extends FragmentActivity implements CancelDialogListener {
 
 	private InternalStorageWrapper internalStorageWrapper;
 	private ContraceptiveType contraceptiveType;
@@ -36,6 +39,7 @@ public class MainActivity extends Activity {
 
 		AlarmCalculationData acd = this.internalStorageWrapper.loadFromStorage();
 		if (acd != null) {
+			LoggerWrapper.LogDebug(acd.toString());
 			tp.clearFocus();
 			tp.setCurrentHour(acd.getAlarmTimeHourOfDay());
 			tp.setCurrentMinute(acd.getAlarmTimeMinutes());
@@ -44,6 +48,8 @@ public class MainActivity extends Activity {
 			tbAlarm.setChecked(acd.isAlarmActive());
 
 			this.turnToggleButtonOn(acd.getContraceptiveType());
+		} else {
+			this.turnToggleButtonOn(ContraceptiveType.CONTRACEPTION_PILL);
 		}
 	}
 
@@ -110,6 +116,14 @@ public class MainActivity extends Activity {
 		}
 	}
 
+	public void onButtonSetTimePickerClicked(View view) {
+		boolean on = ((ToggleButton) view).isChecked();
+		if (on) {
+			this.contraceptiveType = ContraceptiveType.CONTRACEPTION_RING;
+			this.turnToggleButtonOff(true, true, false);
+		}
+	}
+
 	public void onToggleButtonAlarmClicked(View view) {
 		boolean on = ((ToggleButton) view).isChecked();
 		AlarmManagerWrapper alarmManagerWrapper = new AlarmManagerWrapper();
@@ -117,8 +131,8 @@ public class MainActivity extends Activity {
 			this.setupAlarmCalculationData();
 			alarmManagerWrapper.SetAlarm();
 		} else {
-			alarmManagerWrapper.CancelAlarm();
-			this.internalStorageWrapper.saveUpdatedAlarmActiveTo(false);
+			DialogFragment dialog = CancelDialog.newInstance(this);
+			dialog.show(this.getSupportFragmentManager(), "CancelDialog");
 		}
 	}
 
@@ -146,5 +160,18 @@ public class MainActivity extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		this.getMenuInflater().inflate(R.menu.activity_main, menu);
 		return true;
+	}
+
+	public void onDialogPositiveClick(DialogFragment dialog) {
+		AlarmManagerWrapper alarmManagerWrapper = new AlarmManagerWrapper();
+		alarmManagerWrapper.CancelAlarm();
+		this.internalStorageWrapper.saveUpdatedAlarmActivatedTo(false);
+	}
+
+	public void onDialogNegativeClick(DialogFragment dialog) {
+		dialog.dismiss();
+
+		ToggleButton toggleButtonAlarm = (ToggleButton) this.findViewById(R.id.toggleButtonAlarm);
+		toggleButtonAlarm.setChecked(true);
 	}
 }

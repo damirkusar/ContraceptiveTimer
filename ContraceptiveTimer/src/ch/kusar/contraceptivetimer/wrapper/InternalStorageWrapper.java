@@ -79,7 +79,7 @@ public class InternalStorageWrapper {
 		return this.getClass().getName();
 	}
 
-	public void saveUpdatedAlarmActiveTo(boolean isAlarmActive) {
+	public void saveUpdatedAlarmActivatedTo(boolean isAlarmActive) {
 		AlarmCalculationData alarmCalculationData = this.loadFromStorage();
 		alarmCalculationData.setAlarmActive(isAlarmActive);
 		this.saveToStorage(alarmCalculationData);

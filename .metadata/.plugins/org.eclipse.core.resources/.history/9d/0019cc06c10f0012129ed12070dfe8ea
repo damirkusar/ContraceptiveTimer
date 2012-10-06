@@ -1,0 +1,17 @@
+<resources>
+	<string name="app_name">M.C.T</string>
+	<string name="activity_name">My Contraception Timer</string>
+	<string name="menu_settings">Settings</string>
+	<string name="msg_fileNotFoundOnSetAlarm">"Contraceptive could not set Alarm, please set a new alarm."</string>
+	<string name="title_stepOne_chooseContraceptionType">"Choose your contraceptive"</string>
+	<string name="title_stepTwo_chooseAlarmTime">"Choose your alarm time"</string>
+	<string name="title_stepThree_activateOrDeactivateAlarm">"Alarm activation"</string>
+	<string name="toggleButton_pill">Pill</string>
+	<string name="toggleButton_patch">Patch</string>
+	<string name="toggleButton_ring">Ring</string>
+	<string name="toggleButton_alarm">Alarm</string>
+	<string name="toggleButton_alarm_text_on">Start</string>
+	<string name="toggleButton_alarm_text_off">Stop</string>
+	<string name="buttonPlus">+</string>
+	<string name="buttonMinus">-</string>
+</resources>

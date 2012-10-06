@@ -60,3 +60,5 @@
 1349527462097	Rename method 'getIntentnameeventtype'
 1349528419663	Rename method 'getIntentNameAlarMmessage'
 1349529487279	Rename field 'HELLO_ID'
+1349537513534	Rename field 'mListener'
+1349540745931	Rename method 'saveUpdatedAlarmActiveTo'

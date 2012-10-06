@@ -14,4 +14,8 @@
 	<string name="toggleButton_alarm_text_off">Stop</string>
 	<string name="buttonPlus">+</string>
 	<string name="buttonMinus">-</string>
+	<string name="cancelDialog_title">Cancel contraception timer?</string>
+	<string name="cancelDialog_content">This action will stop your timer! </string>
+	<string name="cancelDialog_yes">Yes, please </string>
+	<string name="cancelDialog_no">No, thanks </string>
 </resources>

@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:orientation="vertical" >
+	<TextView
+		android:id="@+id/textView_Head"
+		style="@style/SV_TextView_Head"
+		android:drawableLeft="@drawable/ic_launcher"
+		android:text="@string/activity_name"
+		android:textAppearance="?android:attr/textAppearanceMedium" />
+	<TextView
+		android:id="@+id/textView_Head"
+		style="@style/SV_TextView_Head"
+		android:drawableLeft="@drawable/ic_launcher"
+		android:text="@string/activity_name"
+		android:textAppearance="?android:attr/textAppearanceMedium" />
+	<TextView
+		android:id="@+id/textView_Head"
+		style="@style/SV_TextView_Head"
+		android:drawableLeft="@drawable/ic_launcher"
+		android:text="@string/activity_name"
+		android:textAppearance="?android:attr/textAppearanceMedium" />
+</LinearLayout>
