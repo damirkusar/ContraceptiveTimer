@@ -1,0 +1,55 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" >
+	<LinearLayout
+		style="@style/SV_Theme_LinearLayoutVertical"
+		android:orientation="vertical" >
+		<TextView
+			android:id="@+id/textView_TypeChooser"
+			style="@style/SV_TextView_Title"
+			android:text="@string/text_stepOneTitle_contraception" />
+		<LinearLayout style="@style/SV_Theme_LinearLayoutHorizontal" >
+			<ToggleButton
+				android:id="@+id/toggleButton_Pill"
+				style="@style/SV_ToggleButton"
+				android:onClick="onToggleButtonPillClicked"
+				android:text="@string/toggleButton_pill"
+				android:textOff="@string/toggleButton_pill"
+				android:textOn="@string/toggleButton_pill" />
+			<ToggleButton
+				android:id="@+id/toggleButton_Patch"
+				style="@style/SV_ToggleButton"
+				android:onClick="onToggleButtonPatchClicked"
+				android:text="@string/toggleButton_patch"
+				android:textOff="@string/toggleButton_patch"
+				android:textOn="@string/toggleButton_patch" />
+			<ToggleButton
+				android:id="@+id/toggleButton_Ring"
+				style="@style/SV_ToggleButton"
+				android:layout_marginRight="10dp"
+				android:onClick="onToggleButtonRingClicked"
+				android:text="@string/toggleButton_ring"
+				android:textOff="@string/toggleButton_ring"
+				android:textOn="@string/toggleButton_ring" />
+		</LinearLayout>
+		<TextView
+			android:id="@+id/textView_TimeChooser"
+			style="@style/SV_TextView_Title"
+			android:text="@string/text_stepTwoTitle_alarm" />
+		<RelativeLayout style="@style/SV_Theme_RelativeLayout" >
+			<TimePicker
+				android:id="@+id/timePicker"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerInParent="true"
+				android:layout_marginLeft="10dp" />
+		</RelativeLayout>
+		<View style="@style/SV_View_Separator" />
+		<RelativeLayout style="@style/SV_Theme_RelativeLayout" >
+			<Button
+				android:id="@+id/button1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentBottom="true"
+				android:text="@string/text_updateAlarmTime" />
+		</RelativeLayout>
+	</LinearLayout>
+</ScrollView>

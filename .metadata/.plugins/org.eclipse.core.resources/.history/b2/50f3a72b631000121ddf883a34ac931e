@@ -1,0 +1,13 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	style="@style/SV_Theme_LinearLayoutVerticalRoot" >
+	<ImageView
+		android:id="@+id/imageView_Logo"
+		style="@style/SV_Imageview"
+		android:contentDescription="@string/imageview_logo_contentdescription"
+		android:src="@android:drawable/bottom_bar" />
+	<TextView
+		android:id="@+id/textView_Introductiontext"
+		style="@style/SV_TextView_HomeScreen_Introduction"
+		android:text="Large Text"
+		android:textAppearance="?android:attr/textAppearanceLarge" />
+</LinearLayout>

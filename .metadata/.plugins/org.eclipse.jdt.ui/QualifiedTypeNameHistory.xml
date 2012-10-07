@@ -50,8 +50,6 @@
 <fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.wrapper.AlarmManagerWrapper"/>
 <fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.R.string"/>
 <fullyQualifiedTypeName name="android.support.v4.app.DialogFragment"/>
-<fullyQualifiedTypeName name="android.widget.Toast"/>
-<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.wrapper.LoggerWrapper"/>
 <fullyQualifiedTypeName name="android.view.ViewGroup"/>
 <fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.R.layout"/>
 <fullyQualifiedTypeName name="android.text.Layout"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="android.widget.ToggleButton"/>
 <fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.R.id"/>
 <fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.businessobjects.ContraceptiveType"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.wrapper.LoggerWrapper"/>
 </qualifiedTypeNameHistroy>

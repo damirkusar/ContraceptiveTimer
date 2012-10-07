@@ -62,3 +62,18 @@
 1349529487279	Rename field 'HELLO_ID'
 1349537513534	Rename field 'mListener'
 1349540745931	Rename method 'saveUpdatedAlarmActiveTo'
+1349601073485	Rename type 'TestActivity'
+1349601110789	Rename resource 'activity_test.xml'
+1349601182719	Rename type 'MainActivity'
+1349601187044	Rename type 'AlarmScreeenActivity'
+1349601216519	Rename resource 'activity_main.xml'
+1349601576989	Rename resource 'buttonstyles.xml'
+1349601591099	Rename resource 'textviewstyles.xml'
+1349601602249	Rename resource 'themestyles.xml'
+1349601614704	Rename resource 'styles_theme.xml'
+1349613054464	Delete element
+1349613255098	Rename resource 'sv_togglebutton.xml'
+1349613414058	Rename local variable 'clickable'
+1349613429628	Rename method 'setStopButtonClickable'
+1349613439054	Rename method 'setStartButtonClickable'
+1349614423353	Copy file

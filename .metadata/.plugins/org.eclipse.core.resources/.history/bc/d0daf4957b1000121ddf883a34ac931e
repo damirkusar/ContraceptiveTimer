@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+	<style name="SV_Button" parent="@android:style/Widget.Button">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_gravity">center_vertical</item>
+	</style>
+	<style name="SV_Button_ReadyToStart" parent="@style/SV_Button">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_marginTop">50dp</item>
+		<item name="android:layout_marginBottom">10dp</item>
+		<item name="android:layout_marginLeft">10dp</item>
+		<item name="android:layout_marginRight">10dp</item>
+	</style>
+	<style name="SV_Button_UpdateAlarm" parent="@style/SV_Button">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_marginTop">100dp</item>
+		<item name="android:layout_marginBottom">0dp</item>
+		<item name="android:layout_marginLeft">10dp</item>
+		<item name="android:layout_marginRight">10dp</item>
+	</style>
+	<style name="SV_Button_StartStop" parent="@style/SV_Button">
+		<item name="android:layout_width">0dip</item>
+		<item name="android:layout_weight">1</item>
+		<item name="android:layout_marginTop">0dp</item>
+		<item name="android:layout_marginBottom">10dp</item>
+		<item name="android:background">@drawable/sv_button</item>
+	</style>
+	<style name="SV_ToggleButton" parent="@android:style/Widget.Button.Toggle">
+		<item name="android:layout_width">0dip</item>
+		<item name="android:layout_weight">1</item>
+		<item name="android:layout_height">50dp</item>
+		<item name="android:layout_marginTop">10dp</item>
+		<item name="android:layout_marginBottom">10dp</item>
+		<item name="android:layout_marginLeft">10dp</item>
+		<item name="android:layout_alignParentBottom">true</item>
+		<item name="android:background">@drawable/sv_button</item>
+	</style>
+</resources>

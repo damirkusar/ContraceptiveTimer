@@ -1,0 +1,25 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+	<style name="SV_ToggleButton" parent="@android:style/Widget.Button.Toggle">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_marginTop">15dp</item>
+		<item name="android:layout_alignParentTop">true</item>
+	</style>
+	<style name="SV_ToggleButton_TypeChooser" parent="@style/SV_ToggleButton"></style>
+	<style name="SV_ToggleButton_AlarmActivator" parent="@style/SV_ToggleButton">
+		<item name="android:textOff">@string/toggleButton_alarm_text_on</item>
+		<item name="android:textOn">@string/toggleButton_alarm_text_off</item>
+		<item name="android:layout_centerHorizontal">true</item>
+	</style>
+	<style name="SV_Button" parent="@android:style/Widget.Button">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_gravity">center_vertical</item>
+		<item name="android:layout_marginRight">10dp</item>
+	</style>
+	<style name="SV_View_Separator">
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">1dp</item>
+		<item name="android:background">@color/darkgray</item>
+	</style>
+</resources>

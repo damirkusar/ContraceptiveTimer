@@ -1,0 +1,83 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" >
+	<RelativeLayout
+		android:id="@+id/layout_relativeRoot"
+		style="@style/SV_Theme_RelativeLayoutRoot" >
+		<LinearLayout
+			android:id="@+id/layout_linearRoot"
+			style="@style/SV_Theme_LinearLayoutHorizontal"
+			android:orientation="vertical" >
+			<LinearLayout style="@style/SV_Theme_LinearLayoutHorizontal_Landscape" >
+				<TextView
+					android:id="@+id/textView_TypeChooser"
+					style="@style/SV_TextView_Title_Landscape"
+					android:text="@string/text_stepOneTitle_contraception" />
+				<TextView
+					android:id="@+id/textView_TimeChooser"
+					style="@style/SV_TextView_Title_Landscape"
+					android:text="@string/text_stepTwoTitle_alarm" />
+				<ToggleButton
+					android:id="@+id/toggleButton_Pill"
+					style="@style/SV_ToggleButton_Landscape"
+					android:onClick="onToggleButtonPillClicked"
+					android:text="@string/toggleButton_pill"
+					android:textOff="@string/toggleButton_pill"
+					android:textOn="@string/toggleButton_pill" />
+				<ToggleButton
+					android:id="@+id/toggleButton_Patch"
+					style="@style/SV_ToggleButton_Landscape"
+					android:onClick="onToggleButtonPatchClicked"
+					android:text="@string/toggleButton_patch"
+					android:textOff="@string/toggleButton_patch"
+					android:textOn="@string/toggleButton_patch" />
+				<ToggleButton
+					android:id="@+id/toggleButton_Ring"
+					style="@style/SV_ToggleButton_Landscape"
+					android:layout_marginRight="10dp"
+					android:onClick="onToggleButtonRingClicked"
+					android:text="@string/toggleButton_ring"
+					android:textOff="@string/toggleButton_ring"
+					android:textOn="@string/toggleButton_ring" />
+			</LinearLayout>
+			<RelativeLayout style="@style/SV_Theme_RelativeLayout" >
+				<TimePicker
+					android:id="@+id/timePicker"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_centerInParent="true"
+					android:layout_marginLeft="10dp" />
+			</RelativeLayout>
+		</LinearLayout>
+		<!--
+                    <RelativeLayout
+			style="@style/SV_Theme_RelativeLayoutBottom"
+			android:layout_alignParentBottom="true"
+			android:layout_below="@id/layout_linearRoot" >
+		</RelativeLayout>
+		-->
+		<Button
+			android:id="@+id/buttonUpdateAlarmTime"
+			style="@style/SV_Button_UpdateAlarm"
+			android:layout_alignParentBottom="false"
+			android:layout_below="@id/layout_linearRoot"
+			android:onClick="onButtonUpdateAlarmTimeClicked"
+			android:text="@string/text_updateAlarmTime" />
+		<LinearLayout
+			style="@style/SV_Theme_LinearLayoutHorizontal"
+			android:layout_alignBaseline="@id/layout_relativeRoot"
+			android:layout_alignParentBottom="true"
+			android:layout_below="@id/buttonUpdateAlarmTime" >
+			<Button
+				android:id="@+id/button_Start"
+				style="@style/SV_Button_StartStop"
+				android:layout_marginLeft="10dp"
+				android:onClick="onButtonStartClicked"
+				android:text="@string/text_start" />
+			<Button
+				android:id="@+id/button_Stop"
+				style="@style/SV_Button_StartStop"
+				android:layout_marginRight="10dp"
+				android:onClick="onButtonStopClicked"
+				android:text="@string/text_stop" />
+		</LinearLayout>
+	</RelativeLayout>
+</ScrollView>

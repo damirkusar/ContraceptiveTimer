@@ -1,0 +1,8 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	style="@style/SV_Theme_LinearLayoutVerticalRoot" >
+	<ImageView
+		android:id="@+id/imageViewLogo"
+		style="@style/SV_Imageview"
+		android:contentDescription="da"
+		android:src="@android:drawable/bottom_bar" />
+</LinearLayout>

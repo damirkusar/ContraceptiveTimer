@@ -8,6 +8,7 @@ import java.io.ObjectOutputStream;
 
 import android.content.Context;
 import ch.kusar.contraceptivetimer.calculator.AlarmCalculationData;
+import ch.kusar.contraceptivetimer.calculator.AlarmTime;
 
 public class InternalStorageWrapper {
 
@@ -62,26 +63,40 @@ public class InternalStorageWrapper {
 		return false;
 	}
 
-	public boolean saveUpdatedLastUseOfContraceptionToStorage(int lastUseOfContraception) {
+	public void saveUpdatedLastUseOfContraceptionToStorage(int lastUseOfContraception) {
 		AlarmCalculationData alarmCalculationData = this.loadFromStorage();
 		alarmCalculationData.setLastUseOfContraceptiveDayOfYear(lastUseOfContraception);
-		return this.saveToStorage(alarmCalculationData);
+		this.saveToStorage(alarmCalculationData);
+
+		LoggerWrapper.LogDebug(alarmCalculationData.toString());
 	}
 
-	public boolean saveUpdatedLastBreakOfContraceptionToStorage(int lastBreakOfContraception) {
+	public void saveUpdatedLastBreakOfContraceptionToStorage(int lastBreakOfContraception) {
 		AlarmCalculationData alarmCalculationData = this.loadFromStorage();
 		alarmCalculationData.setLastBreakDayOfYear(lastBreakOfContraception);
-		return this.saveToStorage(alarmCalculationData);
-	}
+		this.saveToStorage(alarmCalculationData);
 
-	@Override
-	public String toString() {
-		return this.getClass().getName();
+		LoggerWrapper.LogDebug(alarmCalculationData.toString());
 	}
 
 	public void saveUpdatedAlarmActivatedTo(boolean isAlarmActive) {
 		AlarmCalculationData alarmCalculationData = this.loadFromStorage();
 		alarmCalculationData.setAlarmActive(isAlarmActive);
 		this.saveToStorage(alarmCalculationData);
+
+		LoggerWrapper.LogDebug(alarmCalculationData.toString());
+	}
+
+	public void saveUpdatedAlarmTime(AlarmTime alarmTime) {
+		AlarmCalculationData alarmCalculationData = this.loadFromStorage();
+		alarmCalculationData.setAlarmTime(alarmTime);
+		this.saveToStorage(alarmCalculationData);
+
+		LoggerWrapper.LogDebug(alarmCalculationData.toString());
+	}
+
+	@Override
+	public String toString() {
+		return this.getClass().getName();
 	}
 }

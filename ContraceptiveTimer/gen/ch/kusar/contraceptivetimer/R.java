@@ -11,21 +11,24 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
-        public static final int black=0x7f040009;
-        public static final int darkgray=0x7f040008;
+        public static final int black=0x7f04000c;
+        public static final int darkgray=0x7f04000b;
         public static final int fuchsia=0x7f040005;
+        public static final int green=0x7f040008;
         public static final int hotpink=0x7f040002;
+        public static final int indigo=0x7f040007;
         public static final int lavenderblush=0x7f040001;
         public static final int mediumorchid=0x7f040006;
         public static final int orchid=0x7f040003;
         /**  http://www.mediaevent.de/tutorial/farbcodes.html 
          */
         public static final int pink=0x7f040000;
+        public static final int red=0x7f040009;
         /**  Android Colors 
          */
-        public static final int transparent=0x7f04000a;
+        public static final int transparent=0x7f04000d;
         public static final int violet=0x7f040004;
-        public static final int white=0x7f040007;
+        public static final int white=0x7f04000a;
     }
     public static final class dimen {
         public static final int padding_large=0x7f050002;
@@ -36,24 +39,35 @@ public final class R {
         public static final int ic_action_search=0x7f020000;
         public static final int ic_launcher=0x7f020001;
         public static final int img_bg_app=0x7f020002;
+        public static final int sv_button=0x7f020003;
     }
     public static final class id {
-        public static final int dialog_textView_content=0x7f09000a;
-        public static final int dialog_textView_title=0x7f090009;
-        public static final int menu_settings=0x7f09000b;
-        public static final int textView_AoD=0x7f090007;
-        public static final int textView_Head=0x7f090000;
-        public static final int textView_TimeChooser=0x7f090005;
-        public static final int textView_TypeChooser=0x7f090001;
-        public static final int timePicker=0x7f090006;
-        public static final int toggleButtonAlarm=0x7f090008;
-        public static final int toggleButton_Patch=0x7f090003;
-        public static final int toggleButton_Pill=0x7f090002;
-        public static final int toggleButton_Ring=0x7f090004;
+        public static final int buttonUpdateAlarmTime=0x7f090008;
+        public static final int button_Start=0x7f09000a;
+        public static final int button_Stop=0x7f09000b;
+        public static final int button_readyToStart=0x7f090012;
+        public static final int dialog_textView_content=0x7f090014;
+        public static final int dialog_textView_title=0x7f090013;
+        public static final int imageView_Logo=0x7f09000d;
+        public static final int layout_linearBottom=0x7f090009;
+        public static final int layout_linearRoot=0x7f090001;
+        public static final int layout_linearroot_landscape=0x7f09000c;
+        public static final int layout_relativeRoot=0x7f090000;
+        public static final int menu_settings=0x7f090015;
+        public static final int textView_1Step=0x7f09000f;
+        public static final int textView_2Step=0x7f090010;
+        public static final int textView_3Step=0x7f090011;
+        public static final int textView_Introductiontext=0x7f09000e;
+        public static final int textView_TimeChooser=0x7f090006;
+        public static final int textView_TypeChooser=0x7f090002;
+        public static final int timePicker=0x7f090007;
+        public static final int toggleButton_Patch=0x7f090004;
+        public static final int toggleButton_Pill=0x7f090003;
+        public static final int toggleButton_Ring=0x7f090005;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
-        public static final int activity_test=0x7f030001;
+        public static final int activity_alarmscreen=0x7f030000;
+        public static final int activity_homescreen=0x7f030001;
         public static final int dialog_cancel=0x7f030002;
     }
     public static final class menu {
@@ -62,36 +76,59 @@ public final class R {
     public static final class string {
         public static final int activity_name=0x7f060001;
         public static final int app_name=0x7f060000;
-        public static final int buttonMinus=0x7f06000e;
-        public static final int buttonPlus=0x7f06000d;
-        public static final int cancelDialog_content=0x7f060010;
-        public static final int cancelDialog_no=0x7f060012;
-        public static final int cancelDialog_title=0x7f06000f;
-        public static final int cancelDialog_yes=0x7f060011;
+        public static final int cancelDialog_content=0x7f060009;
+        public static final int cancelDialog_no=0x7f06000b;
+        public static final int cancelDialog_title=0x7f060008;
+        public static final int cancelDialog_yes=0x7f06000a;
+        /**  HomeScreen 
+         */
+        public static final int imageview_logo_contentdescription=0x7f06000c;
         public static final int menu_settings=0x7f060002;
-        public static final int msg_fileNotFoundOnSetAlarm=0x7f060003;
-        public static final int title_stepOne_chooseContraceptionType=0x7f060004;
-        public static final int title_stepThree_activateOrDeactivateAlarm=0x7f060006;
-        public static final int title_stepTwo_chooseAlarmTime=0x7f060005;
-        public static final int toggleButton_alarm=0x7f06000a;
-        public static final int toggleButton_alarm_text_off=0x7f06000c;
-        public static final int toggleButton_alarm_text_on=0x7f06000b;
-        public static final int toggleButton_patch=0x7f060008;
-        public static final int toggleButton_pill=0x7f060007;
-        public static final int toggleButton_ring=0x7f060009;
+        public static final int text_introduction=0x7f06000d;
+        public static final int text_readyToStart=0x7f060011;
+        public static final int text_setupStep_1=0x7f06000e;
+        public static final int text_setupStep_2=0x7f06000f;
+        public static final int text_setupStep_3=0x7f060010;
+        public static final int text_start=0x7f060013;
+        public static final int text_stepOneTitle_contraception=0x7f060003;
+        public static final int text_stepTwoTitle_alarm=0x7f060004;
+        public static final int text_stop=0x7f060014;
+        /**  AlarmScreen 
+         */
+        public static final int text_updateAlarmTime=0x7f060012;
+        public static final int toggleButton_patch=0x7f060006;
+        public static final int toggleButton_pill=0x7f060005;
+        public static final int toggleButton_ring=0x7f060007;
     }
     public static final class style {
-        public static final int SV_TextView=0x7f070003;
-        public static final int SV_TextView_CancelDialog_Content=0x7f070006;
-        public static final int SV_TextView_CancelDialog_Title=0x7f070005;
-        public static final int SV_TextView_ChooserTitle=0x7f070007;
-        public static final int SV_TextView_Head=0x7f070004;
-        public static final int SV_Theme=0x7f070000;
-        public static final int SV_Theme_Dialog=0x7f070002;
-        public static final int SV_Theme_Layout=0x7f070001;
-        public static final int SV_ToggleButton=0x7f070008;
-        public static final int SV_ToggleButton_AlarmActivator=0x7f07000a;
-        public static final int SV_ToggleButton_TypeChooser=0x7f070009;
-        public static final int SV_View_Separator=0x7f07000b;
+        public static final int SV_Button=0x7f070002;
+        public static final int SV_Button_ReadyToStart=0x7f070003;
+        public static final int SV_Button_StartStop=0x7f070005;
+        public static final int SV_Button_UpdateAlarm=0x7f070004;
+        public static final int SV_Imageview=0x7f070001;
+        public static final int SV_TextView=0x7f070012;
+        public static final int SV_TextView_CancelDialog_Content=0x7f070018;
+        public static final int SV_TextView_CancelDialog_Title=0x7f070017;
+        /**  HomeScreen 
+         */
+        public static final int SV_TextView_Introduction=0x7f070013;
+        public static final int SV_TextView_SetupSteps=0x7f070014;
+        /**  AlarmSreen and Dialog 
+         */
+        public static final int SV_TextView_Title=0x7f070015;
+        public static final int SV_TextView_Title_Landscape=0x7f070016;
+        public static final int SV_Theme=0x7f070008;
+        public static final int SV_Theme_Dialog=0x7f070011;
+        public static final int SV_Theme_LinearLayoutHorizontal=0x7f07000b;
+        public static final int SV_Theme_LinearLayoutHorizontal_Landscape=0x7f07000c;
+        public static final int SV_Theme_LinearLayoutVertical=0x7f070009;
+        public static final int SV_Theme_LinearLayoutVertical_Landscape=0x7f07000a;
+        public static final int SV_Theme_RelativeLayout=0x7f07000e;
+        public static final int SV_Theme_RelativeLayoutBottom=0x7f070010;
+        public static final int SV_Theme_RelativeLayoutRoot=0x7f07000d;
+        public static final int SV_Theme_RelativeLayout_Landscape=0x7f07000f;
+        public static final int SV_ToggleButton=0x7f070006;
+        public static final int SV_ToggleButton_Landscape=0x7f070007;
+        public static final int SV_View_Separator=0x7f070000;
     }
 }

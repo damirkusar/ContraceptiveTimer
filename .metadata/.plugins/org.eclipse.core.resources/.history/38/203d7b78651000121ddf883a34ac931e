@@ -1,0 +1,28 @@
+<resources>
+	<string name="app_name">M.C.T</string>
+	<string name="activity_name">My Contraception Timer</string>
+	<string name="menu_settings">Settings</string>
+	<string name="msg_fileNotFoundOnSetAlarm">"Contraceptive could not set Alarm, please set a new alarm."</string>
+	<string name="title_stepOne_chooseContraceptionType">"Choose your contraceptive"</string>
+	<string name="title_stepTwo_chooseAlarmTime">"Choose your alarm time"</string>
+	<string name="title_stepThree_activateOrDeactivateAlarm">"Alarm activation"</string>
+	<string name="toggleButton_pill">Pill</string>
+	<string name="toggleButton_patch">Patch</string>
+	<string name="toggleButton_ring">Ring</string>
+	<string name="toggleButton_alarm">Alarm</string>
+	<string name="toggleButton_alarm_text_on">Start</string>
+	<string name="toggleButton_alarm_text_off">Stop</string>
+	<string name="buttonPlus">+</string>
+	<string name="buttonMinus">-</string>
+	<string name="buttonTimePickerSet">Set</string>
+	<string name="cancelDialog_title">Cancel contraception timer?</string>
+	<string name="cancelDialog_content">This action will stop your timer! </string>
+	<string name="cancelDialog_yes">Yes, please </string>
+	<string name="cancelDialog_no">No, thanks </string>
+	<!-- HomeScreen -->
+	<string name="imageview_logo_contentdescription">MyContraception Logo</string>
+	<string name="text_introduction">Just 3 easy steps to setup everything you need.</string>
+	<string name="text_setupStep_1">1. Choose your contraception type.</string>
+	<string name="text_setupStep_2">2. Choose your alarm time.</string>
+	<string name="text_setupStep_3">3. Start today a new cycle.</string>
+</resources>

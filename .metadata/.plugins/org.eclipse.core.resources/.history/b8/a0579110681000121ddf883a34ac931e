@@ -1,0 +1,64 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" >
+	<LinearLayout
+		style="@style/SV_Theme_Layout"
+		android:orientation="vertical" >
+		<TextView
+			android:id="@+id/textView_TypeChooser"
+			style="@style/SV_TextView_Title"
+			android:text="@string/title_stepOne_chooseContraceptionType" />
+		<RelativeLayout style="@style/SV_Theme_Layout" >
+			<ToggleButton
+				android:id="@+id/toggleButton_Pill"
+				style="@style/SV_ToggleButton"
+				android:layout_alignParentLeft="true"
+				android:layout_marginLeft="20dp"
+				android:onClick="onToggleButtonPillClicked"
+				android:text="@string/toggleButton_pill"
+				android:textOff="@string/toggleButton_pill"
+				android:textOn="@string/toggleButton_pill" />
+			<ToggleButton
+				android:id="@+id/toggleButton_Patch"
+				style="@style/SV_ToggleButton"
+				android:layout_alignBottom="@+id/toggleButton_Pill"
+				android:layout_centerHorizontal="true"
+				android:onClick="onToggleButtonPatchClicked"
+				android:text="@string/toggleButton_patch"
+				android:textOff="@string/toggleButton_patch"
+				android:textOn="@string/toggleButton_patch" />
+			<ToggleButton
+				android:id="@+id/toggleButton_Ring"
+				style="@style/SV_ToggleButton"
+				android:layout_alignBottom="@+id/toggleButton_Patch"
+				android:layout_alignParentRight="true"
+				android:layout_marginRight="20dp"
+				android:onClick="onToggleButtonRingClicked"
+				android:text="@string/toggleButton_ring"
+				android:textOff="@string/toggleButton_ring"
+				android:textOn="@string/toggleButton_ring" />
+		</RelativeLayout>
+		<TextView
+			android:id="@+id/textView_TimeChooser"
+			style="@style/SV_TextView_Title"
+			android:text="@string/title_stepTwo_chooseAlarmTime" />
+		<RelativeLayout
+			style="@style/SV_Theme_Layout"
+			android:gravity="center_vertical" >
+			<TimePicker
+				android:id="@+id/timePicker"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10dp" />
+		</RelativeLayout>
+		<View style="@style/SV_View_Separator" />
+		<TextView
+			android:id="@+id/textView_AoD"
+			style="@style/SV_TextView_Title"
+			android:text="@string/title_stepThree_activateOrDeactivateAlarm" />
+		<RelativeLayout style="@style/SV_Theme_Layout" >
+			<ToggleButton
+				android:id="@+id/toggleButtonAlarm"
+				style="@style/SV_ToggleButton_AlarmActivator"
+				android:onClick="onToggleButtonAlarmClicked" />
+		</RelativeLayout>
+	</LinearLayout>
+</ScrollView>
