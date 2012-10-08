@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	style="@style/SV_Theme_LinearLayoutVertical" >
+	<ImageView
+		android:id="@+id/imageView_Logo"
+		style="@style/SV_Imageview"
+		android:contentDescription="@string/imageview_logo_contentdescription"
+		android:src="@drawable/logo_mycontraception" />
+	<TextView
+		android:id="@+id/textView_Introductiontext"
+		style="@style/SV_TextView_Introduction"
+		android:text="@string/text_introduction"
+		android:textAppearance="?android:attr/textAppearanceLarge" />
+	<TextView
+		android:id="@+id/textView_1Step"
+		style="@style/SV_TextView_SetupSteps"
+		android:text="@string/text_setupStep_1" />
+	<TextView
+		android:id="@+id/textView_2Step"
+		style="@style/SV_TextView_SetupSteps"
+		android:text="@string/text_setupStep_2" />
+	<TextView
+		android:id="@+id/textView_3Step"
+		style="@style/SV_TextView_SetupSteps"
+		android:text="@string/text_setupStep_3" />
+	<Button
+		android:id="@+id/button_readyToStart"
+		style="@style/SV_Button_ReadyToStart"
+		android:onClick="onButtonReadyToStartClicked"
+		android:text="@string/text_readyToStart" />
+</RelativeLayout>
