@@ -10,7 +10,7 @@
 	</style>
 	<!-- HomeScreen -->
 	<style name="SV_TextView_Introduction" parent="@style/SV_TextView">
-		<item name="android:layout_marginTop">50dp</item>
+		<item name="android:layout_marginTop">30dp</item>
 		<item name="android:textSize">15dp</item>
 	</style>
 	<style name="SV_TextView_SetupSteps" parent="@style/SV_TextView">
