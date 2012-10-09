@@ -1,8 +1,5 @@
 package ch.kusar.contraceptivetimer.wrapper;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-
 import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -37,14 +34,18 @@ public class AlarmManagerWrapper extends BroadcastReceiver {
 
 		if (eventType == EventType.EVENT_CHANGE || eventType == EventType.EVENT_AFTER_BREAK) {
 			internalStorageWrapper.saveUpdatedLastUseOfContraceptionToStorage(CalendarWrapper.getTodayAsDayOfYear());
+			internalStorageWrapper.saveUpdatedIncrementedUsedTimes();
+
 			LoggerWrapper.LogDebug("EventType is EventChange or EventAfterBreak");
 		} else {
 			internalStorageWrapper.saveUpdatedLastBreakOfContraceptionToStorage(CalendarWrapper.getTodayAsDayOfYear());
+			internalStorageWrapper.saveUpdatedResetedUsedTimes();
+
 			LoggerWrapper.LogDebug("EventType is EventBreak");
 		}
 
 		// TODO: use it when beta test.
-		// this.SetAlarm();
+		this.SetAlarm();
 	}
 
 	@SuppressWarnings("deprecation")
@@ -94,15 +95,15 @@ public class AlarmManagerWrapper extends BroadcastReceiver {
 
 			PendingIntent pi = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 			// TODO: Comment it in.
-			// am.set(AlarmManager.RTC_WAKEUP,
-			// alarmEventData.getAlarmTimeInMilliSeconds(), pi);
+			am.set(AlarmManager.RTC_WAKEUP, alarmEventData.getAlarmTimeInMilliSeconds(), pi);
 
 			// TODO: For Tests, remove it.
-			GregorianCalendar gregorianCalendar = (GregorianCalendar) Calendar.getInstance();
-			gregorianCalendar.add(Calendar.SECOND, 5);
-			am.set(AlarmManager.RTC_WAKEUP, gregorianCalendar.getTimeInMillis(), pi);
+			// GregorianCalendar gregorianCalendar = (GregorianCalendar)
+			// Calendar.getInstance();
+			// gregorianCalendar.add(Calendar.SECOND, 5);
+			// am.set(AlarmManager.RTC_WAKEUP,
+			// gregorianCalendar.getTimeInMillis(), pi);
 			LoggerWrapper.LogDebug("ContraceptiveTimer is now finishing the setAlarm Method.");
-			// this.CancelAlarm();
 		} else {
 			LoggerWrapper.LogDebug("ContraceptiveTimer Alarm not set.");
 		}

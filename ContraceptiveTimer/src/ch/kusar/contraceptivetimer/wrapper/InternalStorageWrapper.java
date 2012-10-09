@@ -95,6 +95,22 @@ public class InternalStorageWrapper {
 		LoggerWrapper.LogDebug(alarmCalculationData.toString());
 	}
 
+	public void saveUpdatedIncrementedUsedTimes() {
+		AlarmCalculationData alarmCalculationData = this.loadFromStorage();
+		alarmCalculationData.incrementTimesUsed();
+		this.saveToStorage(alarmCalculationData);
+
+		LoggerWrapper.LogDebug(alarmCalculationData.toString());
+	}
+
+	public void saveUpdatedResetedUsedTimes() {
+		AlarmCalculationData alarmCalculationData = this.loadFromStorage();
+		alarmCalculationData.resetTimesUsed();
+		this.saveToStorage(alarmCalculationData);
+
+		LoggerWrapper.LogDebug(alarmCalculationData.toString());
+	}
+
 	@Override
 	public String toString() {
 		return this.getClass().getName();

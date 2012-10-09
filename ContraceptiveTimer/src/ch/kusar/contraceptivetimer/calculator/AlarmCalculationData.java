@@ -16,9 +16,12 @@ public class AlarmCalculationData implements Serializable {
 	private AlarmTime alarmTime;
 	private boolean isAlarmActive;
 
+	private int timesUsed;
+
 	public AlarmCalculationData() {
 		super();
 		this.alarmTime = new AlarmTime();
+		this.timesUsed = 0;
 	}
 
 	public void setAlarmTimeHourOfDay(int hourOfDay) {
@@ -77,6 +80,18 @@ public class AlarmCalculationData implements Serializable {
 		this.isAlarmActive = isAlarmActive;
 	}
 
+	public int getNextNumberOfUsedContraception() {
+		return this.timesUsed++;
+	}
+
+	public void incrementTimesUsed() {
+		this.timesUsed++;
+	}
+
+	public void resetTimesUsed() {
+		this.timesUsed = 0;
+	}
+
 	public int getNumberOfDaysToMakeSevenDaysBreakAfterFirstContraceptive() {
 		return this.numberOfDaysToMakeSevenDaysBreakAfterFirstContraceptive;
 	}
@@ -92,9 +107,9 @@ public class AlarmCalculationData implements Serializable {
 	@Override
 	public String toString() {
 		String msg = String
-				.format("Alarm is Active: %1$s, Alarm hour is: %2$s, Alarm minute is: %3$s, Contraceptive is: %4$s, Contraceptive Interval is: %5$s,Last use was: %6$s, Last break was: %7$s.",
+				.format("Alarm is Active: %1$s, Alarm hour is: %2$s, Alarm minute is: %3$s, Contraceptive is: %4$s, Contraceptive Interval is: %5$s,Last use was: %6$s, Last break was: %7$s, Times used is: %8$s",
 						this.isAlarmActive(), this.getAlarmTimeHourOfDay(), this.getAlarmTimeMinutes(), this.getContraceptiveType(), this.getIntervalDays(),
-						this.getLastUseOfContraceptiveDayOfYear(), this.getLastBreakDayOfYear());
+						this.getLastUseOfContraceptiveDayOfYear(), this.getLastBreakDayOfYear(), this.timesUsed);
 		return msg;
 	}
 }

@@ -64,10 +64,10 @@ public class AlarmDataCalculator {
 			alarmEventData.setAlarmMessage(AlarmMessage.getRingChangeMessage());
 		}
 		if (this.AlarmCalculationData.getContraceptiveType() == ContraceptiveType.CONTRACEPTION_PATCH) {
-			alarmEventData.setAlarmMessage(AlarmMessage.getPatchChangeMessage());
+			alarmEventData.setAlarmMessage(AlarmMessage.getPatchChangeMessage(this.AlarmCalculationData.getNextNumberOfUsedContraception()));
 		}
 		if (this.AlarmCalculationData.getContraceptiveType() == ContraceptiveType.CONTRACEPTION_PILL) {
-			alarmEventData.setAlarmMessage(AlarmMessage.getPillChangeMessage());
+			alarmEventData.setAlarmMessage(AlarmMessage.getPillChangeMessage(this.AlarmCalculationData.getNextNumberOfUsedContraception()));
 		}
 
 		int nextAlarmDay = this.AlarmCalculationData.getLastBreakDayOfYear() + 7;
@@ -107,10 +107,10 @@ public class AlarmDataCalculator {
 			alarmEventData.setAlarmMessage(AlarmMessage.getRingChangeMessage());
 		}
 		if (this.AlarmCalculationData.getContraceptiveType() == ContraceptiveType.CONTRACEPTION_PATCH) {
-			alarmEventData.setAlarmMessage(AlarmMessage.getPatchChangeMessage());
+			alarmEventData.setAlarmMessage(AlarmMessage.getPatchChangeMessage(this.AlarmCalculationData.getNextNumberOfUsedContraception()));
 		}
 		if (this.AlarmCalculationData.getContraceptiveType() == ContraceptiveType.CONTRACEPTION_PILL) {
-			alarmEventData.setAlarmMessage(AlarmMessage.getPillChangeMessage());
+			alarmEventData.setAlarmMessage(AlarmMessage.getPillChangeMessage(this.AlarmCalculationData.getNextNumberOfUsedContraception()));
 		}
 
 		int nextAlarmDay = this.AlarmCalculationData.getLastUseOfContraceptiveDayOfYear() + this.AlarmCalculationData.getIntervalDays();

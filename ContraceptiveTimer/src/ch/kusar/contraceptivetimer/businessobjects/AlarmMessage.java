@@ -2,13 +2,13 @@ package ch.kusar.contraceptivetimer.businessobjects;
 
 public class AlarmMessage {
 
-	public static String getPillChangeMessage() {
-		String msg = String.format("It's time, take your pill");
+	public static String getPillChangeMessage(int timesUsed) {
+		String msg = String.format("It's time, take your pill nr: %1$s", timesUsed);
 		return msg;
 	}
 
-	public static String getPatchChangeMessage() {
-		String msg = String.format("It's time, stick new patch");
+	public static String getPatchChangeMessage(int timesUsed) {
+		String msg = String.format("It's time, stick new patch nr: %1$s", timesUsed);
 		return msg;
 	}
 

@@ -1,12 +1,10 @@
 package ch.kusar.contraceptivetimer;
 
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.ToggleButton;
 import ch.kusar.contraceptivetimer.businessobjects.ContraceptiveType;
@@ -43,38 +41,23 @@ public class AlarmScreenActivity extends FragmentActivity implements CancelDialo
 		AlarmCalculationData acd = this.internalStorageWrapper.loadFromStorage();
 		if (acd != null) {
 			LoggerWrapper.LogDebug(acd.toString());
-			tp.clearFocus();
 			tp.setCurrentHour(acd.getAlarmTimeHourOfDay());
 			tp.setCurrentMinute(acd.getAlarmTimeMinutes());
 
 			if (acd.isAlarmActive()) {
 				this.setStartButtonEnabled(false);
 				this.setStopButtonEnabled(true);
+				this.setToggleButtonEnabled(false);
 			} else {
 				this.setStartButtonEnabled(true);
 				this.setStopButtonEnabled(false);
+				this.setToggleButtonEnabled(true);
 			}
 
 			this.turnToggleButtonOn(acd.getContraceptiveType());
 		} else {
 			this.turnToggleButtonOn(ContraceptiveType.CONTRACEPTION_PILL);
 		}
-
-		if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-			this.setToggleButtonSizeInLandscapeToSizeOfTextView();
-		}
-	}
-
-	private void setToggleButtonSizeInLandscapeToSizeOfTextView() {
-		TextView tv = (TextView) this.findViewById(R.id.textView_TypeChooser);
-		int width = tv.getWidth();
-
-		ToggleButton tbPill = (ToggleButton) this.findViewById(R.id.toggleButton_Pill);
-		tbPill.setWidth(width);
-		ToggleButton tbPatch = (ToggleButton) this.findViewById(R.id.toggleButton_Patch);
-		tbPatch.setWidth(width);
-		ToggleButton tbRing = (ToggleButton) this.findViewById(R.id.toggleButton_Ring);
-		tbRing.setWidth(width);
 	}
 
 	private TimePicker getTimePicker() {
@@ -182,8 +165,20 @@ public class AlarmScreenActivity extends FragmentActivity implements CancelDialo
 
 		this.setStartButtonEnabled(false);
 		this.setStopButtonEnabled(true);
+		this.setToggleButtonEnabled(false);
+
+		this.internalStorageWrapper.saveUpdatedIncrementedUsedTimes();
 
 		this.restartAlarm();
+	}
+
+	private void setToggleButtonEnabled(boolean enabled) {
+		ToggleButton tbPill = (ToggleButton) this.findViewById(R.id.toggleButton_Pill);
+		tbPill.setEnabled(enabled);
+		ToggleButton tbPatch = (ToggleButton) this.findViewById(R.id.toggleButton_Patch);
+		tbPatch.setEnabled(enabled);
+		ToggleButton tbRing = (ToggleButton) this.findViewById(R.id.toggleButton_Ring);
+		tbRing.setEnabled(enabled);
 	}
 
 	private void setupAlarmCalculationData() {
@@ -213,9 +208,11 @@ public class AlarmScreenActivity extends FragmentActivity implements CancelDialo
 	public void onDialogPositiveClick(DialogFragment dialog) {
 		this.cancelAlarm();
 		this.internalStorageWrapper.saveUpdatedAlarmActivatedTo(false);
+		this.internalStorageWrapper.saveUpdatedResetedUsedTimes();
 
 		this.setStartButtonEnabled(true);
 		this.setStopButtonEnabled(false);
+		this.setToggleButtonEnabled(true);
 	}
 
 	public void onDialogNegativeClick(DialogFragment dialog) {
