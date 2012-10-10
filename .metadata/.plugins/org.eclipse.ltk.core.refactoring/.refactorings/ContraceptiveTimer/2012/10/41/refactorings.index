@@ -5,3 +5,6 @@
 1349805629842	Encapsulate field 'timesUsed'
 1349806879560	Rename method 'saveUpdatedUsedTimes'
 1349807223830	Rename method 'getTimesUsed'
+1349885806360	Rename local variable 'breakAlarmEventDataDayOfYear'
+1349885819542	Rename local variable 'changeAlarmEventDataDayOfYear'
+1349887154207	Move compilation unit

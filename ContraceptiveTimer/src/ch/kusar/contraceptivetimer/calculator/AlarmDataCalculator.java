@@ -26,17 +26,16 @@ public class AlarmDataCalculator {
 	}
 
 	private boolean isNextEventABreakAlarmEvent() {
-		int breakAlarmEventDataDayOfYear = this.AlarmCalculationData.getLastBreakDayOfYear();
-		int changeAlarmEventDataDayOfYear = this.AlarmCalculationData.getLastUseOfContraceptiveDayOfYear();
+		int lastBreakDayOfYear = this.AlarmCalculationData.getLastBreakDayOfYear();
+		int lastUseOfContraceptiveDayOfYear = this.AlarmCalculationData.getLastUseOfContraceptiveDayOfYear();
 
-		if (breakAlarmEventDataDayOfYear == changeAlarmEventDataDayOfYear) {
+		if (lastBreakDayOfYear == lastUseOfContraceptiveDayOfYear) {
 			return true;
 		}
-		if (breakAlarmEventDataDayOfYear < changeAlarmEventDataDayOfYear
-				&& this.AlarmCalculationData.getContraceptiveType() == ContraceptiveType.CONTRACEPTION_RING) {
+		if (lastBreakDayOfYear < lastUseOfContraceptiveDayOfYear && this.AlarmCalculationData.getContraceptiveType() == ContraceptiveType.CONTRACEPTION_RING) {
 			return true;
 		}
-		if (this.getNumberOfDaysSinceLastBreak() >= 21) {
+		if (this.getNumberOfDaysSinceLastBreak() >= 28) {
 			return true;
 		}
 

@@ -47,10 +47,12 @@ public class AlarmScreenActivity extends FragmentActivity implements CancelDialo
 			if (acd.isAlarmActive()) {
 				this.setStartButtonEnabled(false);
 				this.setStopButtonEnabled(true);
+				this.setUpdateAlarmTimeEnabled(true);
 				this.setToggleButtonEnabled(false);
 			} else {
 				this.setStartButtonEnabled(true);
 				this.setStopButtonEnabled(false);
+				this.setUpdateAlarmTimeEnabled(false);
 				this.setToggleButtonEnabled(true);
 			}
 
@@ -71,6 +73,11 @@ public class AlarmScreenActivity extends FragmentActivity implements CancelDialo
 
 	private void setStopButtonEnabled(boolean enabled) {
 		Button button = (Button) this.findViewById(R.id.button_Stop);
+		button.setEnabled(enabled);
+	}
+
+	private void setUpdateAlarmTimeEnabled(boolean enabled) {
+		Button button = (Button) this.findViewById(R.id.buttonUpdateAlarmTime);
 		button.setEnabled(enabled);
 	}
 
@@ -165,9 +172,8 @@ public class AlarmScreenActivity extends FragmentActivity implements CancelDialo
 
 		this.setStartButtonEnabled(false);
 		this.setStopButtonEnabled(true);
+		this.setUpdateAlarmTimeEnabled(true);
 		this.setToggleButtonEnabled(false);
-
-		this.internalStorageWrapper.saveUpdatedIncrementedUsedTimes();
 
 		this.restartAlarm();
 	}
@@ -212,6 +218,7 @@ public class AlarmScreenActivity extends FragmentActivity implements CancelDialo
 
 		this.setStartButtonEnabled(true);
 		this.setStopButtonEnabled(false);
+		this.setUpdateAlarmTimeEnabled(false);
 		this.setToggleButtonEnabled(true);
 	}
 

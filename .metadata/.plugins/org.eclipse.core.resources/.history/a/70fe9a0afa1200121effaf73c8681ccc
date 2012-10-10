@@ -1,0 +1,87 @@
+package ch.kusar.contraceptivetimer.businessobjects;
+
+import android.app.Activity;
+import ch.kusar.contraceptivetimer.R;
+import ch.kusar.contraceptivetimer.wrapper.ResourceWrapper;
+
+public class AlarmMessage extends Activity {
+
+	public static String getPillChangeMessage(int timesUsed) {
+		String msg = String.format("It's time, take your %1$s pill", AlarmMessage.convertToText(timesUsed));
+		return msg;
+	}
+
+	public static String getPatchChangeMessage(int timesUsed) {
+		String msg = String.format("It's time, stick your %1$s patch", AlarmMessage.convertToText(timesUsed));
+		return msg;
+	}
+
+	public static String getRingChangeMessage() {
+		String msg = String.format("It's time, use a new ring");
+		return msg;
+	}
+
+	public static String getPatchRemoveMessage() {
+		String msg = String.format("Time for a break, remove patch");
+		return msg;
+	}
+
+	public static String getRingRemoveMessage() {
+		String msg = String.format("Time for a break, remove ring");
+		return msg;
+	}
+
+	public static String getPillRemoveMessage() {
+		String msg = String.format("Time for a break, DO NOT take a new Pill");
+		return msg;
+	}
+
+	private static String convertToText(int timesUsed) {
+		switch (timesUsed) {
+		case 1:
+			return ResourceWrapper.getStringFromResource(R.string._1st);
+		case 2:
+			return ResourceWrapper.getStringFromResource(R.string._1st);
+		case 3:
+			return ResourceWrapper.getStringFromResource(R.string._1st);
+		case 4:
+			return ResourceWrapper.getStringFromResource(R.string._1st);
+		case 5:
+			return ResourceWrapper.getStringFromResource(R.string._1st);
+		case 6:
+			return ResourceWrapper.getStringFromResource(R.string._1st);
+		case 7:
+			return ResourceWrapper.getStringFromResource(R.string._1st);
+		case 8:
+			return ResourceWrapper.getStringFromResource(R.string._1st);
+		case 9:
+			return ResourceWrapper.getStringFromResource(R.string._1st);
+		case 10:
+			return ResourceWrapper.getStringFromResource(R.string._1st);
+		case 11:
+			return ResourceWrapper.getStringFromResource(R.string._1st);
+		case 12:
+			return ResourceWrapper.getStringFromResource(R.string._1st);
+		case 13:
+			return ResourceWrapper.getStringFromResource(R.string._1st);
+		case 14:
+			return ResourceWrapper.getStringFromResource(R.string._1st);
+		case 15:
+			return ResourceWrapper.getStringFromResource(R.string._1st);
+		case 16:
+			return ResourceWrapper.getStringFromResource(R.string._1st);
+		case 17:
+			return ResourceWrapper.getStringFromResource(R.string._1st);
+		case 18:
+			return ResourceWrapper.getStringFromResource(R.string._1st);
+		case 19:
+			return ResourceWrapper.getStringFromResource(R.string._1st);
+		case 20:
+			return ResourceWrapper.getStringFromResource(R.string._1st);
+		case 21:
+			return ResourceWrapper.getStringFromResource(R.string._1st);
+		default:
+			return "";
+		}
+	}
+}

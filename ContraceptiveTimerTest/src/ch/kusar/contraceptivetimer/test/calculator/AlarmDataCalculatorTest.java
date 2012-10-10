@@ -238,7 +238,7 @@ public class AlarmDataCalculatorTest extends AndroidTestCase {
 
 		AlarmEventData alarmEventData = this.alarmDataCalculator.getNextAlarmEvent();
 
-		Assert.assertEquals(AlarmMessage.getPatchChangeMessage(), alarmEventData.getAlarmMessage());
+		Assert.assertEquals(AlarmMessage.getPatchChangeMessage(1), alarmEventData.getAlarmMessage());
 
 		Assert.assertEquals(nextBreakFromLastBreak.getTimeInMillis(), alarmEventData.getAlarmTimeInMilliSeconds());
 		Assert.assertEquals(nextBreakFromLastUse.getTimeInMillis(), alarmEventData.getAlarmTimeInMilliSeconds());
@@ -262,7 +262,7 @@ public class AlarmDataCalculatorTest extends AndroidTestCase {
 
 		AlarmEventData alarmEventData = this.alarmDataCalculator.getNextAlarmEvent();
 
-		Assert.assertEquals(AlarmMessage.getPatchChangeMessage(), alarmEventData.getAlarmMessage());
+		Assert.assertEquals(AlarmMessage.getPatchChangeMessage(1), alarmEventData.getAlarmMessage());
 
 		Assert.assertEquals(nextEventFromLastUse.getTimeInMillis(), alarmEventData.getAlarmTimeInMilliSeconds());
 		Assert.assertEquals(nextEventFromLastBreak.getTimeInMillis(), alarmEventData.getAlarmTimeInMilliSeconds());
@@ -288,7 +288,7 @@ public class AlarmDataCalculatorTest extends AndroidTestCase {
 
 		AlarmEventData alarmEventData = this.alarmDataCalculator.getNextAlarmEvent();
 
-		Assert.assertEquals(AlarmMessage.getPillChangeMessage(), alarmEventData.getAlarmMessage());
+		Assert.assertEquals(AlarmMessage.getPillChangeMessage(1), alarmEventData.getAlarmMessage());
 
 		Assert.assertEquals(nextEventFromLastUse.getTimeInMillis(), alarmEventData.getAlarmTimeInMilliSeconds());
 	}
@@ -306,7 +306,7 @@ public class AlarmDataCalculatorTest extends AndroidTestCase {
 
 		AlarmEventData alarmEventData = this.alarmDataCalculator.getNextAlarmEvent();
 
-		Assert.assertEquals(AlarmMessage.getPillChangeMessage(), alarmEventData.getAlarmMessage());
+		Assert.assertEquals(AlarmMessage.getPillChangeMessage(1), alarmEventData.getAlarmMessage());
 		Assert.assertEquals(EventType.EVENT_CHANGE, alarmEventData.getEventType());
 
 		Assert.assertEquals(nextEventFromLastUse.getTimeInMillis(), alarmEventData.getAlarmTimeInMilliSeconds());
@@ -355,7 +355,7 @@ public class AlarmDataCalculatorTest extends AndroidTestCase {
 
 		AlarmEventData alarmEventData = this.alarmDataCalculator.getNextAlarmEvent();
 
-		Assert.assertEquals(AlarmMessage.getPillChangeMessage(), alarmEventData.getAlarmMessage());
+		Assert.assertEquals(AlarmMessage.getPillChangeMessage(1), alarmEventData.getAlarmMessage());
 		Assert.assertEquals(EventType.EVENT_AFTER_BREAK, alarmEventData.getEventType());
 
 		GregorianCalendar cal = new GregorianCalendar();
@@ -387,7 +387,7 @@ public class AlarmDataCalculatorTest extends AndroidTestCase {
 
 		Assert.assertEquals(0, this.alarmDataCalculator.getNumberOfDaysSinceLastUse());
 
-		Assert.assertEquals(AlarmMessage.getPillChangeMessage(), alarmEventData.getAlarmMessage());
+		Assert.assertEquals(AlarmMessage.getPillChangeMessage(1), alarmEventData.getAlarmMessage());
 		Assert.assertEquals(EventType.EVENT_CHANGE, alarmEventData.getEventType());
 
 		GregorianCalendar cal = new GregorianCalendar();
@@ -421,7 +421,7 @@ public class AlarmDataCalculatorTest extends AndroidTestCase {
 
 		Assert.assertEquals(0, this.alarmDataCalculator.getNumberOfDaysSinceLastUse());
 
-		Assert.assertEquals(AlarmMessage.getPatchChangeMessage(), alarmEventData.getAlarmMessage());
+		Assert.assertEquals(AlarmMessage.getPatchChangeMessage(1), alarmEventData.getAlarmMessage());
 		Assert.assertEquals(EventType.EVENT_CHANGE, alarmEventData.getEventType());
 
 		GregorianCalendar cal = new GregorianCalendar();

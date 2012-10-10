@@ -78,9 +78,9 @@ public class InternalStorageWrapperTest extends AndroidTestCase {
 
 		this.internalStorageWrapper.saveUpdatedLastUseOfContraceptionToStorage(42);
 
-		AlarmCalculationData alarmCalculationData = this.internalStorageWrapper.loadFromStorage();
-		Assert.assertEquals(0, alarmCalculationData.getLastBreakDayOfYear());
-		Assert.assertEquals(42, alarmCalculationData.getLastUseOfContraceptiveDayOfYear());
+		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper.loadFromStorage();
+		Assert.assertEquals(0, alarmDataLoaded.getLastBreakDayOfYear());
+		Assert.assertEquals(42, alarmDataLoaded.getLastUseOfContraceptiveDayOfYear());
 	}
 
 	public void testsaveUpdatedLastBreakOfContraceptionToStorage_StoresTheFileToInternalStorage_ShouldBeSavedToStorageWithoutError() {
@@ -89,8 +89,52 @@ public class InternalStorageWrapperTest extends AndroidTestCase {
 
 		this.internalStorageWrapper.saveUpdatedLastBreakOfContraceptionToStorage(42);
 
-		AlarmCalculationData alarmCalculationData = this.internalStorageWrapper.loadFromStorage();
-		Assert.assertEquals(42, alarmCalculationData.getLastBreakDayOfYear());
-		Assert.assertEquals(0, alarmCalculationData.getLastUseOfContraceptiveDayOfYear());
+		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper.loadFromStorage();
+		Assert.assertEquals(42, alarmDataLoaded.getLastBreakDayOfYear());
+		Assert.assertEquals(0, alarmDataLoaded.getLastUseOfContraceptiveDayOfYear());
+	}
+
+	public void testsaveUpdatedAlarmActivatedTo_StoresTheFileToInternalStorage_ShouldBeSavedToStorageWithoutError() {
+		Assert.assertTrue(this.internalStorageWrapper.saveToStorage(this.alarmCalculationData));
+		Assert.assertTrue(this.alarmCalculationData.isAlarmActive());
+
+		this.internalStorageWrapper.saveUpdatedAlarmActivatedTo(false);
+
+		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper.loadFromStorage();
+		Assert.assertFalse(alarmDataLoaded.isAlarmActive());
+	}
+
+	public void testsaveUpdatedAlarmTime_StoresTheFileToInternalStorage_ShouldBeSavedToStorageWithoutError() {
+		Assert.assertTrue(this.internalStorageWrapper.saveToStorage(this.alarmCalculationData));
+		Assert.assertEquals(20, this.alarmCalculationData.getAlarmTimeHourOfDay());
+		Assert.assertEquals(0, this.alarmCalculationData.getAlarmTimeMinutes());
+
+		AlarmTime at = new AlarmTime(13, 37);
+		this.internalStorageWrapper.saveUpdatedAlarmTime(at);
+
+		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper.loadFromStorage();
+		Assert.assertEquals(13, alarmDataLoaded.getAlarmTimeHourOfDay());
+		Assert.assertEquals(37, alarmDataLoaded.getAlarmTimeMinutes());
+	}
+
+	public void testsaveUpdatedIncrementedUsedTimes_StoresTheFileToInternalStorage_ShouldBeSavedToStorageWithoutError() {
+		Assert.assertTrue(this.internalStorageWrapper.saveToStorage(this.alarmCalculationData));
+		Assert.assertEquals(0, this.alarmCalculationData.getTimesUsed());
+
+		this.internalStorageWrapper.saveUpdatedIncrementedUsedTimes();
+
+		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper.loadFromStorage();
+		Assert.assertEquals(1, alarmDataLoaded.getTimesUsed());
+	}
+
+	public void testsaveUpdatedResetedUsedTimes_StoresTheFileToInternalStorage_ShouldBeSavedToStorageWithoutError() {
+		Assert.assertTrue(this.internalStorageWrapper.saveToStorage(this.alarmCalculationData));
+		this.alarmCalculationData.incrementTimesUsed();
+		Assert.assertEquals(1, this.alarmCalculationData.getTimesUsed());
+
+		this.internalStorageWrapper.saveUpdatedResetedUsedTimes();
+
+		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper.loadFromStorage();
+		Assert.assertEquals(0, alarmDataLoaded.getTimesUsed());
 	}
 }

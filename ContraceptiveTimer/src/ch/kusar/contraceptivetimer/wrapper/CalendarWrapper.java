@@ -69,4 +69,10 @@ public class CalendarWrapper {
 		int todayOneWeekAgoAsDayOfYear = today - 7;
 		return todayOneWeekAgoAsDayOfYear;
 	}
+
+	public static long getNowAsMilliseconds() {
+		GregorianCalendar cal = CalendarWrapper.getGregorianCalendarInstance();
+		cal.add(Calendar.SECOND, 2);
+		return cal.getTimeInMillis();
+	}
 }

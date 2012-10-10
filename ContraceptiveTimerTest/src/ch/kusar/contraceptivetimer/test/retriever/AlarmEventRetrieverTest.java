@@ -75,7 +75,7 @@ public class AlarmEventRetrieverTest extends AndroidTestCase {
 		Assert.assertEquals(alarmEventDataFromCalculator.getAlarmMessage(), alarmEventDataFromRetriever.getAlarmMessage());
 		Assert.assertEquals(alarmEventDataFromCalculator.getEventType(), alarmEventDataFromRetriever.getEventType());
 		Assert.assertEquals(alarmEventDataFromCalculator.getAlarmTimeInMilliSeconds(), alarmEventDataFromRetriever.getAlarmTimeInMilliSeconds());
-		Assert.assertEquals(AlarmMessage.getPillChangeMessage(), alarmEventDataFromRetriever.getAlarmMessage());
+		Assert.assertEquals(AlarmMessage.getPillChangeMessage(1), alarmEventDataFromRetriever.getAlarmMessage());
 
 		GregorianCalendar cal = (GregorianCalendar) Calendar.getInstance();
 		cal.setTimeInMillis(alarmEventDataFromRetriever.getAlarmTimeInMilliSeconds());

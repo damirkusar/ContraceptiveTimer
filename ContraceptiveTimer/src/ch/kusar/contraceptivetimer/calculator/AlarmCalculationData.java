@@ -81,7 +81,7 @@ public class AlarmCalculationData implements Serializable {
 	}
 
 	public int getNextNumberOfUsedContraception() {
-		return this.timesUsed++;
+		return this.timesUsed + 1;
 	}
 
 	public void incrementTimesUsed() {
@@ -90,6 +90,10 @@ public class AlarmCalculationData implements Serializable {
 
 	public void resetTimesUsed() {
 		this.timesUsed = 0;
+	}
+
+	public int getTimesUsed() {
+		return this.timesUsed;
 	}
 
 	public int getNumberOfDaysToMakeSevenDaysBreakAfterFirstContraceptive() {

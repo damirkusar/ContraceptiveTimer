@@ -1,6 +1,4 @@
-- Bei alarm auslösung, neuen alarm setzen und datei speichern
-- Is AlarmActive implementieren
 - teste calendar day bei jahres wechsel
 - teste verschiedene zeitzonen
-- wen kein type ausgewäählt ist, darf start nicht funktionieren
 - dialog bei start, ob man von vorne beginnen will, oder fortfahren will von vorher.
+- REFACTOR!!!!

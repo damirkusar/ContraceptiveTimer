@@ -22,4 +22,26 @@
 	<string name="text_updateAlarmTime">Update just alarm time</string>
 	<string name="text_start">Start</string>
 	<string name="text_stop">Stop</string>
+	<!-- Message -->
+	<string name="_1">1st</string>
+	<string name="_2">2nd</string>
+	<string name="_3">3rd</string>
+	<string name="_4">4th</string>
+	<string name="_5">5th</string>
+	<string name="_6">6th</string>
+	<string name="_7">7th</string>
+	<string name="_8">8th</string>
+	<string name="_9">9th</string>
+	<string name="_10">10th</string>
+	<string name="_11">11th</string>
+	<string name="_12">12th</string>
+	<string name="_13">13th</string>
+	<string name="_14">14th</string>
+	<string name="_15">15th</string>
+	<string name="_16">16th</string>
+	<string name="_17">17th</string>
+	<string name="_18">18th</string>
+	<string name="_19">19th</string>
+	<string name="_20">20th</string>
+	<string name="_21">21st</string>
 </resources>

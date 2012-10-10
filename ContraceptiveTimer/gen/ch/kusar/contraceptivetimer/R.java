@@ -76,6 +76,29 @@ public final class R {
         public static final int activity_main=0x7f080000;
     }
     public static final class string {
+        /**  Message 
+         */
+        public static final int _1=0x7f060015;
+        public static final int _10=0x7f06001e;
+        public static final int _11=0x7f06001f;
+        public static final int _12=0x7f060020;
+        public static final int _13=0x7f060021;
+        public static final int _14=0x7f060022;
+        public static final int _15=0x7f060023;
+        public static final int _16=0x7f060024;
+        public static final int _17=0x7f060025;
+        public static final int _18=0x7f060026;
+        public static final int _19=0x7f060027;
+        public static final int _2=0x7f060016;
+        public static final int _20=0x7f060028;
+        public static final int _21=0x7f060029;
+        public static final int _3=0x7f060017;
+        public static final int _4=0x7f060018;
+        public static final int _5=0x7f060019;
+        public static final int _6=0x7f06001a;
+        public static final int _7=0x7f06001b;
+        public static final int _8=0x7f06001c;
+        public static final int _9=0x7f06001d;
         public static final int activity_name=0x7f060001;
         public static final int app_name=0x7f060000;
         public static final int cancelDialog_content=0x7f060009;
