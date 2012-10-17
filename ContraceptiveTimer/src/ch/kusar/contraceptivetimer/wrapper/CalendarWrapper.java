@@ -1,13 +1,51 @@
 package ch.kusar.contraceptivetimer.wrapper;
 
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
-public class CalendarWrapper {
+public class CalendarWrapper implements Serializable {
+
+	private static final long serialVersionUID = -4959482964453259671L;
 	private int hourOfDay;
 	private int minutes;
-	private int dayOfYear;
+	private int year;
+	private int month;
+	private int dayOfMonth;
+
+	public CalendarWrapper() {
+	}
+
+	public CalendarWrapper(int year, int month, int dayOfMonth) {
+		this.year = year;
+		this.month = month;
+		this.dayOfMonth = dayOfMonth;
+	}
+
+	public int getYear() {
+		return this.year;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+	public int getMonth() {
+		return this.month;
+	}
+
+	public void setMonth(int month) {
+		this.month = month;
+	}
+
+	public int getDayOfMonth() {
+		return this.dayOfMonth;
+	}
+
+	public void setDayOfMonth(int dayOfMonth) {
+		this.dayOfMonth = dayOfMonth;
+	}
 
 	public int getHourOfDay() {
 		return this.hourOfDay;
@@ -25,19 +63,14 @@ public class CalendarWrapper {
 		this.minutes = minutes;
 	}
 
-	public int getDayOfYear() {
-		return this.dayOfYear;
-	}
-
-	public void setDayOfYear(int dayOfYear) {
-		this.dayOfYear = dayOfYear;
-	}
-
 	public long getTimeInMillis() {
 		GregorianCalendar calInstance = CalendarWrapper.getGregorianCalendarInstance();
 
 		GregorianCalendar cal = this.convertToCalendarWithoutHourMinutesSeconds(calInstance);
-		cal.set(Calendar.DAY_OF_YEAR, this.dayOfYear);
+		cal.set(Calendar.YEAR, this.year);
+		cal.set(Calendar.MONTH, this.month);
+		cal.set(Calendar.DAY_OF_MONTH, this.dayOfMonth);
+
 		cal.set(Calendar.HOUR_OF_DAY, this.hourOfDay);
 		cal.set(Calendar.MINUTE, this.minutes);
 
@@ -59,15 +92,19 @@ public class CalendarWrapper {
 		return (GregorianCalendar) cal;
 	}
 
-	public static int getTodayAsDayOfYear() {
+	public static CalendarWrapper getToday() {
 		GregorianCalendar cal = CalendarWrapper.getGregorianCalendarInstance();
-		return cal.get(Calendar.DAY_OF_YEAR);
+		CalendarWrapper cw = new CalendarWrapper(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH));
+		return cw;
 	}
 
-	public static int getTodayOneWeekAgoAsDayOfYear() {
-		int today = CalendarWrapper.getTodayAsDayOfYear();
-		int todayOneWeekAgoAsDayOfYear = today - 7;
-		return todayOneWeekAgoAsDayOfYear;
+	public static CalendarWrapper getTodayOneWeekAgo() {
+		GregorianCalendar cal = CalendarWrapper.getGregorianCalendarInstance();
+		int todayOneWeekAgoAsDayOfYear = cal.get(Calendar.DAY_OF_YEAR) - 7;
+		cal.set(Calendar.DAY_OF_YEAR, todayOneWeekAgoAsDayOfYear);
+
+		CalendarWrapper cw = new CalendarWrapper(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH));
+		return cw;
 	}
 
 	public static long getNowAsMilliseconds() {
@@ -75,4 +112,56 @@ public class CalendarWrapper {
 		cal.add(Calendar.SECOND, 2);
 		return cal.getTimeInMillis();
 	}
+
+	public static int daysBetweenTodayAnd(final CalendarWrapper startDate) {
+		CalendarWrapper cal = new CalendarWrapper();
+
+		int MILLIS_IN_DAY = 1000 * 60 * 60 * 24;
+		long endInstant = cal.convertToCalendarWithoutHourMinutesSeconds(CalendarWrapper.getGregorianCalendarInstance()).getTimeInMillis();
+
+		int presumedDays = (int) ((endInstant - startDate.getTimeInMillis()) / MILLIS_IN_DAY);
+		Calendar cursor = new GregorianCalendar(startDate.getYear(), startDate.getMonth(), startDate.getDayOfMonth());
+		cursor.add(Calendar.DAY_OF_YEAR, presumedDays);
+		long instant = cursor.getTimeInMillis();
+
+		if (instant == endInstant) {
+			return presumedDays;
+		}
+
+		final int step = instant < endInstant ? 1 : -1;
+
+		do {
+			cursor.add(Calendar.DAY_OF_MONTH, step);
+			presumedDays += step;
+		} while (cursor.getTimeInMillis() != endInstant);
+
+		return presumedDays;
+	}
+
+	public void addDays(int days) {
+		GregorianCalendar gc = this.convertCalendarWrapperIntoGregorianCalendar();
+		gc.add(Calendar.DAY_OF_YEAR, days);
+
+		this.convertGregorianCalendarToCalendarWrapper(gc);
+	}
+
+	public void convertGregorianCalendarToCalendarWrapper(GregorianCalendar gc) {
+		this.setYear(gc.get(Calendar.YEAR));
+		this.setMonth(gc.get(Calendar.MONTH));
+		this.setDayOfMonth(gc.get(Calendar.DAY_OF_MONTH));
+	}
+
+	public GregorianCalendar convertCalendarWrapperIntoGregorianCalendar() {
+		GregorianCalendar cal = new GregorianCalendar(this.year, this.month, this.dayOfMonth);
+		cal.set(Calendar.HOUR_OF_DAY, this.hourOfDay);
+		cal.set(Calendar.MINUTE, this.minutes);
+		return cal;
+	}
+
+	@Override
+	public String toString() {
+		String msg = String.format("%1$s-%2$s-%3$s", this.year, this.month, this.dayOfMonth);
+		return msg;
+	}
+
 }

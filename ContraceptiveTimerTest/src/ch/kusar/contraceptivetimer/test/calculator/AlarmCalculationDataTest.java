@@ -23,23 +23,27 @@ public class AlarmCalculationDataTest extends AndroidTestCase {
 	}
 
 	public void testGetIntervalDays_TypeIsRing_Returns28() {
-		this.alarmCalculationData
-				.setContraceptiveType(ContraceptiveType.CONTRACEPTION_RING);
+		this.alarmCalculationData.setContraceptiveType(ContraceptiveType.CONTRACEPTION_RING);
 
 		Assert.assertEquals(28, this.alarmCalculationData.getIntervalDays());
 	}
 
 	public void testGetIntervalDays_TypeIsPill_Returns1() {
-		this.alarmCalculationData
-				.setContraceptiveType(ContraceptiveType.CONTRACEPTION_PILL);
+		this.alarmCalculationData.setContraceptiveType(ContraceptiveType.CONTRACEPTION_PILL);
 
 		Assert.assertEquals(1, this.alarmCalculationData.getIntervalDays());
 	}
 
 	public void testGetIntervalDays_TypeIsPatch_Returns7() {
-		this.alarmCalculationData
-				.setContraceptiveType(ContraceptiveType.CONTRACEPTION_PATCH);
+		this.alarmCalculationData.setContraceptiveType(ContraceptiveType.CONTRACEPTION_PATCH);
 
 		Assert.assertEquals(7, this.alarmCalculationData.getIntervalDays());
+	}
+
+	public void testSetFirstUseWasOn_TypeIsPillAndFirstUseWas2WeeksAgo_TimesUsedIs14() {
+		// CalendarWrapper calendarWrapper = new CalendarWrapper(2012, 4, 2);
+		// calendarWrapper.setDayOfYear(CalendarWrapperForTest.getTodayTwoWeeksAgoAsDayOfYear);
+		//
+		// this.alarmCalculationData.setFirstUseWasOn(calendarWrapper);
 	}
 }

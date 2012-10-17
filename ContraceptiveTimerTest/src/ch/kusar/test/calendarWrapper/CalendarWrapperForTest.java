@@ -3,6 +3,8 @@ package ch.kusar.test.calendarWrapper;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import ch.kusar.contraceptivetimer.wrapper.CalendarWrapper;
+
 public class CalendarWrapperForTest {
 
 	public static GregorianCalendar getActualCalendarWithoutHourMinutesSeconds() {
@@ -22,10 +24,10 @@ public class CalendarWrapperForTest {
 
 	public static GregorianCalendar getLastSunday() {
 		int todaysWeekDay = CalendarWrapperForTest.getActualCalendarWithoutHourMinutesSeconds().get(Calendar.DAY_OF_WEEK);
+		int realTodaysWeekDay = CalendarWrapperForTest.convertFromCalendarDayToNormal7DaysScale(todaysWeekDay);
 
 		Calendar calendar = CalendarWrapperForTest.getActualCalendarWithoutHourMinutesSeconds();
-		calendar.set(Calendar.DAY_OF_YEAR,
-				(calendar.get(Calendar.DAY_OF_YEAR) - CalendarWrapperForTest.convertFromCalendarDayToNormal7DaysScale(todaysWeekDay)));
+		calendar.set(Calendar.DAY_OF_YEAR, (calendar.get(Calendar.DAY_OF_YEAR) - realTodaysWeekDay));
 		return (GregorianCalendar) calendar;
 	}
 
@@ -106,6 +108,10 @@ public class CalendarWrapperForTest {
 		return (GregorianCalendar) calendar;
 	}
 
+	public static CalendarWrapper convertGregorianCalendarToCalendarWrapper(GregorianCalendar gc) {
+		return CalendarWrapperForTest.createCalendarWrapper(gc);
+	}
+
 	public static int convertFromCalendarDayToNormal7DaysScale(int dayOfWeek) {
 		switch (dayOfWeek) {
 		case 2:
@@ -120,5 +126,30 @@ public class CalendarWrapperForTest {
 		default:
 			return 0;
 		}
+	}
+
+	public static CalendarWrapper todayAsCalendarWrapper() {
+		GregorianCalendar gc = CalendarWrapperForTest.getActualCalendarWithoutHourMinutesSeconds();
+
+		return CalendarWrapperForTest.createCalendarWrapper(gc);
+	}
+
+	public static CalendarWrapper todayAWeekAgoAsCalendarWrapper() {
+		GregorianCalendar gc = CalendarWrapperForTest.getActualCalendarWithoutHourMinutesSeconds();
+
+		int daysOfWeekAsDaysOfYear = gc.get(Calendar.DAY_OF_YEAR) - 7;
+
+		gc.set(Calendar.DAY_OF_YEAR, daysOfWeekAsDaysOfYear);
+
+		return CalendarWrapperForTest.createCalendarWrapper(gc);
+	}
+
+	private static CalendarWrapper createCalendarWrapper(GregorianCalendar gc) {
+		CalendarWrapper cw = new CalendarWrapper();
+		cw.setYear(gc.get(Calendar.YEAR));
+		cw.setMonth(gc.get(Calendar.MONTH));
+		cw.setDayOfMonth(gc.get(Calendar.DAY_OF_MONTH));
+
+		return cw;
 	}
 }

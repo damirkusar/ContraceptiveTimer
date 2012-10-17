@@ -3,6 +3,7 @@ package ch.kusar.contraceptivetimer.calculator;
 import java.io.Serializable;
 
 import ch.kusar.contraceptivetimer.businessobjects.ContraceptiveType;
+import ch.kusar.contraceptivetimer.wrapper.CalendarWrapper;
 
 public class AlarmCalculationData implements Serializable {
 
@@ -11,8 +12,8 @@ public class AlarmCalculationData implements Serializable {
 	private final int numberOfDaysToMakeSevenDaysBreakAfterFirstContraceptive = 21;
 
 	private ContraceptiveType contraceptiveType;
-	private int lastUseOfContraceptiveDayOfYear;
-	private int lastBreakDayOfYear;
+	private CalendarWrapper lastUseOfContraceptive;
+	private CalendarWrapper lastBreak;
 	private AlarmTime alarmTime;
 	private boolean isAlarmActive;
 
@@ -22,6 +23,8 @@ public class AlarmCalculationData implements Serializable {
 		super();
 		this.alarmTime = new AlarmTime();
 		this.timesUsed = 0;
+		this.lastUseOfContraceptive = new CalendarWrapper();
+		this.lastBreak = new CalendarWrapper();
 	}
 
 	public void setAlarmTimeHourOfDay(int hourOfDay) {
@@ -48,12 +51,12 @@ public class AlarmCalculationData implements Serializable {
 		this.contraceptiveType = contraceptiveType;
 	}
 
-	public int getLastBreakDayOfYear() {
-		return this.lastBreakDayOfYear;
+	public CalendarWrapper getLastBreak() {
+		return this.lastBreak;
 	}
 
-	public void setLastBreakDayOfYear(int lastBreak) {
-		this.lastBreakDayOfYear = lastBreak;
+	public void setLastBreak(CalendarWrapper lastBreak) {
+		this.lastBreak = lastBreak;
 	}
 
 	public AlarmTime getAlarmTime() {
@@ -100,12 +103,12 @@ public class AlarmCalculationData implements Serializable {
 		return this.numberOfDaysToMakeSevenDaysBreakAfterFirstContraceptive;
 	}
 
-	public int getLastUseOfContraceptiveDayOfYear() {
-		return this.lastUseOfContraceptiveDayOfYear;
+	public CalendarWrapper getLastUseOfContraceptive() {
+		return this.lastUseOfContraceptive;
 	}
 
-	public void setLastUseOfContraceptiveDayOfYear(int lastUseOfContraceptive) {
-		this.lastUseOfContraceptiveDayOfYear = lastUseOfContraceptive;
+	public void setLastUseOfContraceptive(CalendarWrapper lastUseOfContraceptive) {
+		this.lastUseOfContraceptive = lastUseOfContraceptive;
 	}
 
 	@Override
@@ -113,7 +116,7 @@ public class AlarmCalculationData implements Serializable {
 		String msg = String
 				.format("Alarm is Active: %1$s, Alarm hour is: %2$s, Alarm minute is: %3$s, Contraceptive is: %4$s, Contraceptive Interval is: %5$s,Last use was: %6$s, Last break was: %7$s, Times used is: %8$s",
 						this.isAlarmActive(), this.getAlarmTimeHourOfDay(), this.getAlarmTimeMinutes(), this.getContraceptiveType(), this.getIntervalDays(),
-						this.getLastUseOfContraceptiveDayOfYear(), this.getLastBreakDayOfYear(), this.timesUsed);
+						this.getLastUseOfContraceptive(), this.getLastBreak(), this.timesUsed);
 		return msg;
 	}
 }

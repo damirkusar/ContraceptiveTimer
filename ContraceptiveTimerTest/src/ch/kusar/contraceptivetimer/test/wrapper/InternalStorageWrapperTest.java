@@ -9,6 +9,7 @@ import ch.kusar.contraceptivetimer.MainApplicationContext;
 import ch.kusar.contraceptivetimer.businessobjects.ContraceptiveType;
 import ch.kusar.contraceptivetimer.calculator.AlarmCalculationData;
 import ch.kusar.contraceptivetimer.calculator.AlarmTime;
+import ch.kusar.contraceptivetimer.wrapper.CalendarWrapper;
 import ch.kusar.contraceptivetimer.wrapper.InternalStorageWrapper;
 
 public class InternalStorageWrapperTest extends AndroidTestCase {
@@ -74,24 +75,38 @@ public class InternalStorageWrapperTest extends AndroidTestCase {
 
 	public void testsaveUpdatedLastUseOfContraceptionToStorage_StoresTheFileToInternalStorage_ShouldBeSavedToStorageWithoutError() {
 		Assert.assertTrue(this.internalStorageWrapper.saveToStorage(this.alarmCalculationData));
-		Assert.assertEquals(0, this.alarmCalculationData.getLastUseOfContraceptiveDayOfYear());
+		Assert.assertEquals(0, this.alarmCalculationData.getLastUseOfContraceptive().getYear());
+		Assert.assertEquals(0, this.alarmCalculationData.getLastUseOfContraceptive().getMonth());
+		Assert.assertEquals(0, this.alarmCalculationData.getLastUseOfContraceptive().getDayOfMonth());
 
-		this.internalStorageWrapper.saveUpdatedLastUseOfContraceptionToStorage(42);
+		CalendarWrapper cw = new CalendarWrapper(2012, 4, 2);
+		this.internalStorageWrapper.saveUpdatedLastUseOfContraceptionToStorage(cw);
 
 		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper.loadFromStorage();
-		Assert.assertEquals(0, alarmDataLoaded.getLastBreakDayOfYear());
-		Assert.assertEquals(42, alarmDataLoaded.getLastUseOfContraceptiveDayOfYear());
+		Assert.assertEquals(0, alarmDataLoaded.getLastBreak().getYear());
+		Assert.assertEquals(0, alarmDataLoaded.getLastBreak().getMonth());
+		Assert.assertEquals(0, alarmDataLoaded.getLastBreak().getDayOfMonth());
+		Assert.assertEquals(2012, alarmDataLoaded.getLastUseOfContraceptive().getYear());
+		Assert.assertEquals(4, alarmDataLoaded.getLastUseOfContraceptive().getMonth());
+		Assert.assertEquals(2, alarmDataLoaded.getLastUseOfContraceptive().getDayOfMonth());
 	}
 
 	public void testsaveUpdatedLastBreakOfContraceptionToStorage_StoresTheFileToInternalStorage_ShouldBeSavedToStorageWithoutError() {
 		Assert.assertTrue(this.internalStorageWrapper.saveToStorage(this.alarmCalculationData));
-		Assert.assertEquals(0, this.alarmCalculationData.getLastBreakDayOfYear());
+		Assert.assertEquals(0, this.alarmCalculationData.getLastBreak().getYear());
+		Assert.assertEquals(0, this.alarmCalculationData.getLastBreak().getMonth());
+		Assert.assertEquals(0, this.alarmCalculationData.getLastBreak().getDayOfMonth());
 
-		this.internalStorageWrapper.saveUpdatedLastBreakOfContraceptionToStorage(42);
+		CalendarWrapper cw = new CalendarWrapper(2012, 4, 2);
+		this.internalStorageWrapper.saveUpdatedLastBreakOfContraceptionToStorage(cw);
 
 		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper.loadFromStorage();
-		Assert.assertEquals(42, alarmDataLoaded.getLastBreakDayOfYear());
-		Assert.assertEquals(0, alarmDataLoaded.getLastUseOfContraceptiveDayOfYear());
+		Assert.assertEquals(0, alarmDataLoaded.getLastUseOfContraceptive().getYear());
+		Assert.assertEquals(0, alarmDataLoaded.getLastUseOfContraceptive().getMonth());
+		Assert.assertEquals(0, alarmDataLoaded.getLastUseOfContraceptive().getDayOfMonth());
+		Assert.assertEquals(2012, alarmDataLoaded.getLastBreak().getYear());
+		Assert.assertEquals(4, alarmDataLoaded.getLastBreak().getMonth());
+		Assert.assertEquals(2, alarmDataLoaded.getLastBreak().getDayOfMonth());
 	}
 
 	public void testsaveUpdatedAlarmActivatedTo_StoresTheFileToInternalStorage_ShouldBeSavedToStorageWithoutError() {

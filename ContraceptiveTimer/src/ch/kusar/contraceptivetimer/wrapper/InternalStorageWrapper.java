@@ -63,17 +63,17 @@ public class InternalStorageWrapper {
 		return false;
 	}
 
-	public void saveUpdatedLastUseOfContraceptionToStorage(int lastUseOfContraception) {
+	public void saveUpdatedLastUseOfContraceptionToStorage(CalendarWrapper lastUseOfContraception) {
 		AlarmCalculationData alarmCalculationData = this.loadFromStorage();
-		alarmCalculationData.setLastUseOfContraceptiveDayOfYear(lastUseOfContraception);
+		alarmCalculationData.setLastUseOfContraceptive(lastUseOfContraception);
 		this.saveToStorage(alarmCalculationData);
 
 		LoggerWrapper.LogDebug(alarmCalculationData.toString());
 	}
 
-	public void saveUpdatedLastBreakOfContraceptionToStorage(int lastBreakOfContraception) {
+	public void saveUpdatedLastBreakOfContraceptionToStorage(CalendarWrapper lastBreakOfContraception) {
 		AlarmCalculationData alarmCalculationData = this.loadFromStorage();
-		alarmCalculationData.setLastBreakDayOfYear(lastBreakOfContraception);
+		alarmCalculationData.setLastBreak(lastBreakOfContraception);
 		this.saveToStorage(alarmCalculationData);
 
 		LoggerWrapper.LogDebug(alarmCalculationData.toString());

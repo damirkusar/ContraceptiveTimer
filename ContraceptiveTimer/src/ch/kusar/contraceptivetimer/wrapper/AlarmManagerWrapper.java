@@ -35,12 +35,12 @@ public class AlarmManagerWrapper extends BroadcastReceiver {
 		LoggerWrapper.LogDebug(eventType.name());
 
 		if (eventType == EventType.EVENT_CHANGE || eventType == EventType.EVENT_AFTER_BREAK) {
-			this.internalStorageWrapper.saveUpdatedLastUseOfContraceptionToStorage(CalendarWrapper.getTodayAsDayOfYear());
+			this.internalStorageWrapper.saveUpdatedLastUseOfContraceptionToStorage(CalendarWrapper.getToday());
 			this.internalStorageWrapper.saveUpdatedIncrementedUsedTimes();
 
 			LoggerWrapper.LogDebug("EventType is EventChange or EventAfterBreak");
 		} else {
-			this.internalStorageWrapper.saveUpdatedLastBreakOfContraceptionToStorage(CalendarWrapper.getTodayAsDayOfYear());
+			this.internalStorageWrapper.saveUpdatedLastBreakOfContraceptionToStorage(CalendarWrapper.getToday());
 			this.internalStorageWrapper.saveUpdatedResetedUsedTimes();
 
 			LoggerWrapper.LogDebug("EventType is EventBreak");

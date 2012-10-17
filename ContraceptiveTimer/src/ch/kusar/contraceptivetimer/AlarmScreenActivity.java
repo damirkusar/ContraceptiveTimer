@@ -198,8 +198,8 @@ public class AlarmScreenActivity extends FragmentActivity implements CancelDialo
 		acd.setAlarmTimeHourOfDay(hours);
 		acd.setAlarmTimeMinuteOfDay(minutes);
 		acd.setContraceptiveType(this.contraceptiveType);
-		acd.setLastUseOfContraceptiveDayOfYear(CalendarWrapper.getTodayAsDayOfYear());
-		acd.setLastBreakDayOfYear(CalendarWrapper.getTodayOneWeekAgoAsDayOfYear());
+		acd.setLastUseOfContraceptive(CalendarWrapper.getToday());
+		acd.setLastBreak(CalendarWrapper.getTodayOneWeekAgo());
 
 		this.internalStorageWrapper.saveToStorage(acd);
 

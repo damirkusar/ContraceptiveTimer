@@ -26,13 +26,13 @@ public class AlarmDataCalculator {
 	}
 
 	private boolean isNextEventABreakAlarmEvent() {
-		int lastBreakDayOfYear = this.AlarmCalculationData.getLastBreakDayOfYear();
-		int lastUseOfContraceptiveDayOfYear = this.AlarmCalculationData.getLastUseOfContraceptiveDayOfYear();
+		CalendarWrapper lbdoy = this.AlarmCalculationData.getLastBreak();
+		CalendarWrapper luocu = this.AlarmCalculationData.getLastUseOfContraceptive();
 
-		if (lastBreakDayOfYear == lastUseOfContraceptiveDayOfYear) {
+		if (lbdoy.toString().equals(luocu.toString())) {
 			return true;
 		}
-		if (lastBreakDayOfYear < lastUseOfContraceptiveDayOfYear && this.AlarmCalculationData.getContraceptiveType() == ContraceptiveType.CONTRACEPTION_RING) {
+		if ((lbdoy.getTimeInMillis() < luocu.getTimeInMillis() && this.AlarmCalculationData.getContraceptiveType() == ContraceptiveType.CONTRACEPTION_RING)) {
 			return true;
 		}
 		if (this.getNumberOfDaysSinceLastBreak() >= 28) {
@@ -43,17 +43,11 @@ public class AlarmDataCalculator {
 	}
 
 	public int getNumberOfDaysSinceLastBreak() {
-		int actualDayOfYear = CalendarWrapper.getTodayAsDayOfYear();
-		int lastBreakAsDayOfYear = this.AlarmCalculationData.getLastBreakDayOfYear();
-
-		return actualDayOfYear - lastBreakAsDayOfYear;
+		return CalendarWrapper.daysBetweenTodayAnd(this.AlarmCalculationData.getLastBreak());
 	}
 
 	public int getNumberOfDaysSinceLastUse() {
-		int actualDayOfYear = CalendarWrapper.getTodayAsDayOfYear();
-		int lastUseAsDayOfYear = this.AlarmCalculationData.getLastUseOfContraceptiveDayOfYear();
-
-		return actualDayOfYear - lastUseAsDayOfYear;
+		return CalendarWrapper.daysBetweenTodayAnd(this.AlarmCalculationData.getLastUseOfContraceptive());
 	}
 
 	private AlarmEventData getNextAlarmEventAfterBreak() {
@@ -69,11 +63,13 @@ public class AlarmDataCalculator {
 			alarmEventData.setAlarmMessage(AlarmMessage.getPillChangeMessage(this.AlarmCalculationData.getNextNumberOfUsedContraception()));
 		}
 
-		int nextAlarmDay = this.AlarmCalculationData.getLastBreakDayOfYear() + 7;
+		CalendarWrapper lastBreak = this.AlarmCalculationData.getLastBreak();
+		CalendarWrapper nextAlarm = new CalendarWrapper(lastBreak.getYear(), lastBreak.getMonth(), lastBreak.getDayOfMonth());
+		nextAlarm.addDays(7);
 
 		alarmEventData.setEventType(EventType.EVENT_AFTER_BREAK);
 
-		this.setAlarmEventData(alarmEventData, nextAlarmDay);
+		this.setAlarmEventData(alarmEventData, nextAlarm);
 
 		return alarmEventData;
 	}
@@ -91,9 +87,11 @@ public class AlarmDataCalculator {
 			alarmEventData.setAlarmMessage(AlarmMessage.getPillRemoveMessage());
 		}
 
-		int nextAlarmDay = this.AlarmCalculationData.getLastBreakDayOfYear() + 28;
+		CalendarWrapper lastBreak = this.AlarmCalculationData.getLastBreak();
+		CalendarWrapper nextAlarm = new CalendarWrapper(lastBreak.getYear(), lastBreak.getMonth(), lastBreak.getDayOfMonth());
+		nextAlarm.addDays(28);
 
-		this.setAlarmEventData(alarmEventData, nextAlarmDay);
+		this.setAlarmEventData(alarmEventData, nextAlarm);
 		alarmEventData.setEventType(EventType.EVENT_BREAK_ALARM);
 
 		return alarmEventData;
@@ -112,18 +110,23 @@ public class AlarmDataCalculator {
 			alarmEventData.setAlarmMessage(AlarmMessage.getPillChangeMessage(this.AlarmCalculationData.getNextNumberOfUsedContraception()));
 		}
 
-		int nextAlarmDay = this.AlarmCalculationData.getLastUseOfContraceptiveDayOfYear() + this.AlarmCalculationData.getIntervalDays();
+		CalendarWrapper lastUseOfContraceptive = this.AlarmCalculationData.getLastUseOfContraceptive();
+		CalendarWrapper nextAlarm = new CalendarWrapper(lastUseOfContraceptive.getYear(), lastUseOfContraceptive.getMonth(),
+				lastUseOfContraceptive.getDayOfMonth());
+		nextAlarm.addDays(this.AlarmCalculationData.getIntervalDays());
 
-		this.setAlarmEventData(alarmEventData, nextAlarmDay);
+		this.setAlarmEventData(alarmEventData, nextAlarm);
 		alarmEventData.setEventType(EventType.EVENT_CHANGE);
 
 		return alarmEventData;
 	}
 
-	private void setAlarmEventData(AlarmEventData alarmEventData, int nextAlarmDay) {
+	private void setAlarmEventData(AlarmEventData alarmEventData, CalendarWrapper cal) {
 
 		CalendarWrapper calendarWrapper = new CalendarWrapper();
-		calendarWrapper.setDayOfYear(nextAlarmDay);
+		calendarWrapper.setYear(cal.getYear());
+		calendarWrapper.setMonth(cal.getMonth());
+		calendarWrapper.setDayOfMonth(cal.getDayOfMonth());
 		calendarWrapper.setHourOfDay(this.AlarmCalculationData.getAlarmTimeHourOfDay());
 		calendarWrapper.setMinutes(this.AlarmCalculationData.getAlarmTimeMinutes());
 

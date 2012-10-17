@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testrun name="AlarmEventRetrieverTest.testRetrieveAlarmEventData_AlarmCalculationDataFileIsAvailableDefaultData_ShouldReturnExpectedData" project="ContraceptiveTimerTest" tests="1" started="1" failures="1" errors="0" ignored="0">
+  <testsuite name="ch.kusar.contraceptivetimer.test.retriever.AlarmEventRetrieverTest" time="144.662">
+    <testcase name="testRetrieveAlarmEventData_AlarmCalculationDataFileIsAvailableDefaultData_ShouldReturnExpectedData" classname="ch.kusar.contraceptivetimer.test.retriever.AlarmEventRetrieverTest" time="144.662">
+      <failure>junit.framework.ComparisonFailure: expected:&lt;It's time, take your 1st p...&gt; but was:&lt;Time for a break, DO NOT take a new P...&gt;&#13;
+at ch.kusar.contraceptivetimer.test.retriever.AlarmEventRetrieverTest.testRetrieveAlarmEventData_AlarmCalculationDataFileIsAvailableDefaultData_ShouldReturnExpectedData(AlarmEventRetrieverTest.java:78)&#13;
+at java.lang.reflect.Method.invokeNative(Native Method)&#13;
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:169)&#13;
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:154)&#13;
+at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:529)&#13;
+at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1448)&#13;
+
+</failure>
+    </testcase>
+  </testsuite>
+</testrun>

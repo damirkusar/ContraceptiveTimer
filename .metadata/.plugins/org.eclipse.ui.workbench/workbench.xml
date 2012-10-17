@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="37" version="2.0">
+<workbench progressCount="32" version="2.0">
 <workbenchAdvisor/>
-<window height="768" maximized="true" width="1024" x="35" y="56">
+<window height="878" maximized="true" width="718" x="4" y="22">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -15,20 +15,21 @@
 <coolItem id="adt.actionSet.wizards" itemType="typeToolBarContribution" x="76" y="22"/>
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="100" y="22"/>
 <coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="62" y="22"/>
-<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="84" y="22"/>
 <coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="98" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="152" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.compare.CompareEditor" itemType="typePlaceholder" x="76" y="22"/>
-<coolItem id="com.android.ide.eclipse.editors.CommonXmlEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="com.android.ide.eclipse.editors.CommonXmlEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="UserSeparator" itemType="typeSeparator"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="84" y="22"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="152" y="22"/>
 </coolbarLayout>
 <page aggregateWorkingSetId="Aggregate for window 1341851882980" focus="true" label="Workspace - Java">
 <editors>
@@ -39,28 +40,21 @@
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
-<part id="3"/>
-<part id="4"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AlarmScreenActivity.java" partName="AlarmScreenActivity.java" path="/Volumes/Data/softver/Projects/ContraceptiveTimer/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/AlarmScreenActivity.java" title="AlarmScreenActivity.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/AlarmScreenActivity.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/AlarmScreenActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1698" selectionTopPixel="328"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AlarmEventRetrieverTest.java" partName="AlarmEventRetrieverTest.java" path="/Volumes/Data/softver/Projects/ContraceptiveTimer/ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/retriever/AlarmEventRetrieverTest.java" title="AlarmEventRetrieverTest.java" tooltip="ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/retriever/AlarmEventRetrieverTest.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/retriever/AlarmEventRetrieverTest.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2844" selectionTopPixel="636"/>
 </editor>
-<editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="activity_homescreen.xml" partName="activity_homescreen.xml" path="/Volumes/Data/softver/Projects/ContraceptiveTimer/ContraceptiveTimer/res/layout/activity_homescreen.xml" title="activity_homescreen.xml" tooltip="ContraceptiveTimer/res/layout/activity_homescreen.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ContraceptiveTimer/res/layout/activity_homescreen.xml"/>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AlarmDataCalculator.java" partName="AlarmDataCalculator.java" path="/Volumes/Data/softver/Projects/ContraceptiveTimer/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/calculator/AlarmDataCalculator.java" title="AlarmDataCalculator.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/calculator/AlarmDataCalculator.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/calculator/AlarmDataCalculator.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1511" selectionTopPixel="285"/>
 </editor>
-<editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="styles_textview.xml" partName="styles_textview.xml" path="/Volumes/Data/softver/Projects/ContraceptiveTimer/ContraceptiveTimer/res/values/styles_textview.xml" title="styles_textview.xml" tooltip="ContraceptiveTimer/res/values/styles_textview.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ContraceptiveTimer/res/values/styles_textview.xml"/>
-</editor>
-<editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="styles.xml" partName="styles.xml" path="/Volumes/Data/softver/Projects/ContraceptiveTimer/ContraceptiveTimer/res/values/styles.xml" title="styles.xml" tooltip="ContraceptiveTimer/res/values/styles.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ContraceptiveTimer/res/values/styles.xml"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AlarmManagerWrapper.java" partName="AlarmManagerWrapper.java" path="/Volumes/Data/softver/Projects/ContraceptiveTimer/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/wrapper/AlarmManagerWrapper.java" title="AlarmManagerWrapper.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/wrapper/AlarmManagerWrapper.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/wrapper/AlarmManagerWrapper.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2857" selectionTopPixel="459"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AlarmDataCalculatorTest.java" partName="AlarmDataCalculatorTest.java" path="/Volumes/Data/softver/Projects/ContraceptiveTimer/ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/calculator/AlarmDataCalculatorTest.java" title="AlarmDataCalculatorTest.java" tooltip="ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/calculator/AlarmDataCalculatorTest.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/calculator/AlarmDataCalculatorTest.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="10690" selectionTopPixel="2730"/>
 </editor>
 </editors>
 <views>
@@ -111,6 +105,9 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Warnings (2 items)"/>
+</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="127" org.eclipse.ui.ide.pathField="176" org.eclipse.ui.ide.resourceField="117" org.eclipse.ui.ide.severityAndDescriptionField="655"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -159,7 +156,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.debug.ui.DebugView" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -231,10 +228,10 @@
 <view id="org.eclipse.team.ui.GenericHistoryView"/>
 <view id="org.eclipse.debug.ui.ExpressionView"/>
 <view id="org.eclipse.ui.views.TaskList"/>
-<view id="org.eclipse.jdt.junit.ResultView"/>
 <view id="org.eclipse.pde.runtime.LogView"/>
-<view id="org.eclipse.jdt.ui.PackageExplorer"/>
+<view id="org.eclipse.jdt.junit.ResultView"/>
 <view id="com.android.ide.eclipse.ddms.views.LogCatView"/>
+<view id="org.eclipse.jdt.ui.PackageExplorer"/>
 <fastViewBars>
 <fastViewBar fastViewLocation="131072" id="right" orientation="512" selectedTabId="org.eclipse.ui.views.ContentOutline" style="0">
 <fastViews>
@@ -264,8 +261,8 @@
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.21192983" ratioLeft="302" ratioRight="1123" relationship="2" relative="left"/>
-<info folder="true" part="bottom" ratio="0.7697368" ratioLeft="585" ratioRight="175" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.jdt.junit.ResultView" appearance="2" expanded="2">
+<info folder="true" part="bottom" ratio="0.64973956" ratioLeft="499" ratioRight="269" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.debug.ui.DebugView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
 <page content="org.eclipse.jdt.ui.SourceView" label="Declaration"/>
@@ -278,6 +275,7 @@
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="org.eclipse.pde.runtime.LogView" label="Error Log"/>
 <page content="org.eclipse.jdt.junit.ResultView" label="JUnit"/>
+<page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
 <page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -293,6 +291,7 @@
 <part id="9"/>
 <part id="10"/>
 <part id="11"/>
+<part id="12"/>
 </presentation>
 </folder>
 </info>
@@ -305,14 +304,6 @@
 </folder>
 </info>
 </mainWindow>
-<detachedWindow height="1024" width="1280" x="1440" y="0">
-<folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">
-<page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
-</folder>
-</detachedWindow>
 </layout>
 </perspective>
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
@@ -424,122 +415,162 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/ContraceptiveTimer/res/values/styles_button.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/ContraceptiveTimer/res/values/styles_layout.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/AlarmScreenActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/ContraceptiveTimer/res/layout-land/activity_alarmscreen.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="" path="/ContraceptiveTimer/res/layout-land/activity_alarmscreen.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/ContraceptiveTimer/res/values/styles_textview.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/ContraceptiveTimer/res/layout/activity_homescreen.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/ContraceptiveTimer/res/values/colors.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/ContraceptiveTimer/res/values/styles_textview.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/ContraceptiveTimer/res/values/styles.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="" path="/ContraceptiveTimer/res/layout/activity_homescreen.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/ContraceptiveTimer/res/values/styles_button.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/ContraceptiveTimer/res/layout/activity_alarmscreen.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/AlarmScreenActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/ContraceptiveTimer/res/layout/activity_homescreen.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/ContraceptiveTimer/res/values/styles_textview.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/ContraceptiveTimer/res/values/styles.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/wrapper/AlarmManagerWrapper.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/retriever/AlarmEventRetrieverTest.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/retriever/AlarmEventRetriever.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/calculator/AlarmDataCalculator.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/calculator/AlarmCalculationData.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/calculator/AlarmDataCalculatorTest.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/wrapper/CalendarWrapper.java"/>
 </editors>
-<item historyLabel="activity_alarmscreen.xml" index="4">
-<position info="not_deleted" x="680" y="446"/>
+<item historyLabel="AlarmEventRetriever.java" index="1">
+<position info="not_deleted" x="463" y="0"/>
 </item>
-<item historyLabel="styles_button.xml" index="0"/>
-<item historyLabel="AlarmScreenActivity.java" index="2">
-<position info="not_deleted" x="5806" y="20"/>
+<item historyLabel="AlarmEventRetriever.java" index="1">
+<position info="not_deleted" x="582" y="0"/>
 </item>
-<item historyLabel="activity_alarmscreen.xml" index="3"/>
-<item historyLabel="styles_button.xml" index="0"/>
-<item historyLabel="AlarmScreenActivity.java" index="2">
-<position info="not_deleted" x="5806" y="20"/>
+<item historyLabel="AlarmEventRetriever.java" index="1">
+<position info="not_deleted" x="671" y="0"/>
 </item>
-<item historyLabel="activity_alarmscreen.xml" index="3">
-<position info="not_deleted" x="1788" y="553"/>
+<item historyLabel="AlarmEventRetriever.java" index="1">
+<position info="not_deleted" x="709" y="0"/>
 </item>
-<item historyLabel="activity_alarmscreen.xml" index="4">
-<position info="not_deleted" x="286" y="158"/>
+<item historyLabel="AlarmEventRetriever.java" index="1">
+<position info="not_deleted" x="801" y="0"/>
 </item>
-<item historyLabel="styles_textview.xml" index="5"/>
-<item historyLabel="activity_alarmscreen.xml" index="3"/>
-<item historyLabel="AlarmScreenActivity.java" index="2">
-<position info="not_deleted" x="5806" y="20"/>
-</item>
-<item historyLabel="AlarmScreenActivity.java" index="2">
-<position info="not_deleted" x="2286" y="0"/>
-</item>
-<item historyLabel="AlarmScreenActivity.java" index="2">
-<position info="not_deleted" x="2288" y="0"/>
-</item>
-<item historyLabel="AlarmScreenActivity.java" index="2">
-<position info="not_deleted" x="2239" y="46"/>
-</item>
-<item historyLabel="AlarmScreenActivity.java" index="2">
-<position info="not_deleted" x="2447" y="0"/>
-</item>
-<item historyLabel="activity_alarmscreen.xml" index="3"/>
-<item historyLabel="styles_textview.xml" index="5"/>
-<item historyLabel="activity_alarmscreen.xml" index="3">
-<position info="not_deleted" x="447" y="214"/>
-</item>
-<item historyLabel="styles_textview.xml" index="5"/>
-<item historyLabel="activity_alarmscreen.xml" index="3"/>
-<item historyLabel="styles_layout.xml" index="1"/>
-<item historyLabel="activity_alarmscreen.xml" index="3"/>
-<item historyLabel="activity_homescreen.xml" index="6"/>
-<item historyLabel="colors.xml" index="7"/>
-<item historyLabel="activity_homescreen.xml" index="6">
-<position info="not_deleted" x="363" y="249"/>
-</item>
-<item historyLabel="styles_textview.xml" index="8"/>
-<item historyLabel="activity_homescreen.xml" index="6">
-<position info="not_deleted" x="124" y="237"/>
-</item>
-<item historyLabel="styles.xml" index="9"/>
-<item historyLabel="styles_textview.xml" index="8"/>
-<item historyLabel="activity_homescreen.xml" index="6">
-<position info="not_deleted" x="194" y="0"/>
-</item>
-<item historyLabel="activity_homescreen.xml" index="10">
-<position info="not_deleted" x="363" y="249"/>
-</item>
-<item historyLabel="styles_textview.xml" index="8"/>
-<item historyLabel="activity_homescreen.xml" index="6">
-<position info="not_deleted" x="454" y="0"/>
-</item>
-<item historyLabel="activity_homescreen.xml" index="10">
-<position info="not_deleted" x="1153" y="223"/>
-</item>
-<item historyLabel="styles_button.xml" index="11"/>
-<item historyLabel="activity_homescreen.xml" index="6">
-<position info="not_deleted" x="363" y="249"/>
-</item>
-<item historyLabel="styles_textview.xml" index="8"/>
-<item historyLabel="styles_button.xml" index="11"/>
-<item historyLabel="activity_homescreen.xml" index="6"/>
-<item historyLabel="activity_alarmscreen.xml" index="12"/>
-<item historyLabel="AlarmScreenActivity.java" index="13">
+<item historyLabel="AlarmDataCalculator.java" index="2">
 <position/>
 </item>
-<item historyLabel="activity_homescreen.xml" index="14">
-<position info="not_deleted" x="363" y="249"/>
+<item historyLabel="AlarmDataCalculator.java" index="2">
+<position/>
 </item>
-<item historyLabel="styles_textview.xml" index="15"/>
-<item historyLabel="activity_homescreen.xml" index="14"/>
-<item historyLabel="styles.xml" index="16"/>
-<item historyLabel="styles_textview.xml" index="15"/>
-<item historyLabel="AlarmScreenActivity.java" index="13">
-<position info="not_deleted" x="1726" y="0"/>
+<item historyLabel="AlarmEventRetrieverTest.java" index="0">
+<position info="not_deleted" x="3073" y="28"/>
 </item>
-<item historyLabel="AlarmScreenActivity.java" index="13">
-<position info="not_deleted" x="1698" y="0"/>
+<item historyLabel="AlarmCalculationData.java" index="3">
+<position info="not_deleted" x="1527" y="0"/>
 </item>
-<item historyLabel="AlarmManagerWrapper.java" index="17">
-<position info="not_deleted" x="2123" y="16"/>
+<item historyLabel="AlarmDataCalculator.java" index="2">
+<position/>
 </item>
-<item active="true" historyLabel="AlarmManagerWrapper.java" index="17">
-<position info="not_deleted" x="3924" y="20"/>
+<item historyLabel="AlarmDataCalculator.java" index="2">
+<position/>
+</item>
+<item historyLabel="AlarmDataCalculator.java" index="2">
+<position/>
+</item>
+<item historyLabel="AlarmDataCalculator.java" index="2">
+<position/>
+</item>
+<item historyLabel="AlarmEventRetrieverTest.java" index="0">
+<position info="not_deleted" x="2844" y="0"/>
+</item>
+<item historyLabel="AlarmEventRetriever.java" index="1">
+<position info="not_deleted" x="463" y="0"/>
+</item>
+<item historyLabel="AlarmEventRetriever.java" index="1">
+<position info="not_deleted" x="582" y="0"/>
+</item>
+<item historyLabel="AlarmEventRetriever.java" index="1">
+<position info="not_deleted" x="671" y="0"/>
+</item>
+<item historyLabel="AlarmEventRetriever.java" index="1">
+<position info="not_deleted" x="709" y="0"/>
+</item>
+<item historyLabel="AlarmEventRetriever.java" index="1">
+<position info="not_deleted" x="801" y="0"/>
+</item>
+<item historyLabel="AlarmDataCalculator.java" index="2">
+<position info="not_deleted" x="621" y="0"/>
+</item>
+<item historyLabel="AlarmDataCalculator.java" index="2">
+<position info="not_deleted" x="968" y="0"/>
+</item>
+<item historyLabel="AlarmDataCalculator.java" index="2">
+<position info="not_deleted" x="1036" y="0"/>
+</item>
+<item historyLabel="AlarmDataCalculator.java" index="2">
+<position info="not_deleted" x="1118" y="0"/>
+</item>
+<item historyLabel="AlarmDataCalculator.java" index="2">
+<position info="not_deleted" x="1511" y="0"/>
+</item>
+<item historyLabel="AlarmDataCalculatorTest.java" index="4">
+<position info="not_deleted" x="10771" y="94"/>
+</item>
+<item historyLabel="AlarmDataCalculatorTest.java" index="4">
+<position info="not_deleted" x="10690" y="0"/>
+</item>
+<item historyLabel="AlarmDataCalculator.java" index="2">
+<position info="not_deleted" x="621" y="0"/>
+</item>
+<item historyLabel="AlarmDataCalculator.java" index="2">
+<position info="not_deleted" x="968" y="0"/>
+</item>
+<item historyLabel="AlarmDataCalculator.java" index="2">
+<position info="not_deleted" x="1036" y="0"/>
+</item>
+<item historyLabel="AlarmDataCalculator.java" index="2">
+<position info="not_deleted" x="1118" y="0"/>
+</item>
+<item historyLabel="AlarmDataCalculator.java" index="2">
+<position info="not_deleted" x="1189" y="0"/>
+</item>
+<item historyLabel="CalendarWrapper.java" index="5">
+<position info="not_deleted" x="599" y="0"/>
+</item>
+<item historyLabel="AlarmDataCalculator.java" index="2">
+<position info="not_deleted" x="1189" y="0"/>
+</item>
+<item historyLabel="AlarmDataCalculator.java" index="2">
+<position info="not_deleted" x="1319" y="0"/>
+</item>
+<item historyLabel="AlarmDataCalculator.java" index="2">
+<position info="not_deleted" x="1511" y="0"/>
+</item>
+<item historyLabel="AlarmDataCalculatorTest.java" index="4">
+<position info="not_deleted" x="9633" y="158"/>
+</item>
+<item historyLabel="AlarmDataCalculatorTest.java" index="4">
+<position info="not_deleted" x="10104" y="0"/>
+</item>
+<item historyLabel="AlarmDataCalculatorTest.java" index="4">
+<position info="not_deleted" x="2570" y="14"/>
+</item>
+<item historyLabel="AlarmDataCalculatorTest.java" index="4">
+<position info="not_deleted" x="9633" y="158"/>
+</item>
+<item historyLabel="AlarmDataCalculatorTest.java" index="4">
+<position info="not_deleted" x="10106" y="0"/>
+</item>
+<item historyLabel="AlarmDataCalculatorTest.java" index="4">
+<position info="not_deleted" x="2570" y="14"/>
+</item>
+<item historyLabel="AlarmDataCalculatorTest.java" index="4">
+<position info="not_deleted" x="10771" y="94"/>
+</item>
+<item historyLabel="AlarmDataCalculatorTest.java" index="4">
+<position info="not_deleted" x="10690" y="0"/>
+</item>
+<item historyLabel="AlarmDataCalculator.java" index="2">
+<position info="not_deleted" x="621" y="0"/>
+</item>
+<item historyLabel="AlarmDataCalculator.java" index="2">
+<position info="not_deleted" x="968" y="0"/>
+</item>
+<item historyLabel="AlarmDataCalculator.java" index="2">
+<position info="not_deleted" x="1036" y="0"/>
+</item>
+<item historyLabel="AlarmDataCalculator.java" index="2">
+<position info="not_deleted" x="1118" y="0"/>
+</item>
+<item historyLabel="AlarmDataCalculator.java" index="2">
+<position info="not_deleted" x="1189" y="0"/>
+</item>
+<item historyLabel="AlarmDataCalculator.java" index="2">
+<position info="not_deleted" x="1319" y="0"/>
+</item>
+<item active="true" historyLabel="AlarmDataCalculator.java" index="2">
+<position info="not_deleted" x="1511" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -562,50 +593,50 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AlarmDataCalculatorTest.java" tooltip="ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/calculator/AlarmDataCalculatorTest.java">
+<persistable path="/ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/calculator/AlarmDataCalculatorTest.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AlarmEventRetriever.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/retriever/AlarmEventRetriever.java">
+<persistable path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/retriever/AlarmEventRetriever.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AlarmEventRetrieverTest.java" tooltip="ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/retriever/AlarmEventRetrieverTest.java">
+<persistable path="/ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/retriever/AlarmEventRetrieverTest.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InternalStorageWrapper.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/wrapper/InternalStorageWrapper.java">
+<persistable path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/wrapper/InternalStorageWrapper.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AlarmCalculationData.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/calculator/AlarmCalculationData.java">
+<persistable path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/calculator/AlarmCalculationData.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AlarmDataCalculator.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/calculator/AlarmDataCalculator.java">
+<persistable path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/calculator/AlarmDataCalculator.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CalendarWrapper.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/wrapper/CalendarWrapper.java">
+<persistable path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/wrapper/CalendarWrapper.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AlarmCalculationDataTest.java" tooltip="ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/calculator/AlarmCalculationDataTest.java">
+<persistable path="/ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/calculator/AlarmCalculationDataTest.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InternalStorageWrapperTest.java" tooltip="ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/wrapper/InternalStorageWrapperTest.java">
+<persistable path="/ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/wrapper/InternalStorageWrapperTest.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CalendarWrapperForTest.java" tooltip="ContraceptiveTimerTest/src/ch/kusar/test/calendarWrapper/CalendarWrapperForTest.java">
+<persistable path="/ContraceptiveTimerTest/src/ch/kusar/test/calendarWrapper/CalendarWrapperForTest.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AlarmManagerWrapper.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/wrapper/AlarmManagerWrapper.java">
 <persistable path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/wrapper/AlarmManagerWrapper.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="styles.xml" tooltip="ContraceptiveTimer/res/values/styles.xml">
-<persistable path="/ContraceptiveTimer/res/values/styles.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="styles_textview.xml" tooltip="ContraceptiveTimer/res/values/styles_textview.xml">
-<persistable path="/ContraceptiveTimer/res/values/styles_textview.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="activity_homescreen.xml" tooltip="ContraceptiveTimer/res/layout/activity_homescreen.xml">
-<persistable path="/ContraceptiveTimer/res/layout/activity_homescreen.xml"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AlarmScreenActivity.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/AlarmScreenActivity.java">
 <persistable path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/AlarmScreenActivity.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="activity_alarmscreen.xml" tooltip="ContraceptiveTimer/res/layout/activity_alarmscreen.xml">
-<persistable path="/ContraceptiveTimer/res/layout/activity_alarmscreen.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ResourceWrapper.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/wrapper/ResourceWrapper.java">
+<persistable path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/wrapper/ResourceWrapper.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="styles_button.xml" tooltip="ContraceptiveTimer/res/values/styles_button.xml">
-<persistable path="/ContraceptiveTimer/res/values/styles_button.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ResourceWrapper.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/ResourceWrapper.java">
+<persistable path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/ResourceWrapper.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="colors.xml" tooltip="ContraceptiveTimer/res/values/colors.xml">
-<persistable path="/ContraceptiveTimer/res/values/colors.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="activity_alarmscreen.xml" tooltip="ContraceptiveTimer/res/layout-land/activity_alarmscreen.xml">
-<persistable path="/ContraceptiveTimer/res/layout-land/activity_alarmscreen.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="styles_layout.xml" tooltip="ContraceptiveTimer/res/values/styles_layout.xml">
-<persistable path="/ContraceptiveTimer/res/values/styles_layout.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="sv_button.xml" tooltip="ContraceptiveTimer/res/drawable/sv_button.xml">
-<persistable path="/ContraceptiveTimer/res/drawable/sv_button.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="dialog_cancel.xml" tooltip="ContraceptiveTimer/res/layout/dialog_cancel.xml">
-<persistable path="/ContraceptiveTimer/res/layout/dialog_cancel.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AutoStartAlarmManagerWrapper.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/wrapper/AutoStartAlarmManagerWrapper.java">
-<persistable path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/wrapper/AutoStartAlarmManagerWrapper.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LoggerWrapper.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/wrapper/LoggerWrapper.java">
-<persistable path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/wrapper/LoggerWrapper.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InternalStorageWrapper.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/wrapper/InternalStorageWrapper.java">
-<persistable path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/wrapper/InternalStorageWrapper.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainApplicationContext.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/MainApplicationContext.java">
+<persistable path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/MainApplicationContext.java"/>
 </file>
 </mruList>
 </workbench>

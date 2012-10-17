@@ -1,8 +1,0 @@
-<resources>
-	<string name="app_name">ContraceptiveTimer</string>
-	<string name="hello_world">Hello world!</string>
-	<string name="hello_world2">Hello world! We are on test activity, it works!!</string>
-	<string name="menu_settings">Settings</string>
-	<string name="title_activity_main">My Contraception</string>
-	<string name="msg_fileNotFoundOnSetAlarm">"Contraceptive could not set Alarm, please set a new alarm."</string>
-</resources>
