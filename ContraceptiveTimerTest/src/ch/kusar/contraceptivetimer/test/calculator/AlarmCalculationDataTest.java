@@ -40,10 +40,12 @@ public class AlarmCalculationDataTest extends AndroidTestCase {
 		Assert.assertEquals(7, this.alarmCalculationData.getIntervalDays());
 	}
 
-	public void testSetFirstUseWasOn_TypeIsPillAndFirstUseWas2WeeksAgo_TimesUsedIs14() {
+	public void testSetFirstUseWasOn_TypeIsPill_FirstUseWas2WeeksAgo_TimesUsedIs14() {
 		// CalendarWrapper calendarWrapper = new CalendarWrapper(2012, 4, 2);
-		// calendarWrapper.setDayOfYear(CalendarWrapperForTest.getTodayTwoWeeksAgoAsDayOfYear);
+		// calendarWrapper.....(CalendarWrapperForTest.getTodayTwoWeeksAgoAsDayOfYear);
 		//
 		// this.alarmCalculationData.setFirstUseWasOn(calendarWrapper);
+
+		Assert.assertEquals(0, 1);
 	}
 }

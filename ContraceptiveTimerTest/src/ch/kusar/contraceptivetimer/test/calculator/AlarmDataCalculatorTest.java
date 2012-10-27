@@ -5,6 +5,7 @@ import java.util.GregorianCalendar;
 
 import junit.framework.Assert;
 import android.test.AndroidTestCase;
+import android.test.suitebuilder.annotation.Suppress;
 import ch.kusar.contraceptivetimer.businessobjects.AlarmEventData;
 import ch.kusar.contraceptivetimer.businessobjects.AlarmMessage;
 import ch.kusar.contraceptivetimer.businessobjects.ContraceptiveType;
@@ -455,6 +456,65 @@ public class AlarmDataCalculatorTest extends AndroidTestCase {
 
 		Assert.assertEquals(nextEventFromLastUse.getTimeInMillis(), alarmEventData.getAlarmTimeInMilliSeconds());
 		Assert.assertEquals(nextEventFromLastBreak.getTimeInMillis(), alarmEventData.getAlarmTimeInMilliSeconds());
+	}
+
+	@Suppress
+	public void testNextAlarmEvent_LastUseWas31_12_AndLastBreakWas24_12_AndContraceptiveTypeIsPill_ExpectedMessageForChangePillAndCalendarDayIs1_1_2013() {
+
+		CalendarWrapper Dec312012 = CalendarWrapperForTest.dec312012();
+		CalendarWrapper Dec242012 = CalendarWrapperForTest.dec242012();
+
+		this.setupAlarmData(ContraceptiveType.CONTRACEPTION_PILL, Dec312012, Dec242012, true);
+
+		GregorianCalendar nextEventFromLastUse = Dec312012.convertCalendarWrapperIntoGregorianCalendar();
+		nextEventFromLastUse.add(Calendar.DAY_OF_YEAR, 1);
+		nextEventFromLastUse.set(Calendar.HOUR_OF_DAY, 20);
+
+		GregorianCalendar nextEventFromLastBreak = Dec242012.convertCalendarWrapperIntoGregorianCalendar();
+		nextEventFromLastBreak.add(Calendar.DAY_OF_YEAR, 8);
+		nextEventFromLastBreak.set(Calendar.HOUR_OF_DAY, 20);
+
+		Assert.assertEquals(nextEventFromLastUse.getTimeInMillis(), nextEventFromLastBreak.getTimeInMillis());
+
+		CalendarWrapper nextEventFromLastUse_toProve = CalendarWrapperForTest
+				.convertTimeInMilliSecondsToCalendarWrapper(nextEventFromLastUse.getTimeInMillis());
+
+		Assert.assertEquals(2012, nextEventFromLastUse_toProve.getYear());
+		Assert.assertEquals(0, nextEventFromLastUse_toProve.getMonth());
+		Assert.assertEquals(1, nextEventFromLastUse_toProve.getDayOfMonth());
+
+		AlarmEventData alarmEventData = this.alarmDataCalculator.getNextAlarmEvent();
+
+		Assert.assertEquals(AlarmMessage.getPillChangeMessage(1), alarmEventData.getAlarmMessage());
+		Assert.assertEquals(EventType.EVENT_AFTER_BREAK, alarmEventData.getEventType());
+
+		GregorianCalendar cal = new GregorianCalendar();
+		cal.setTimeInMillis(alarmEventData.getAlarmTimeInMilliSeconds());
+
+		Assert.assertEquals(nextEventFromLastUse.getTimeInMillis(), alarmEventData.getAlarmTimeInMilliSeconds());
+		Assert.assertEquals(nextEventFromLastBreak.getTimeInMillis(), alarmEventData.getAlarmTimeInMilliSeconds());
+
+		CalendarWrapper alarmEvent = CalendarWrapperForTest.convertTimeInMilliSecondsToCalendarWrapper(alarmEventData.getAlarmTimeInMilliSeconds());
+
+		Assert.assertEquals(2012, alarmEvent.getYear());
+		Assert.assertEquals(0, alarmEvent.getMonth());
+		Assert.assertEquals(1, alarmEvent.getDayOfMonth());
+	}
+
+	public void testYearChange_ActualDayIsLastDayOfYear2012_AddOneDay_ExpectedIsFirstDayOfYear2013() {
+		CalendarWrapper Dec312012 = CalendarWrapperForTest.dec312012();
+		GregorianCalendar Dec312012GC = Dec312012.convertCalendarWrapperIntoGregorianCalendar();
+
+		Dec312012.addDays(1);
+		Dec312012GC.add(Calendar.DAY_OF_YEAR, 1);
+
+		Assert.assertEquals(2013, Dec312012.getYear());
+		Assert.assertEquals(0, Dec312012.getMonth());
+		Assert.assertEquals(1, Dec312012.getDayOfMonth());
+
+		Assert.assertEquals(2013, Dec312012GC.get(Calendar.YEAR));
+		Assert.assertEquals(0, Dec312012GC.get(Calendar.MONTH));
+		Assert.assertEquals(1, Dec312012GC.get(Calendar.DAY_OF_MONTH));
 	}
 
 	public void testLastSundayWeekAgo() {

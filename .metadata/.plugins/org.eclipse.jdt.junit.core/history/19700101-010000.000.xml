@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testrun name="Rerun ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest.testNextAlarmEvent_LastUseWasLastSundayThreeWeeksAgoAndLastBreakWasLastSundayAndContraceptiveTypeIsRing_ExpectedMessageForChangeRingAndCalendarDayIsNextSunday" project="ContraceptiveTimerTest" tests="0" started="0" failures="0" errors="0" ignored="0"/>
+<testrun name="ContraceptiveTimerTest (1)" project="ContraceptiveTimerTest" tests="0" started="0" failures="0" errors="0" ignored="0"/>

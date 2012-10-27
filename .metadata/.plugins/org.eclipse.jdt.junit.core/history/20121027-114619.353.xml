@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testrun name="AlarmDataCalculatorTest.testNextAlarmEvent_LastUseWas31_12_AndLastBreakWas24_12_AndContraceptiveTypeIsPill_ExpectedMessageForChangePillAndCalendarDayIs1_1_2013" project="ContraceptiveTimerTest" tests="1" started="1" failures="1" errors="0" ignored="0">
+  <testsuite name="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.795">
+    <testcase name="testNextAlarmEvent_LastUseWas31_12_AndLastBreakWas24_12_AndContraceptiveTypeIsPill_ExpectedMessageForChangePillAndCalendarDayIs1_1_2013" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.795">
+      <failure>junit.framework.AssertionFailedError: expected:&lt;1357066800000&gt; but was:&lt;1356980400000&gt;&#13;
+at ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest.testNextAlarmEvent_LastUseWas31_12_AndLastBreakWas24_12_AndContraceptiveTypeIsPill_ExpectedMessageForChangePillAndCalendarDayIs1_1_2013(AlarmDataCalculatorTest.java:492)&#13;
+at java.lang.reflect.Method.invokeNative(Native Method)&#13;
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:169)&#13;
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:154)&#13;
+at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:520)&#13;
+at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1447)&#13;
+
+</failure>
+    </testcase>
+  </testsuite>
+</testrun>
