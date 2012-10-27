@@ -118,13 +118,6 @@ public class AlarmCalculationData implements Serializable {
 		lastBreak.subDays(7);
 
 		this.setLastBreak(lastBreak);
-
-		this.calculateTimesUsed();
-	}
-
-	private void calculateTimesUsed() {
-		int daysSinceLastUse = CalendarWrapper.daysBetweenTodayAnd(this.getLastUseOfContraceptive());
-		this.timesUsed = daysSinceLastUse;
 	}
 
 	@Override

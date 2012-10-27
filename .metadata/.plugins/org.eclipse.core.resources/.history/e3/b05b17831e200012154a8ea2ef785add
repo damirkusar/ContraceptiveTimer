@@ -145,13 +145,6 @@ public class CalendarWrapper implements Serializable {
 		this.convertGregorianCalendarToCalendarWrapper(gc);
 	}
 
-	public void subDays(int days) {
-		GregorianCalendar gc = this.convertCalendarWrapperIntoGregorianCalendar();
-		gc.set(Calendar.DAY_OF_YEAR, gc.get(Calendar.DAY_OF_YEAR) - days);
-
-		this.convertGregorianCalendarToCalendarWrapper(gc);
-	}
-
 	public void convertGregorianCalendarToCalendarWrapper(GregorianCalendar gc) {
 		this.setYear(gc.get(Calendar.YEAR));
 		this.setMonth(gc.get(Calendar.MONTH));
@@ -166,14 +159,9 @@ public class CalendarWrapper implements Serializable {
 	}
 
 	@Override
-	public CalendarWrapper clone() {
-		CalendarWrapper cw = new CalendarWrapper(this.year, this.month, this.dayOfMonth);
-		return cw;
-	}
-
-	@Override
 	public String toString() {
 		String msg = String.format("%1$s-%2$s-%3$s", this.year, this.month, this.dayOfMonth);
 		return msg;
 	}
+
 }

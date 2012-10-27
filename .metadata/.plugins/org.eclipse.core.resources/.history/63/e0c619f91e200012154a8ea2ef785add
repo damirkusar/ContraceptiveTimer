@@ -47,6 +47,6 @@ public class AlarmCalculationDataTest extends AndroidTestCase {
 
 		this.alarmCalculationData.setFirstUseWasOn(cw);
 
-		Assert.assertEquals(7, this.alarmCalculationData.getTimesUsed());
+		Assert.assertEquals(0, 1);
 	}
 }

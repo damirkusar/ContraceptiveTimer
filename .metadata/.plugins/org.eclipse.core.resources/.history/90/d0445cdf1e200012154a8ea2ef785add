@@ -114,17 +114,6 @@ public class AlarmCalculationData implements Serializable {
 	public void setFirstUseWasOn(CalendarWrapper cw) {
 		this.setLastUseOfContraceptive(cw);
 
-		CalendarWrapper lastBreak = cw.clone();
-		lastBreak.subDays(7);
-
-		this.setLastBreak(lastBreak);
-
-		this.calculateTimesUsed();
-	}
-
-	private void calculateTimesUsed() {
-		int daysSinceLastUse = CalendarWrapper.daysBetweenTodayAnd(this.getLastUseOfContraceptive());
-		this.timesUsed = daysSinceLastUse;
 	}
 
 	@Override
