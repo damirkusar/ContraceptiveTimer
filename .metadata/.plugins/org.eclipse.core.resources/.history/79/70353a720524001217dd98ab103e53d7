@@ -1,0 +1,19 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	style="@style/SV_Theme_Dialog"
+	android:orientation="vertical" >
+	<TextView
+		android:id="@+id/dialog_textView_title"
+		style="@style/SV_TextView_Dialog_Title"
+		android:text="@string/startDialog_title"
+		android:textAppearance="?android:attr/textAppearanceMedium" />
+	<View style="@style/SV_View_Separator" />
+	<TextView
+		android:id="@+id/dialog_textView_content"
+		style="@style/SV_TextView_Dialog_Content"
+		android:text="@string/startDialog_content"
+		android:textAppearance="?android:attr/textAppearanceMedium" />
+	<DatePicker
+		android:id="@+id/datePicker"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" />
+</LinearLayout>

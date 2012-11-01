@@ -3,13 +3,13 @@
 	android:orientation="vertical" >
 	<TextView
 		android:id="@+id/dialog_textView_title"
-		style="@style/SV_TextView_CancelDialog_Title"
+		style="@style/SV_TextView_Dialog_Title"
 		android:text="@string/cancelDialog_title"
 		android:textAppearance="?android:attr/textAppearanceMedium" />
 	<View style="@style/SV_View_Separator" />
 	<TextView
 		android:id="@+id/dialog_textView_content"
-		style="@style/SV_TextView_CancelDialog_Content"
+		style="@style/SV_TextView_Dialog_Content"
 		android:text="@string/cancelDialog_content"
 		android:textAppearance="?android:attr/textAppearanceMedium" />
 </LinearLayout>

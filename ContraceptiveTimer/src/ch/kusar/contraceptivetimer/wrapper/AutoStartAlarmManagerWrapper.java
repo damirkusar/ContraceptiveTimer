@@ -11,7 +11,7 @@ public class AutoStartAlarmManagerWrapper extends BroadcastReceiver {
 	public void onReceive(Context context, Intent intent) {
 		if (intent.getAction().equals("android.intent.action.BOOT_COMPLETED")) {
 			LoggerWrapper.LogInfo("ContraceptiveTimer is now in onReceive method while device booted.");
-			this.alarmWrapper.SetAlarm();
+			this.alarmWrapper.SetupAlarm();
 		}
 	}
 }

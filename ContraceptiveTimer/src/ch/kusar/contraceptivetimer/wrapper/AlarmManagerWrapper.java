@@ -11,10 +11,7 @@ import android.os.Bundle;
 import ch.kusar.contraceptivetimer.MainApplicationContext;
 import ch.kusar.contraceptivetimer.R;
 import ch.kusar.contraceptivetimer.businessobjects.AlarmEventData;
-import ch.kusar.contraceptivetimer.businessobjects.AlarmMessage;
-import ch.kusar.contraceptivetimer.businessobjects.ContraceptiveType;
 import ch.kusar.contraceptivetimer.businessobjects.EventType;
-import ch.kusar.contraceptivetimer.calculator.AlarmCalculationData;
 import ch.kusar.contraceptivetimer.retriever.AlarmEventRetriever;
 
 public class AlarmManagerWrapper extends BroadcastReceiver {
@@ -47,7 +44,7 @@ public class AlarmManagerWrapper extends BroadcastReceiver {
 		}
 
 		// TODO: use it when beta test.
-		this.SetAlarm();
+		this.SetupAlarm();
 	}
 
 	@SuppressWarnings("deprecation")
@@ -76,66 +73,39 @@ public class AlarmManagerWrapper extends BroadcastReceiver {
 		mNotificationManager.notify(AlarmManagerWrapper.ID, notification);
 	}
 
-	public void SetAlarm() {
+	public void SetupAlarm() {
 		Context context = MainApplicationContext.getAppContext();
 
+		AlarmEventData alarmEventData = this.retreiveEventData();
+		this.setAlarm(context, alarmEventData);
+	}
+
+	private AlarmEventData retreiveEventData() {
 		LoggerWrapper.LogDebug("ContraceptiveTimer is now retrieving EventData.");
 
 		AlarmEventRetriever alarmEventRetriever = new AlarmEventRetriever();
 		AlarmEventData alarmEventData = alarmEventRetriever.retrieveAlarmEventData();
 		LoggerWrapper.LogDebug(alarmEventData.toString());
+		return alarmEventData;
+	}
 
+	public void setAlarm(Context context, AlarmEventData alarmEventData) {
 		if (alarmEventData != null) {
-			LoggerWrapper.LogDebug("ContraceptiveTimer is now trying to setup alarm from file..");
-
 			AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
-			AlarmCalculationData acd = this.internalStorageWrapper.loadFromStorage();
-
 			Intent intent = new Intent(context, AlarmManagerWrapper.class);
-
-			long alarmtime = 0;
-
-			if (acd.getTimesUsed() == 0) {
-				intent.putExtra(AlarmEventData.getIntentNameAlarmMmessage(), this.getCorrectMessage(acd));
-				intent.putExtra(AlarmEventData.getIntentNameEventType(), EventType.EVENT_AFTER_BREAK);
-				alarmtime = CalendarWrapper.getNowAsMilliseconds();
-
-				LoggerWrapper.LogDebug("Its the first use of something.");
-			} else {
-				intent.putExtra(AlarmEventData.getIntentNameAlarmMmessage(), alarmEventData.getAlarmMessage());
-				intent.putExtra(AlarmEventData.getIntentNameEventType(), alarmEventData.getEventType());
-				alarmtime = alarmEventData.getAlarmTimeInMilliSeconds();
-
-				LoggerWrapper.LogDebug("Its not the first use of something.");
-			}
+			intent.putExtra(AlarmEventData.getIntentNameAlarmMmessage(), alarmEventData.getAlarmMessage());
+			intent.putExtra(AlarmEventData.getIntentNameEventType(), alarmEventData.getEventType());
+			long alarmtime = alarmEventData.getAlarmTimeInMilliSeconds();
 
 			PendingIntent pi = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-			// TODO: Comment it in.
 			am.set(AlarmManager.RTC_WAKEUP, alarmtime, pi);
 
-			// TODO: For Tests, remove it.
-			// GregorianCalendar gregorianCalendar = (GregorianCalendar)
-			// Calendar.getInstance();
-			// gregorianCalendar.add(Calendar.SECOND, 5);
-			// am.set(AlarmManager.RTC_WAKEUP,
-			// gregorianCalendar.getTimeInMillis(), pi);
 			LoggerWrapper.LogDebug("ContraceptiveTimer is now finishing the setAlarm Method.");
 		} else {
 			LoggerWrapper.LogDebug("ContraceptiveTimer Alarm not set.");
 		}
-	}
-
-	private String getCorrectMessage(AlarmCalculationData acd) {
-		if (acd.getContraceptiveType() == ContraceptiveType.CONTRACEPTION_PATCH) {
-			return AlarmMessage.getPatchChangeMessage(1);
-		} else if (acd.getContraceptiveType() == ContraceptiveType.CONTRACEPTION_RING) {
-			return AlarmMessage.getRingChangeMessage();
-		} else if (acd.getContraceptiveType() == ContraceptiveType.CONTRACEPTION_PILL) {
-			return AlarmMessage.getPillChangeMessage(1);
-		}
-		return "";
 	}
 
 	public void CancelAlarm() {

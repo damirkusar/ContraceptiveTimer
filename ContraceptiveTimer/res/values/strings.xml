@@ -11,12 +11,16 @@
 	<string name="cancelDialog_content">This action will stop your timer! </string>
 	<string name="cancelDialog_yes">Yes, please </string>
 	<string name="cancelDialog_no">No, thanks </string>
+	<string name="startDialog_title">Set first use of your cycle</string>
+	<string name="startDialog_content">Choose a specific date or start today a new cycle. </string>
+	<string name="startDialog_now">Start today </string>
+	<string name="startDialog_specificDate">Start specific </string>
 	<!-- HomeScreen -->
 	<string name="imageview_logo_contentdescription">MyContraception Logo</string>
 	<string name="text_introduction">Just 3 easy steps to setup everything you need.</string>
 	<string name="text_setupStep_1">1. Choose your contraception type.</string>
 	<string name="text_setupStep_2">2. Choose your alarm time.</string>
-	<string name="text_setupStep_3">3. Start today a new cycle.</string>
+	<string name="text_setupStep_3">3. Start your cycle.</string>
 	<string name="text_readyToStart">Ready to start? Click!!</string>
 	<!-- AlarmScreen -->
 	<string name="text_updateAlarmTime">Update just alarm time</string>

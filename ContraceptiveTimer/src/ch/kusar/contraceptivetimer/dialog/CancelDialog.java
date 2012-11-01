@@ -22,12 +22,12 @@ public class CancelDialog extends DialogFragment {
 
 		builder.setPositiveButton(R.string.cancelDialog_yes, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
-				CancelDialog.cancelListener.onDialogPositiveClick(CancelDialog.this);
+				CancelDialog.cancelListener.onCancelDialogYesClick(CancelDialog.this);
 			}
 		});
 		builder.setNegativeButton(R.string.cancelDialog_no, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
-				CancelDialog.cancelListener.onDialogNegativeClick(CancelDialog.this);
+				CancelDialog.cancelListener.onCancelDialogNoClick(CancelDialog.this);
 			}
 		});
 		return builder.create();

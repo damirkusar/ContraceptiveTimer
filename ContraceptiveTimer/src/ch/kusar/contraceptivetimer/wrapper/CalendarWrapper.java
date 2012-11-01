@@ -109,7 +109,7 @@ public class CalendarWrapper implements Serializable {
 
 	public static long getNowAsMilliseconds() {
 		GregorianCalendar cal = CalendarWrapper.getGregorianCalendarInstance();
-		cal.add(Calendar.SECOND, 2);
+		// cal.add(Calendar.SECOND, 2);
 		return cal.getTimeInMillis();
 	}
 
@@ -175,5 +175,11 @@ public class CalendarWrapper implements Serializable {
 	public String toString() {
 		String msg = String.format("%1$s-%2$s-%3$s", this.year, this.month, this.dayOfMonth);
 		return msg;
+	}
+
+	public static CalendarWrapper getYesterday() {
+		CalendarWrapper cal = CalendarWrapper.getToday();
+		cal.subDays(1);
+		return cal;
 	}
 }

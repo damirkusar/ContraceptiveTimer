@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="ch.kusar.calendarWrapper.CalendarWrapperForTest"/>
-<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.wrapper.AlarmWrapper"/>
 <fullyQualifiedTypeName name="java.security.SecureRandom"/>
 <fullyQualifiedTypeName name="java.math.BigInteger"/>
 <fullyQualifiedTypeName name="java.util.TimeZone"/>
@@ -55,9 +53,11 @@
 <fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.MainApplicationContext"/>
 <fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.R"/>
 <fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.R.string"/>
-<fullyQualifiedTypeName name="ch.kusar.test.calendarWrapper.CalendarWrapperForTest"/>
+<fullyQualifiedTypeName name="junit.framework.Assert"/>
 <fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
+<fullyQualifiedTypeName name="org.junit.Ignore"/>
+<fullyQualifiedTypeName name="android.test.suitebuilder.annotation.Suppress"/>
+<fullyQualifiedTypeName name="ch.kusar.test.calendarWrapper.CalendarWrapperForTest"/>
 <fullyQualifiedTypeName name="java.util.Calendar"/>
 <fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.wrapper.CalendarWrapper"/>
-<fullyQualifiedTypeName name="junit.framework.Assert"/>
 </qualifiedTypeNameHistroy>

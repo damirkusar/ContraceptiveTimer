@@ -1,0 +1,18 @@
+1351758809465	Copy compilation units
+1351758855458	Rename field 'cancelListener'
+1351759030397	Copy file
+1351759096817	Rename method 'onDialogPositiveClick'
+1351759103307	Rename method 'onDialogNegativeClick'
+1351759169092	Rename method 'onStartDialogPositiveClick'
+1351759181494	Rename method 'onStartDialogNegativeClick'
+1351759203030	Rename method 'onCancelDialogPositiveClick'
+1351759208379	Rename method 'onCancelDialogNegativeClick'
+1351760381037	Extract method 'setupButtonsOnStart'
+1351762608323	Extract method 'setupAlarm'
+1351763615655	Rename method 'setupAlarm'
+1351763630891	Rename method 'SetAlarm'
+1351763637185	Rename method 'setup2Alarm'
+1351763662986	Extract method 'retreiveEventData'
+1351764439730	Extract method 'setTodaysAlarm'
+1351766899064	Rename local variable 'lbdoy'
+1351766905644	Rename local variable 'luocu'

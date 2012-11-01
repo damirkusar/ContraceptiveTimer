@@ -48,6 +48,7 @@ public final class R {
         public static final int button_Start=0x7f09000a;
         public static final int button_Stop=0x7f09000b;
         public static final int button_readyToStart=0x7f090012;
+        public static final int datePicker=0x7f090015;
         public static final int dialog_textView_content=0x7f090014;
         public static final int dialog_textView_title=0x7f090013;
         public static final int imageView_Logo=0x7f09000d;
@@ -55,7 +56,7 @@ public final class R {
         public static final int layout_linearRoot=0x7f090001;
         public static final int layout_linearroot_landscape=0x7f09000c;
         public static final int layout_relativeRoot=0x7f090000;
-        public static final int menu_settings=0x7f090015;
+        public static final int menu_settings=0x7f090016;
         public static final int textView_1Step=0x7f09000f;
         public static final int textView_2Step=0x7f090010;
         public static final int textView_3Step=0x7f090011;
@@ -71,6 +72,7 @@ public final class R {
         public static final int activity_alarmscreen=0x7f030000;
         public static final int activity_homescreen=0x7f030001;
         public static final int dialog_cancel=0x7f030002;
+        public static final int dialog_start=0x7f030003;
     }
     public static final class menu {
         public static final int activity_main=0x7f080000;
@@ -78,27 +80,27 @@ public final class R {
     public static final class string {
         /**  Message 
          */
-        public static final int _1=0x7f060015;
-        public static final int _10=0x7f06001e;
-        public static final int _11=0x7f06001f;
-        public static final int _12=0x7f060020;
-        public static final int _13=0x7f060021;
-        public static final int _14=0x7f060022;
-        public static final int _15=0x7f060023;
-        public static final int _16=0x7f060024;
-        public static final int _17=0x7f060025;
-        public static final int _18=0x7f060026;
-        public static final int _19=0x7f060027;
-        public static final int _2=0x7f060016;
-        public static final int _20=0x7f060028;
-        public static final int _21=0x7f060029;
-        public static final int _3=0x7f060017;
-        public static final int _4=0x7f060018;
-        public static final int _5=0x7f060019;
-        public static final int _6=0x7f06001a;
-        public static final int _7=0x7f06001b;
-        public static final int _8=0x7f06001c;
-        public static final int _9=0x7f06001d;
+        public static final int _1=0x7f060019;
+        public static final int _10=0x7f060022;
+        public static final int _11=0x7f060023;
+        public static final int _12=0x7f060024;
+        public static final int _13=0x7f060025;
+        public static final int _14=0x7f060026;
+        public static final int _15=0x7f060027;
+        public static final int _16=0x7f060028;
+        public static final int _17=0x7f060029;
+        public static final int _18=0x7f06002a;
+        public static final int _19=0x7f06002b;
+        public static final int _2=0x7f06001a;
+        public static final int _20=0x7f06002c;
+        public static final int _21=0x7f06002d;
+        public static final int _3=0x7f06001b;
+        public static final int _4=0x7f06001c;
+        public static final int _5=0x7f06001d;
+        public static final int _6=0x7f06001e;
+        public static final int _7=0x7f06001f;
+        public static final int _8=0x7f060020;
+        public static final int _9=0x7f060021;
         public static final int activity_name=0x7f060001;
         public static final int app_name=0x7f060000;
         public static final int cancelDialog_content=0x7f060009;
@@ -107,20 +109,24 @@ public final class R {
         public static final int cancelDialog_yes=0x7f06000a;
         /**  HomeScreen 
          */
-        public static final int imageview_logo_contentdescription=0x7f06000c;
+        public static final int imageview_logo_contentdescription=0x7f060010;
         public static final int menu_settings=0x7f060002;
-        public static final int text_introduction=0x7f06000d;
-        public static final int text_readyToStart=0x7f060011;
-        public static final int text_setupStep_1=0x7f06000e;
-        public static final int text_setupStep_2=0x7f06000f;
-        public static final int text_setupStep_3=0x7f060010;
-        public static final int text_start=0x7f060013;
+        public static final int startDialog_content=0x7f06000d;
+        public static final int startDialog_now=0x7f06000e;
+        public static final int startDialog_specificDate=0x7f06000f;
+        public static final int startDialog_title=0x7f06000c;
+        public static final int text_introduction=0x7f060011;
+        public static final int text_readyToStart=0x7f060015;
+        public static final int text_setupStep_1=0x7f060012;
+        public static final int text_setupStep_2=0x7f060013;
+        public static final int text_setupStep_3=0x7f060014;
+        public static final int text_start=0x7f060017;
         public static final int text_stepOneTitle_contraception=0x7f060003;
         public static final int text_stepTwoTitle_alarm=0x7f060004;
-        public static final int text_stop=0x7f060014;
+        public static final int text_stop=0x7f060018;
         /**  AlarmScreen 
          */
-        public static final int text_updateAlarmTime=0x7f060012;
+        public static final int text_updateAlarmTime=0x7f060016;
         public static final int toggleButton_patch=0x7f060006;
         public static final int toggleButton_pill=0x7f060005;
         public static final int toggleButton_ring=0x7f060007;
@@ -132,8 +138,8 @@ public final class R {
         public static final int SV_Button_UpdateAlarm=0x7f070004;
         public static final int SV_Imageview=0x7f070001;
         public static final int SV_TextView=0x7f070012;
-        public static final int SV_TextView_CancelDialog_Content=0x7f070018;
-        public static final int SV_TextView_CancelDialog_Title=0x7f070017;
+        public static final int SV_TextView_Dialog_Content=0x7f070018;
+        public static final int SV_TextView_Dialog_Title=0x7f070017;
         /**  HomeScreen 
          */
         public static final int SV_TextView_Introduction=0x7f070013;
