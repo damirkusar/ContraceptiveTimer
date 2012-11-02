@@ -16,3 +16,14 @@
 1351764439730	Extract method 'setTodaysAlarm'
 1351766899064	Rename local variable 'lbdoy'
 1351766905644	Rename local variable 'luocu'
+1351865484498	Rename type 'LicensesCheck'
+1351866158504	Rename resource 'library'
+1351867635495	Delete element
+1351869511110	Delete element
+1351877148873	Move compilation unit
+1351877159572	Move compilation unit
+1351877249038	Encapsulate field 'paid'
+1351879213657	Rename field 'fileName'
+1351879408916	Rename method 'loadFromStorage'
+1351879985301	Encapsulate field 'fileName'
+1351880034572	Encapsulate field 'fileName'

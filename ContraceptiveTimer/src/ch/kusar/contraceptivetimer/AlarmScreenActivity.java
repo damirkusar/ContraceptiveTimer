@@ -45,7 +45,7 @@ public class AlarmScreenActivity extends FragmentActivity implements CancelDialo
 		TimePicker tp = this.getTimePicker();
 		tp.setIs24HourView(true);
 
-		AlarmCalculationData acd = this.internalStorageWrapper.loadFromStorage();
+		AlarmCalculationData acd = this.internalStorageWrapper.loadAlarmCalculationDataFromStorage();
 		if (acd != null) {
 			LoggerWrapper.LogDebug(acd.toString());
 			tp.setCurrentHour(acd.getAlarmTimeHourOfDay());

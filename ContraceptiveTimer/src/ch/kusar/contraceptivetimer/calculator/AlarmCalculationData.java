@@ -11,6 +11,8 @@ public class AlarmCalculationData implements Serializable {
 	private final int numberOfDaysToMakeSevenDaysBreakAfterBreak = 28;
 	private final int numberOfDaysToMakeSevenDaysBreakAfterFirstContraceptive = 21;
 
+	private final String fileName = "ContraceptiveTimerData";
+
 	private ContraceptiveType contraceptiveType;
 	private CalendarWrapper lastUseOfContraceptive;
 	private CalendarWrapper lastBreak;
@@ -156,5 +158,9 @@ public class AlarmCalculationData implements Serializable {
 						this.isAlarmActive(), this.getAlarmTimeHourOfDay(), this.getAlarmTimeMinutes(), this.getContraceptiveType(), this.getIntervalDays(),
 						this.getLastUseOfContraceptive(), this.getLastBreak(), this.timesUsed);
 		return msg;
+	}
+
+	public String getFileName() {
+		return this.fileName;
 	}
 }

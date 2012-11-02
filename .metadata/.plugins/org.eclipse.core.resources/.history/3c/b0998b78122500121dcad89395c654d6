@@ -1,0 +1,5 @@
+package ch.kusar.contraceptivetimer.licenceing;
+
+public class LicenseStatus {
+
+}

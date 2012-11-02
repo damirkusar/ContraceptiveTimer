@@ -44,7 +44,7 @@ public class AlarmEventRetrieverTest extends AndroidTestCase {
 	public void testRetrieveAlarmEventData_AlarmCalculationDataFileIsAvailable_ShouldReturnNull() {
 		this.internalStorageWrapper.setFileName(new BigInteger(130, this.random).toString(32));
 
-		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper.loadFromStorage();
+		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper.loadAlarmCalculationDataFromStorage();
 
 		Assert.assertNull(alarmDataLoaded);
 	}

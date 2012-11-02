@@ -1,0 +1,17 @@
+package ch.kusar.contraceptivetimer.licenceing;
+
+import java.io.Serializable;
+
+public class LicenseStatus implements Serializable {
+
+	private boolean paid;
+
+	public boolean isPaid() {
+		return this.paid;
+	}
+
+	public void setPaid(boolean paid) {
+		this.paid = paid;
+	}
+
+}

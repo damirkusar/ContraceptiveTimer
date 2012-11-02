@@ -39,7 +39,7 @@ public class InternalStorageWrapperTest extends AndroidTestCase {
 
 	public void testLoadFromStorage_LoadsStoredFileIntoObject_ShouldLoadTheSavedDataCorrectly() {
 		this.internalStorageWrapper.saveToStorage(this.alarmCalculationData);
-		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper.loadFromStorage();
+		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper.loadAlarmCalculationDataFromStorage();
 
 		Assert.assertEquals(20, alarmDataLoaded.getAlarmTimeHourOfDay());
 		Assert.assertEquals(0, alarmDataLoaded.getAlarmTimeMinutes());
@@ -53,7 +53,7 @@ public class InternalStorageWrapperTest extends AndroidTestCase {
 
 		InternalStorageWrapper internalStorageWrapperLoader = new InternalStorageWrapper(this.getContext().getApplicationContext());
 
-		AlarmCalculationData alarmDataLoaded = internalStorageWrapperLoader.loadFromStorage();
+		AlarmCalculationData alarmDataLoaded = internalStorageWrapperLoader.loadAlarmCalculationDataFromStorage();
 
 		Assert.assertEquals(20, alarmDataLoaded.getAlarmTimeHourOfDay());
 		Assert.assertEquals(0, alarmDataLoaded.getAlarmTimeMinutes());
@@ -64,7 +64,7 @@ public class InternalStorageWrapperTest extends AndroidTestCase {
 
 	public void testLoadFromStorage_TryToLoadNotSavedFileFromStorage_ObjectIsNull() {
 		this.internalStorageWrapper.setFileName(new BigInteger(130, this.random).toString(32));
-		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper.loadFromStorage();
+		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper.loadAlarmCalculationDataFromStorage();
 
 		Assert.assertNull(alarmDataLoaded);
 	}
@@ -82,7 +82,7 @@ public class InternalStorageWrapperTest extends AndroidTestCase {
 		CalendarWrapper cw = new CalendarWrapper(2012, 4, 2);
 		this.internalStorageWrapper.saveUpdatedLastUseOfContraceptionToStorage(cw);
 
-		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper.loadFromStorage();
+		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper.loadAlarmCalculationDataFromStorage();
 		Assert.assertEquals(0, alarmDataLoaded.getLastBreak().getYear());
 		Assert.assertEquals(0, alarmDataLoaded.getLastBreak().getMonth());
 		Assert.assertEquals(0, alarmDataLoaded.getLastBreak().getDayOfMonth());
@@ -100,7 +100,7 @@ public class InternalStorageWrapperTest extends AndroidTestCase {
 		CalendarWrapper cw = new CalendarWrapper(2012, 4, 2);
 		this.internalStorageWrapper.saveUpdatedLastBreakOfContraceptionToStorage(cw);
 
-		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper.loadFromStorage();
+		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper.loadAlarmCalculationDataFromStorage();
 		Assert.assertEquals(0, alarmDataLoaded.getLastUseOfContraceptive().getYear());
 		Assert.assertEquals(0, alarmDataLoaded.getLastUseOfContraceptive().getMonth());
 		Assert.assertEquals(0, alarmDataLoaded.getLastUseOfContraceptive().getDayOfMonth());
@@ -115,7 +115,7 @@ public class InternalStorageWrapperTest extends AndroidTestCase {
 
 		this.internalStorageWrapper.saveUpdatedAlarmActivatedTo(false);
 
-		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper.loadFromStorage();
+		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper.loadAlarmCalculationDataFromStorage();
 		Assert.assertFalse(alarmDataLoaded.isAlarmActive());
 	}
 
@@ -127,7 +127,7 @@ public class InternalStorageWrapperTest extends AndroidTestCase {
 		AlarmTime at = new AlarmTime(13, 37);
 		this.internalStorageWrapper.saveUpdatedAlarmTime(at);
 
-		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper.loadFromStorage();
+		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper.loadAlarmCalculationDataFromStorage();
 		Assert.assertEquals(13, alarmDataLoaded.getAlarmTimeHourOfDay());
 		Assert.assertEquals(37, alarmDataLoaded.getAlarmTimeMinutes());
 	}
@@ -138,7 +138,7 @@ public class InternalStorageWrapperTest extends AndroidTestCase {
 
 		this.internalStorageWrapper.saveUpdatedIncrementedUsedTimes();
 
-		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper.loadFromStorage();
+		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper.loadAlarmCalculationDataFromStorage();
 		Assert.assertEquals(1, alarmDataLoaded.getTimesUsed());
 	}
 
@@ -149,7 +149,7 @@ public class InternalStorageWrapperTest extends AndroidTestCase {
 
 		this.internalStorageWrapper.saveUpdatedResetedUsedTimes();
 
-		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper.loadFromStorage();
+		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper.loadAlarmCalculationDataFromStorage();
 		Assert.assertEquals(0, alarmDataLoaded.getTimesUsed());
 	}
 }

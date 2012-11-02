@@ -1,0 +1,35 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="ch.kusar.contraceptivetimer"
+	android:versionCode="1"
+	android:versionName="1.0" >
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+	<uses-permission android:name="com.android.vending.CHECK_LICENSE" />
+	<uses-sdk
+		android:minSdkVersion="8"
+		android:targetSdkVersion="15" />
+	<application
+		android:name=".MainApplicationContext"
+		android:icon="@drawable/ic_launcher"
+		android:label="@string/app_name"
+		android:theme="@style/SV_Theme" >
+		<receiver android:name=".wrapper.AlarmManagerWrapper" >
+		</receiver>
+		<receiver android:name=".wrapper.AutoStartAlarmManagerWrapper" >
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED" >
+				</action>
+			</intent-filter>
+		</receiver>
+		<activity
+			android:name=".licenceing.LicenseCheck"
+			android:label="@string/app_name" >
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name=".AlarmScreenActivity" >
+		</activity>
+	</application>
+</manifest>

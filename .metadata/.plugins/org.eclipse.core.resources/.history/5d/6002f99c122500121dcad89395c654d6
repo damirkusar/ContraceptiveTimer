@@ -1,0 +1,7 @@
+package ch.kusar.contraceptivetimer.licenceing;
+
+import java.io.Serializable;
+
+public class LicenseStatus implements Serializable {
+
+}
