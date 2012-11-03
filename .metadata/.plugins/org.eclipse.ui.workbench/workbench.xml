@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="35" version="2.0">
+<workbench progressCount="38" version="2.0">
 <workbenchAdvisor/>
 <window height="878" maximized="true" width="718" x="4" y="22">
 <fastViewData fastViewLocation="1024"/>
@@ -17,7 +17,7 @@
 <coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="62" y="22"/>
 <coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="98" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="54" y="22"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.jdt.ui.PropertiesFileEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -42,55 +42,25 @@
 <part id="1"/>
 <part id="2"/>
 <part id="3"/>
-<part id="4"/>
-<part id="5"/>
-<part id="6"/>
-<part id="7"/>
-<part id="8"/>
-<part id="9"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LicenseCheckerCallback.java" partName="LicenseCheckerCallback.java" path="/Volumes/Data/softver/Projects/ContraceptiveTimer/gLicencingLibrary/src/com/google/android/vending/licensing/LicenseCheckerCallback.java" title="LicenseCheckerCallback.java" tooltip="gLicencingLibrary/src/com/google/android/vending/licensing/LicenseCheckerCallback.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/gLicencingLibrary/src/com/google/android/vending/licensing/LicenseCheckerCallback.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="22" selectionOffset="1417" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.PropertiesFileEditor" name="project.properties" partName="project.properties" path="/Volumes/Data/softver/Projects/ContraceptiveTimer/ContraceptiveTimer/project.properties" title="project.properties" tooltip="ContraceptiveTimer/project.properties" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ContraceptiveTimer/project.properties"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AlarmEventData.java" partName="AlarmEventData.java" path="/Volumes/Data/softver/Projects/ContraceptiveTimer/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/businessobjects/AlarmEventData.java" title="AlarmEventData.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/businessobjects/AlarmEventData.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/businessobjects/AlarmEventData.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="54" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LicenseStatus.java" partName="LicenseStatus.java" path="/Volumes/Data/softver/Projects/ContraceptiveTimer/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/businessobjects/LicenseStatus.java" title="LicenseStatus.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/businessobjects/LicenseStatus.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/businessobjects/LicenseStatus.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="153" selectionTopPixel="0"/>
-</editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AlarmCalculationData.java" partName="AlarmCalculationData.java" path="/Volumes/Data/softver/Projects/ContraceptiveTimer/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/calculator/AlarmCalculationData.java" title="AlarmCalculationData.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/calculator/AlarmCalculationData.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/calculator/AlarmCalculationData.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="356" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="17" selectionOffset="2146" selectionTopPixel="498"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InternalStorageWrapper.java" partName="InternalStorageWrapper.java" path="/Volumes/Data/softver/Projects/ContraceptiveTimer/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/wrapper/InternalStorageWrapper.java" title="InternalStorageWrapper.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/wrapper/InternalStorageWrapper.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/wrapper/InternalStorageWrapper.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1234" selectionTopPixel="0"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AlarmCalculationDataTest.java" partName="AlarmCalculationDataTest.java" path="/Volumes/Data/softver/Projects/ContraceptiveTimer/ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/calculator/AlarmCalculationDataTest.java" title="AlarmCalculationDataTest.java" tooltip="ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/calculator/AlarmCalculationDataTest.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/calculator/AlarmCalculationDataTest.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1717" selectionTopPixel="353"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InternalStorageWrapperTest.java" partName="InternalStorageWrapperTest.java" path="/Volumes/Data/softver/Projects/ContraceptiveTimer/ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/wrapper/InternalStorageWrapperTest.java" title="InternalStorageWrapperTest.java" tooltip="ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/wrapper/InternalStorageWrapperTest.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InternalStorageWrapperTest.java" partName="InternalStorageWrapperTest.java" path="/Volumes/Data/softver/Projects/ContraceptiveTimer/ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/wrapper/InternalStorageWrapperTest.java" title="InternalStorageWrapperTest.java" tooltip="ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/wrapper/InternalStorageWrapperTest.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/wrapper/InternalStorageWrapperTest.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1737" selectionTopPixel="419"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3723" selectionTopPixel="666"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LicenseCheck.java" partName="LicenseCheck.java" path="/Volumes/Data/softver/Projects/ContraceptiveTimer/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/LicenseCheck.java" title="LicenseCheck.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/LicenseCheck.java" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LicenseCheck.java" partName="LicenseCheck.java" path="/Volumes/Data/softver/Projects/ContraceptiveTimer/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/LicenseCheck.java" title="LicenseCheck.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/LicenseCheck.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/LicenseCheck.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5790" selectionTopPixel="1883"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FileStorageWriter.java" partName="FileStorageWriter.java" path="/Volumes/Data/softver/Projects/ContraceptiveTimer/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/businessobjects/FileStorageWriter.java" title="FileStorageWriter.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/businessobjects/FileStorageWriter.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/businessobjects/FileStorageWriter.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="113" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AlarmDataCalculator.java" partName="AlarmDataCalculator.java" path="/Volumes/Data/softver/Projects/ContraceptiveTimer/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/calculator/AlarmDataCalculator.java" title="AlarmDataCalculator.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/calculator/AlarmDataCalculator.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/calculator/AlarmDataCalculator.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="16" selectionOffset="3830" selectionTopPixel="1159"/>
 </editor>
 </editors>
 <views>
@@ -144,6 +114,9 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Errors"/>
+</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="127" org.eclipse.ui.ide.pathField="176" org.eclipse.ui.ide.resourceField="117" org.eclipse.ui.ide.severityAndDescriptionField="655"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -190,7 +163,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.ui.navigator.ProjectExplorer" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -299,7 +272,7 @@
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.24017155" ratioLeft="336" ratioRight="1063" relationship="2" relative="left"/>
 <info folder="true" part="bottom" ratio="0.5260417" ratioLeft="404" ratioRight="364" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.jdt.callhierarchy.view" appearance="2" expanded="2">
+<folder activePageID="org.eclipse.jdt.junit.ResultView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
 <page content="org.eclipse.jdt.ui.SourceView" label="Declaration"/>
@@ -452,164 +425,167 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/LicenseCheck.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/licenceing/LicenseStatus.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/wrapper/InternalStorageWrapperTest.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/calculator/AlarmCalculationDataTest.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/retriever/AlarmEventRetrieverTest.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/businessobjects/FileStorageWriter.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/calculator/AlarmCalculationData.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/wrapper/InternalStorageWrapper.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/businessobjects/LicenseStatus.java"/>
+<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=ContraceptiveTimerTest/\/Volumes\/Data\/softver\/DevLibrary\/Android\/_sdk\/android-sdk-macosx\/platforms\/android-8\/android.jar&lt;android.app(Instrumentation.class"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/calculator/AlarmCalculationDataTest.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/wrapper/InternalStorageWrapperTest.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/businessobjects/LicenseStatus.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/businessobjects/FileStorageWriter.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/calculator/AlarmDataCalculator.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/LicenseCheck.java"/>
 </editors>
-<item historyLabel="InternalStorageWrapper.java" index="3">
-<position info="not_deleted" x="543" y="0"/>
-</item>
-<item historyLabel="InternalStorageWrapper.java" index="3">
+<item historyLabel="InternalStorageWrapperTest.java" index="0">
 <position/>
 </item>
-<item historyLabel="InternalStorageWrapper.java" index="3">
+<item historyLabel="InternalStorageWrapperTest.java" index="0">
 <position/>
 </item>
-<item historyLabel="InternalStorageWrapper.java" index="3">
+<item historyLabel="FileStorageWriter.java" index="3">
+<position info="not_deleted" x="113" y="0"/>
+</item>
+<item historyLabel="FileStorageWriter.java" index="3">
+<position info="not_deleted" x="113" y="0"/>
+</item>
+<item historyLabel="InternalStorageWrapperTest.java" index="0">
 <position/>
 </item>
-<item historyLabel="LicenseCheck.java" index="0">
-<position info="not_deleted" x="4931" y="0"/>
-</item>
-<item historyLabel="InternalStorageWrapper.java" index="3">
+<item historyLabel="AlarmCalculationData.java" index="4">
 <position/>
 </item>
-<item historyLabel="InternalStorageWrapperTest.java" index="4">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="InternalStorageWrapper.java" index="3">
+<item historyLabel="AlarmCalculationData.java" index="4">
 <position/>
 </item>
-<item historyLabel="InternalStorageWrapperTest.java" index="4">
-<position info="not_deleted" x="1624" y="15"/>
-</item>
-<item historyLabel="InternalStorageWrapper.java" index="3">
-<position info="not_deleted" x="2323" y="20"/>
-</item>
-<item historyLabel="InternalStorageWrapper.java" index="3">
+<item historyLabel="FileStorageWriter.java" index="3">
 <position/>
 </item>
-<item historyLabel="InternalStorageWrapper.java" index="3">
-<position info="not_deleted" x="3040" y="0"/>
-</item>
-<item historyLabel="LicenseCheck.java" index="0">
+<item historyLabel="InternalStorageWrapperTest.java" index="0">
 <position/>
 </item>
-<item historyLabel="LicenseStatus.java" index="1">
-<position info="not_deleted" x="400" y="0"/>
-</item>
-<item historyLabel="LicenseCheck.java" index="0">
-<position/>
-</item>
-<item historyLabel="AlarmCalculationData.java" index="2">
-<position info="not_deleted" x="578" y="0"/>
-</item>
-<item historyLabel="InternalStorageWrapperTest.java" index="4">
-<position info="not_deleted" x="593" y="0"/>
-</item>
-<item historyLabel="InternalStorageWrapper.java" index="3">
-<position/>
-</item>
-<item historyLabel="InternalStorageWrapper.java" index="3">
-<position info="not_deleted" x="529" y="0"/>
-</item>
-<item historyLabel="InternalStorageWrapper.java" index="3">
-<position info="not_deleted" x="587" y="22"/>
-</item>
-<item historyLabel="InternalStorageWrapperTest.java" index="4">
-<position info="not_deleted" x="892" y="66"/>
-</item>
-<item historyLabel="InternalStorageWrapperTest.java" index="4">
-<position info="not_deleted" x="2230" y="127"/>
-</item>
-<item historyLabel="InternalStorageWrapper.java" index="3">
-<position info="not_deleted" x="587" y="22"/>
-</item>
-<item historyLabel="LicenseCheck.java" index="0">
-<position/>
-</item>
-<item historyLabel="LicenseCheck.java" index="0">
-<position/>
-</item>
-<item historyLabel="InternalStorageWrapper.java" index="3">
-<position info="not_deleted" x="587" y="22"/>
-</item>
-<item historyLabel="InternalStorageWrapperTest.java" index="4">
-<position info="not_deleted" x="2230" y="127"/>
-</item>
-<item historyLabel="LicenseCheck.java" index="0">
-<position info="not_deleted" x="3109" y="0"/>
-</item>
-<item historyLabel="LicenseStatus.java" index="1">
-<position info="not_deleted" x="400" y="0"/>
-</item>
-<item historyLabel="LicenseStatus.java" index="1">
-<position info="not_deleted" x="346" y="0"/>
-</item>
-<item historyLabel="LicenseCheck.java" index="0">
-<position/>
-</item>
-<item historyLabel="LicenseCheck.java" index="0">
-<position/>
-</item>
-<item historyLabel="LicenseCheck.java" index="0">
+<item historyLabel="AlarmCalculationData.java" index="4">
 <position/>
 </item>
 <item historyLabel="LicenseStatus.java" index="5">
-<position info="not_deleted" x="365" y="0"/>
+<position info="not_deleted" x="238" y="0"/>
 </item>
-<item historyLabel="LicenseStatus.java" index="5">
-<position info="not_deleted" x="370" y="0"/>
+<item historyLabel="AlarmCalculationData.java" index="4">
+<position info="not_deleted" x="4621" y="0"/>
 </item>
-<item historyLabel="InternalStorageWrapper.java" index="3">
-<position info="not_deleted" x="587" y="22"/>
+<item historyLabel="AlarmCalculationDataTest.java" index="1">
+<position info="not_deleted" x="1630" y="50"/>
 </item>
-<item historyLabel="FileStorageWriter.java" index="6">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="InternalStorageWrapperTest.java" index="0">
+<position info="not_deleted" x="2811" y="0"/>
 </item>
-<item historyLabel="FileStorageWriter.java" index="6">
+<item historyLabel="AlarmCalculationData.java" index="4">
+<position info="not_deleted" x="4549" y="0"/>
+</item>
+<item historyLabel="FileStorageWriter.java" index="3">
 <position info="not_deleted" x="113" y="0"/>
 </item>
 <item historyLabel="LicenseStatus.java" index="5">
-<position info="not_deleted" x="153" y="0"/>
+<position info="not_deleted" x="569" y="0"/>
 </item>
-<item historyLabel="AlarmCalculationData.java" index="2">
-<position info="not_deleted" x="578" y="0"/>
+<item historyLabel="InternalStorageWrapperTest.java" index="0">
+<position info="not_deleted" x="2811" y="0"/>
 </item>
-<item historyLabel="AlarmDataCalculator.java" index="7">
+<item historyLabel="AlarmEventRetrieverTest.java" index="2">
+<position info="not_deleted" x="1583" y="0"/>
+</item>
+<item historyLabel="InternalStorageWrapperTest.java" index="0">
+<position info="not_deleted" x="2811" y="0"/>
+</item>
+<item historyLabel="AlarmCalculationData.java" index="4">
+<position info="not_deleted" x="2132" y="43"/>
+</item>
+<item historyLabel="AlarmCalculationData.java" index="4">
+<position info="not_deleted" x="3918" y="59"/>
+</item>
+<item historyLabel="AlarmCalculationData.java" index="4">
+<position info="not_deleted" x="3168" y="48"/>
+</item>
+<item historyLabel="AlarmCalculationDataTest.java" index="1">
+<position info="not_deleted" x="1630" y="50"/>
+</item>
+<item historyLabel="Instrumentation.class" index="6">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="AlarmCalculationData.java" index="2">
-<position info="not_deleted" x="356" y="0"/>
+<item historyLabel="AlarmCalculationDataTest.java" index="1">
+<position info="not_deleted" x="1630" y="50"/>
 </item>
-<item historyLabel="InternalStorageWrapper.java" index="3">
-<position info="not_deleted" x="587" y="22"/>
+<item historyLabel="AlarmCalculationData.java" index="4">
+<position info="not_deleted" x="3168" y="48"/>
 </item>
-<item historyLabel="InternalStorageWrapper.java" index="3">
-<position info="not_deleted" x="2077" y="0"/>
+<item historyLabel="AlarmCalculationData.java" index="4">
+<position info="not_deleted" x="3918" y="59"/>
 </item>
-<item historyLabel="InternalStorageWrapper.java" index="3">
-<position info="not_deleted" x="2408" y="0"/>
+<item historyLabel="AlarmCalculationData.java" index="4">
+<position info="not_deleted" x="2132" y="43"/>
 </item>
-<item historyLabel="LicenseCheck.java" index="0">
-<position info="not_deleted" x="5790" y="0"/>
+<item historyLabel="AlarmCalculationDataTest.java" index="1">
+<position info="not_deleted" x="1630" y="50"/>
 </item>
-<item historyLabel="InternalStorageWrapper.java" index="3">
-<position info="not_deleted" x="2409" y="0"/>
+<item historyLabel="AlarmCalculationData.java" index="4">
+<position info="not_deleted" x="2146" y="17"/>
 </item>
-<item historyLabel="InternalStorageWrapperTest.java" index="4">
-<position info="not_deleted" x="2230" y="127"/>
+<item historyLabel="AlarmCalculationDataTest.java" index="1">
+<position info="not_deleted" x="1630" y="50"/>
 </item>
-<item historyLabel="InternalStorageWrapper.java" index="3">
-<position info="not_deleted" x="1234" y="0"/>
+<item historyLabel="AlarmCalculationData.java" index="4">
+<position info="not_deleted" x="2146" y="17"/>
 </item>
-<item active="true" historyLabel="InternalStorageWrapperTest.java" index="4">
-<position info="not_deleted" x="2230" y="127"/>
+<item historyLabel="AlarmCalculationDataTest.java" index="7">
+<position info="not_deleted" x="603" y="20"/>
+</item>
+<item historyLabel="AlarmCalculationData.java" index="4">
+<position info="not_deleted" x="2146" y="17"/>
+</item>
+<item historyLabel="AlarmCalculationDataTest.java" index="7">
+<position info="not_deleted" x="1557" y="0"/>
+</item>
+<item historyLabel="AlarmCalculationData.java" index="4">
+<position info="not_deleted" x="2146" y="17"/>
+</item>
+<item historyLabel="AlarmCalculationDataTest.java" index="7">
+<position info="not_deleted" x="1557" y="0"/>
+</item>
+<item historyLabel="AlarmCalculationDataTest.java" index="7">
+<position info="not_deleted" x="1771" y="0"/>
+</item>
+<item historyLabel="AlarmCalculationDataTest.java" index="7">
+<position/>
+</item>
+<item historyLabel="AlarmCalculationDataTest.java" index="7">
+<position info="not_deleted" x="1717" y="0"/>
+</item>
+<item historyLabel="InternalStorageWrapperTest.java" index="8">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="InternalStorageWrapperTest.java" index="8">
+<position info="not_deleted" x="1338" y="0"/>
+</item>
+<item historyLabel="InternalStorageWrapperTest.java" index="8">
+<position info="not_deleted" x="1320" y="19"/>
+</item>
+<item historyLabel="LicenseStatus.java" index="9">
+<position info="not_deleted" x="421" y="0"/>
+</item>
+<item historyLabel="InternalStorageWrapperTest.java" index="8">
+<position info="not_deleted" x="1320" y="19"/>
+</item>
+<item historyLabel="InternalStorageWrapperTest.java" index="8">
+<position info="not_deleted" x="4014" y="0"/>
+</item>
+<item historyLabel="InternalStorageWrapperTest.java" index="8">
+<position info="not_deleted" x="3790" y="0"/>
+</item>
+<item historyLabel="InternalStorageWrapperTest.java" index="8">
+<position info="not_deleted" x="3723" y="0"/>
+</item>
+<item active="true" historyLabel="LicenseCheck.java" index="10">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -632,17 +608,32 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LicenseCheck.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/LicenseCheck.java">
+<persistable path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/LicenseCheck.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LicenseStatus.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/businessobjects/LicenseStatus.java">
+<persistable path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/businessobjects/LicenseStatus.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InternalStorageWrapperTest.java" tooltip="ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/wrapper/InternalStorageWrapperTest.java">
+<persistable path="/ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/wrapper/InternalStorageWrapperTest.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AlarmCalculationDataTest.java" tooltip="ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/calculator/AlarmCalculationDataTest.java">
+<persistable path="/ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/calculator/AlarmCalculationDataTest.java"/>
+</file>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="Instrumentation.class" tooltip="android.app.Instrumentation">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=ContraceptiveTimerTest/\/Volumes\/Data\/softver\/DevLibrary\/Android\/_sdk\/android-sdk-macosx\/platforms\/android-8\/android.jar&lt;android.app(Instrumentation.class"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AlarmEventRetrieverTest.java" tooltip="ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/retriever/AlarmEventRetrieverTest.java">
+<persistable path="/ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/retriever/AlarmEventRetrieverTest.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="ContraceptiveTimer/AndroidManifest.xml">
+<persistable path="/ContraceptiveTimer/AndroidManifest.xml"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AlarmDataCalculator.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/calculator/AlarmDataCalculator.java">
 <persistable path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/calculator/AlarmDataCalculator.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FileStorageWriter.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/businessobjects/FileStorageWriter.java">
 <persistable path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/businessobjects/FileStorageWriter.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LicenseCheck.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/LicenseCheck.java">
-<persistable path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/LicenseCheck.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InternalStorageWrapperTest.java" tooltip="ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/wrapper/InternalStorageWrapperTest.java">
-<persistable path="/ContraceptiveTimerTest/src/ch/kusar/contraceptivetimer/test/wrapper/InternalStorageWrapperTest.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InternalStorageWrapper.java" tooltip="ContraceptiveTimer/src/ch/kusar/contraceptivetimer/wrapper/InternalStorageWrapper.java">
 <persistable path="/ContraceptiveTimer/src/ch/kusar/contraceptivetimer/wrapper/InternalStorageWrapper.java"/>
@@ -661,21 +652,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="project.properties" tooltip="ContraceptiveTimerTest/project.properties">
 <persistable path="/ContraceptiveTimerTest/project.properties"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="project.properties" tooltip="ContraceptiveTimer/project.properties">
-<persistable path="/ContraceptiveTimer/project.properties"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ILicenseResultListener.java" tooltip="gLicencingLibrary/src/com/google/android/vending/licensing/ILicenseResultListener.java">
-<persistable path="/gLicencingLibrary/src/com/google/android/vending/licensing/ILicenseResultListener.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LicenseCheckerCallback.java" tooltip="gLicencingLibrary/src/com/google/android/vending/licensing/LicenseCheckerCallback.java">
-<persistable path="/gLicencingLibrary/src/com/google/android/vending/licensing/LicenseCheckerCallback.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="gLicencingLibrary/AndroidManifest.xml">
-<persistable path="/gLicencingLibrary/AndroidManifest.xml"/>
-</file>
-<file factoryID="org.eclipse.jdt.ui.internal.JarEntryEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="ILicenseResultListener.aidl" tooltip="/Volumes/Data/softver/Projects/ContraceptiveTimer/library/ILicenseResultListener.aidl">
-<persistable element="=ContraceptiveTimer/\/Volumes\/Data\/softver\/Projects\/ContraceptiveTimer\/library" path="ILicenseResultListener.aidl"/>
 </file>
 </mruList>
 </workbench>
