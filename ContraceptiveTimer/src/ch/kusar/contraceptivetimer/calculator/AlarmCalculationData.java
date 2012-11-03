@@ -3,9 +3,10 @@ package ch.kusar.contraceptivetimer.calculator;
 import java.io.Serializable;
 
 import ch.kusar.contraceptivetimer.businessobjects.ContraceptiveType;
+import ch.kusar.contraceptivetimer.businessobjects.FileStorageWriter;
 import ch.kusar.contraceptivetimer.wrapper.CalendarWrapper;
 
-public class AlarmCalculationData implements Serializable {
+public class AlarmCalculationData implements Serializable, FileStorageWriter {
 
 	private static final long serialVersionUID = 5921434769798781785L;
 	private final int numberOfDaysToMakeSevenDaysBreakAfterBreak = 28;

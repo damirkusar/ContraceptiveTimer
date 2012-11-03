@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testrun name="ContraceptiveTimerTest (1)" project="ContraceptiveTimerTest" tests="42" started="42" failures="0" errors="1" ignored="0">
+  <testsuite name="ch.kusar.contraceptivetimer.test.calculator.AlarmCalculationDataTest" time="1.77">
+    <testcase name="testGetIntervalDays_TypeIsPatch_Returns7" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmCalculationDataTest" time="0.06"/>
+    <testcase name="testGetIntervalDays_TypeIsPill_Returns1" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmCalculationDataTest" time="0.439"/>
+    <testcase name="testGetIntervalDays_TypeIsRing_Returns28" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmCalculationDataTest" time="0.415"/>
+    <testcase name="testSetFirstUseWasOn_TypeIsPill_FirstUseWas1WeeksAgo_TimesUsedIs7" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmCalculationDataTest" time="0.233">
+      <error>java.lang.NullPointerException&#13;
+at ch.kusar.contraceptivetimer.calculator.AlarmCalculationData.getIntervalDays(AlarmCalculationData.java:79)&#13;
+at ch.kusar.contraceptivetimer.calculator.AlarmCalculationData.calculateTimesUsed(AlarmCalculationData.java:151)&#13;
+at ch.kusar.contraceptivetimer.calculator.AlarmCalculationData.setFirstUseWasOn(AlarmCalculationData.java:125)&#13;
+at ch.kusar.contraceptivetimer.test.calculator.AlarmCalculationDataTest.testSetFirstUseWasOn_TypeIsPill_FirstUseWas1WeeksAgo_TimesUsedIs7(AlarmCalculationDataTest.java:48)&#13;
+at java.lang.reflect.Method.invokeNative(Native Method)&#13;
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:169)&#13;
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:154)&#13;
+at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:520)&#13;
+at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1447)&#13;
+
+</error>
+    </testcase>
+    <testcase name="testAndroidTestCaseSetupProperly" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmCalculationDataTest" time="0.442"/>
+  </testsuite>
+  <testsuite name="ch.kusar.contraceptivetimer.test.wrapper.InternalStorageWrapperTest" time="0.702">
+    <testcase name="testLoadFromStorage_LoadsStoredFileIntoObjectWithAnotherStorageWrapperInstance_ShouldLoadTheSavedDataCorrectly" classname="ch.kusar.contraceptivetimer.test.wrapper.InternalStorageWrapperTest" time="0.078"/>
+    <testcase name="testLoadFromStorage_LoadsStoredFileIntoObject_ShouldLoadTheSavedDataCorrectly" classname="ch.kusar.contraceptivetimer.test.wrapper.InternalStorageWrapperTest" time="0.077"/>
+    <testcase name="testSaveToStorage_StoresTheFileToInternalStorage_ShouldBeSavedToStorageWithoutError" classname="ch.kusar.contraceptivetimer.test.wrapper.InternalStorageWrapperTest" time="0.052"/>
+    <testcase name="testsaveUpdatedAlarmActivatedTo_StoresTheFileToInternalStorage_ShouldBeSavedToStorageWithoutError" classname="ch.kusar.contraceptivetimer.test.wrapper.InternalStorageWrapperTest" time="0.104"/>
+    <testcase name="testsaveUpdatedAlarmTime_StoresTheFileToInternalStorage_ShouldBeSavedToStorageWithoutError" classname="ch.kusar.contraceptivetimer.test.wrapper.InternalStorageWrapperTest" time="0.026"/>
+    <testcase name="testsaveUpdatedIncrementedUsedTimes_StoresTheFileToInternalStorage_ShouldBeSavedToStorageWithoutError" classname="ch.kusar.contraceptivetimer.test.wrapper.InternalStorageWrapperTest" time="0.077"/>
+    <testcase name="testsaveUpdatedLastBreakOfContraceptionToStorage_StoresTheFileToInternalStorage_ShouldBeSavedToStorageWithoutError" classname="ch.kusar.contraceptivetimer.test.wrapper.InternalStorageWrapperTest" time="0.104"/>
+    <testcase name="testsaveUpdatedLastUseOfContraceptionToStorage_StoresTheFileToInternalStorage_ShouldBeSavedToStorageWithoutError" classname="ch.kusar.contraceptivetimer.test.wrapper.InternalStorageWrapperTest" time="0.025"/>
+    <testcase name="testsaveUpdatedResetedUsedTimes_StoresTheFileToInternalStorage_ShouldBeSavedToStorageWithoutError" classname="ch.kusar.contraceptivetimer.test.wrapper.InternalStorageWrapperTest" time="0.053"/>
+    <testcase name="testAndroidTestCaseSetupProperly" classname="ch.kusar.contraceptivetimer.test.wrapper.InternalStorageWrapperTest" time="0.105"/>
+  </testsuite>
+  <testsuite name="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="1.969">
+    <testcase name="testLastSunday" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.366"/>
+    <testcase name="testLastSundayWeekAgo" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.08"/>
+    <testcase name="testNextAlarmEvent_LastUseWasLastSaturdayAndLastBreakWasLastSundayAndContraceptiveTypeIsPill_ExpectedMessageForChangePillAndCalendarDayIsNextSunday" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.078"/>
+    <testcase name="testNextAlarmEvent_LastUseWasLastSaturdayAndLastBreakWasLastSundayThreeWeeksAgoAndContraceptiveTypeIsPill_ExpectedMessageForRemovePillAndCalendarDayIsOneDayAfterLastUse" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.168"/>
+    <testcase name="testNextAlarmEvent_LastUseWasLastSundayAndLastBreakSundayAWeekAgoAndContraceptiveTypeIsPatch_ExpectedMessageForChangePatchAndCalendarDayIsNextSunday" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.0"/>
+    <testcase name="testNextAlarmEvent_LastUseWasLastSundayAndLastBreakSundayAWeekAgoAndContraceptiveTypeIsRing_ExpectedMessageForRemoveRingAndCalendarDayIsLastSundayIn21Days" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.08"/>
+    <testcase name="testNextAlarmEvent_LastUseWasLastSundayAndLastBreakWasLastSundayAndContraceptiveTypeIsRing_ExpectedMessageForRemoveRingAndCalendarDayIsNextSunday" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.077"/>
+    <testcase name="testNextAlarmEvent_LastUseWasLastSundayOneWeeksAgoAndLastBreakWasLastSundayAndContraceptiveTypeIsPatch_ExpectedMessageForChangePatchAndCalendarDayIsNextSunday" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.078"/>
+    <testcase name="testNextAlarmEvent_LastUseWasLastSundayThreeWeeksAgoAndLastBreakWasLastSundayAndContraceptiveTypeIsRing_ExpectedMessageForChangeRingAndCalendarDayIsNextSunday" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.078"/>
+    <testcase name="testNextAlarmEvent_LastUseWasLastSundayTwoWeeksAgoAndLastBreakWasLastSundayThreeWeeksAgoAndContraceptiveTypeIsRing_ExpectedMessageForRemoveRingAndCalendarDayIsNextSunday" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.078"/>
+    <testcase name="testNextAlarmEvent_LastUseWasTodayAndLastBreakWasTodayOneWeekAgoAndContraceptiveTypeIsPatch_ExpectedMessageForChangePatchAndCalendarDayIsInOneWeek" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.077"/>
+    <testcase name="testNextAlarmEvent_LastUseWasTodayAndLastBreakWasTodayOneWeekAgoAndContraceptiveTypeIsPill_ExpectedMessageForChangePillAndCalendarDayIsTomorrow" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.053"/>
+    <testcase name="testNextAlarmEvent_LastUseWasTodayAndLastBreakWasTodayOneWeekAgoAndContraceptiveTypeIsRing_ExpectedMessageForRemoveRingAndCalendarDayIsIn3Weeks" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.052"/>
+    <testcase name="testNextAlarmEvent_LastUseWasYesterdayAndLastBreakWasSundayAWeekAgoAndContraceptiveTypeIsPill_ExpectedMessageForChangePillAndCalendarDayIsToday" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.105"/>
+    <testcase name="testNextAlarmEvent_LastUseWasYesterdayAndLastBreakWasYesterDayAWeekAgoAndContraceptiveTypeIsPill_ExpectedMessageForChangePillAndCalendarDayIsToday" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.052"/>
+    <testcase name="testNumberOfDaysSinceLastBreak_StartTimeAndLastBreakIs1DayAgo_Expected1" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.079"/>
+    <testcase name="testNumberOfDaysSinceLastBreak_StartTimeAndLastBreakIs21DaysAgo_Expected21" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.077"/>
+    <testcase name="testNumberOfDaysSinceLastBreak_StartTimeAndLastBreakIs7DaysAgo_Expected7" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.052"/>
+    <testcase name="testNumberOfDaysSinceLastUse_StartTimeAndLastUseIs1DayAgo_Expected1" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.078"/>
+    <testcase name="testNumberOfDaysSinceLastUse_StartTimeAndLastUseIs21DaysAgo_Expected21" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.103"/>
+    <testcase name="testNumberOfDaysSinceLastUse_StartTimeAndLastUseIs7DaysAgo_Expected7" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.027"/>
+    <testcase name="testYearChange_ActualDayIsLastDayOfYear2012_AddOneDay_ExpectedIsFirstDayOfYear2013" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.077"/>
+    <testcase name="testAndroidTestCaseSetupProperly" classname="ch.kusar.contraceptivetimer.test.calculator.AlarmDataCalculatorTest" time="0.053"/>
+  </testsuite>
+  <testsuite name="ch.kusar.contraceptivetimer.test.retriever.AlarmEventRetrieverTest" time="0.295">
+    <testcase name="testRetrieveAlarmEventData_AlarmCalculationDataFileIsAvailableDefaultData_ShouldReturnExpectedData" classname="ch.kusar.contraceptivetimer.test.retriever.AlarmEventRetrieverTest" time="0.087"/>
+    <testcase name="testRetrieveAlarmEventData_AlarmCalculationDataFileIsAvailableWithValidData_ShouldReturnExpectedData" classname="ch.kusar.contraceptivetimer.test.retriever.AlarmEventRetrieverTest" time="0.051"/>
+    <testcase name="testRetrieveAlarmEventData_AlarmCalculationDataFileIsAvailable_ShouldNotReturnNull" classname="ch.kusar.contraceptivetimer.test.retriever.AlarmEventRetrieverTest" time="0.078"/>
+    <testcase name="testAndroidTestCaseSetupProperly" classname="ch.kusar.contraceptivetimer.test.retriever.AlarmEventRetrieverTest" time="0.078"/>
+  </testsuite>
+</testrun>

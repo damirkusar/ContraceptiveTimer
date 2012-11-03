@@ -7,14 +7,13 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 import android.content.Context;
+import ch.kusar.contraceptivetimer.businessobjects.FileStorageWriter;
+import ch.kusar.contraceptivetimer.businessobjects.LicenseStatus;
 import ch.kusar.contraceptivetimer.calculator.AlarmCalculationData;
 import ch.kusar.contraceptivetimer.calculator.AlarmTime;
-import ch.kusar.contraceptivetimer.licenceing.LicenseStatus;
 
 public class InternalStorageWrapper {
 
-	private String fileNameData = "ContraceptiveTimerData";
-	private final String fileNameLicense = "ContraceptiveLicense";
 	private final Context fileContext;
 
 	public InternalStorageWrapper(Context fileContext) {
@@ -22,36 +21,31 @@ public class InternalStorageWrapper {
 	}
 
 	public void setFileName(String fileName) {
-		this.fileNameData = fileName;
 	}
 
-	public LicenseStatus loadLicenseFileFromStorage() {
+	public boolean saveToStorage(FileStorageWriter data) {
 		try {
-			FileInputStream fis = this.fileContext.openFileInput(this.fileNameLicense);
-			ObjectInputStream ois = new ObjectInputStream(fis);
-			LicenseStatus licenseStatus = (LicenseStatus) ois.readObject();
+			FileOutputStream fos = this.fileContext.openFileOutput(data.getFileName(), Context.MODE_PRIVATE);
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			oos.writeObject(data);
 
-			fis.close();
-			ois.close();
+			fos.close();
+			oos.close();
 
-			return licenseStatus;
-		} catch (ClassNotFoundException e) {
-			String msg = String.format("%s: ClassNotFoundException with error: %s", this.toString(), e.getStackTrace());
-			LoggerWrapper.LogError(msg);
-			e.printStackTrace();
+			return true;
 		} catch (IOException e) {
 			String msg = String.format("%s: IOException with error: %s", this.toString(), e.getStackTrace());
 			LoggerWrapper.LogError(msg);
 			e.printStackTrace();
 		}
-		return null;
+		return false;
 	}
 
-	public AlarmCalculationData loadAlarmCalculationDataFromStorage() {
+	private FileStorageWriter loadDataFromStorage(FileStorageWriter data) {
 		try {
-			FileInputStream fis = this.fileContext.openFileInput(this.fileNameData);
+			FileInputStream fis = this.fileContext.openFileInput(data.getFileName());
 			ObjectInputStream ois = new ObjectInputStream(fis);
-			AlarmCalculationData alarmData = (AlarmCalculationData) ois.readObject();
+			FileStorageWriter alarmData = (FileStorageWriter) ois.readObject();
 
 			fis.close();
 			ois.close();
@@ -69,40 +63,16 @@ public class InternalStorageWrapper {
 		return null;
 	}
 
-	public boolean saveToStorage(AlarmCalculationData data) {
-		try {
-			FileOutputStream fos = this.fileContext.openFileOutput(this.fileNameData, Context.MODE_PRIVATE);
-			ObjectOutputStream oos = new ObjectOutputStream(fos);
-			oos.writeObject(data);
-
-			fos.close();
-			oos.close();
-
-			return true;
-		} catch (IOException e) {
-			String msg = String.format("%s: IOException with error: %s", this.toString(), e.getStackTrace());
-			LoggerWrapper.LogError(msg);
-			e.printStackTrace();
-		}
-		return false;
+	public LicenseStatus loadLicenseFileFromStorage() {
+		LicenseStatus ls = new LicenseStatus(false);
+		LicenseStatus loadedLS = (LicenseStatus) this.loadDataFromStorage(ls);
+		return loadedLS;
 	}
 
-	public boolean saveToStorage(LicenseStatus data) {
-		try {
-			FileOutputStream fos = this.fileContext.openFileOutput(this.fileNameLicense, Context.MODE_PRIVATE);
-			ObjectOutputStream oos = new ObjectOutputStream(fos);
-			oos.writeObject(data);
-
-			fos.close();
-			oos.close();
-
-			return true;
-		} catch (IOException e) {
-			String msg = String.format("%s: IOException with error: %s", this.toString(), e.getStackTrace());
-			LoggerWrapper.LogError(msg);
-			e.printStackTrace();
-		}
-		return false;
+	public AlarmCalculationData loadAlarmCalculationDataFromStorage() {
+		AlarmCalculationData acd = new AlarmCalculationData();
+		AlarmCalculationData loadedACD = (AlarmCalculationData) this.loadDataFromStorage(acd);
+		return loadedACD;
 	}
 
 	public void saveUpdatedLastUseOfContraceptionToStorage(CalendarWrapper lastUseOfContraception) {

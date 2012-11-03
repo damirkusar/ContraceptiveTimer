@@ -1,12 +1,12 @@
 package ch.kusar.contraceptivetimer.test.wrapper;
 
-import java.math.BigInteger;
 import java.security.SecureRandom;
 
 import junit.framework.Assert;
 import android.test.AndroidTestCase;
 import ch.kusar.contraceptivetimer.MainApplicationContext;
 import ch.kusar.contraceptivetimer.businessobjects.ContraceptiveType;
+import ch.kusar.contraceptivetimer.businessobjects.LicenseStatus;
 import ch.kusar.contraceptivetimer.calculator.AlarmCalculationData;
 import ch.kusar.contraceptivetimer.calculator.AlarmTime;
 import ch.kusar.contraceptivetimer.wrapper.CalendarWrapper;
@@ -15,6 +15,7 @@ import ch.kusar.contraceptivetimer.wrapper.InternalStorageWrapper;
 public class InternalStorageWrapperTest extends AndroidTestCase {
 
 	private AlarmCalculationData alarmCalculationData;
+	private LicenseStatus licenseStatus;
 	private InternalStorageWrapper internalStorageWrapper;
 	private SecureRandom random;
 
@@ -28,6 +29,8 @@ public class InternalStorageWrapperTest extends AndroidTestCase {
 		this.alarmCalculationData.setContraceptiveType(ContraceptiveType.CONTRACEPTION_RING);
 		this.alarmCalculationData.setAlarmActive(true);
 		this.alarmCalculationData.setAlarmTime(new AlarmTime(20, 0));
+
+		this.licenseStatus = new LicenseStatus();
 	}
 
 	@Override
@@ -62,15 +65,36 @@ public class InternalStorageWrapperTest extends AndroidTestCase {
 		Assert.assertTrue(this.alarmCalculationData.isAlarmActive());
 	}
 
-	public void testLoadFromStorage_TryToLoadNotSavedFileFromStorage_ObjectIsNull() {
-		this.internalStorageWrapper.setFileName(new BigInteger(130, this.random).toString(32));
-		AlarmCalculationData alarmDataLoaded = this.internalStorageWrapper.loadAlarmCalculationDataFromStorage();
-
-		Assert.assertNull(alarmDataLoaded);
-	}
-
 	public void testSaveToStorage_StoresTheFileToInternalStorage_ShouldBeSavedToStorageWithoutError() {
 		Assert.assertTrue(this.internalStorageWrapper.saveToStorage(this.alarmCalculationData));
+	}
+
+	public void testLoadFromStorage_LicenseStatus_LoadsStoredFileIntoObject_ShouldLoadTheSavedDataCorrectly() {
+		Assert.assertFalse(this.licenseStatus.isPaid());
+
+		this.licenseStatus.setPaid(true);
+		this.internalStorageWrapper.saveToStorage(this.licenseStatus);
+
+		LicenseStatus licenseStatus = this.internalStorageWrapper.loadLicenseFileFromStorage();
+
+		Assert.assertTrue(licenseStatus.isPaid());
+	}
+
+	public void testLoadFromStorage_LicenseStatus_LoadsStoredFileIntoObjectWithAnotherStorageWrapperInstance_ShouldLoadTheSavedDataCorrectly() {
+		Assert.assertFalse(this.licenseStatus.isPaid());
+
+		this.licenseStatus.setPaid(true);
+		this.internalStorageWrapper.saveToStorage(this.licenseStatus);
+
+		InternalStorageWrapper internalStorageWrapperLoader = new InternalStorageWrapper(this.getContext().getApplicationContext());
+
+		LicenseStatus licenseStatus = internalStorageWrapperLoader.loadLicenseFileFromStorage();
+
+		Assert.assertTrue(licenseStatus.isPaid());
+	}
+
+	public void testSaveToStorage_LicenseStatus_StoresTheFileToInternalStorage_ShouldBeSavedToStorageWithoutError() {
+		Assert.assertTrue(this.internalStorageWrapper.saveToStorage(this.licenseStatus));
 	}
 
 	public void testsaveUpdatedLastUseOfContraceptionToStorage_StoresTheFileToInternalStorage_ShouldBeSavedToStorageWithoutError() {

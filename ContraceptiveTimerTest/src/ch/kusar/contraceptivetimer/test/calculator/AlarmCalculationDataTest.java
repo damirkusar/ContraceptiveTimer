@@ -45,6 +45,7 @@ public class AlarmCalculationDataTest extends AndroidTestCase {
 	public void testSetFirstUseWasOn_TypeIsPill_FirstUseWas1WeeksAgo_TimesUsedIs7() {
 		CalendarWrapper cw = CalendarWrapperForTest.convertGregorianCalendarToCalendarWrapper(CalendarWrapperForTest.getTodayOneWeekAgo());
 
+		this.alarmCalculationData.setContraceptiveType(ContraceptiveType.CONTRACEPTION_PILL);
 		this.alarmCalculationData.setFirstUseWasOn(cw);
 
 		Assert.assertEquals(7, this.alarmCalculationData.getTimesUsed());
