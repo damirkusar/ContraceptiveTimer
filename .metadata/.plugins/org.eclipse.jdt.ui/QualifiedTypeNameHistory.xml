@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="android.R"/>
 <fullyQualifiedTypeName name="android.os.Bundle"/>
 <fullyQualifiedTypeName name="android.graphics.Color"/>
 <fullyQualifiedTypeName name="android.app.Notification"/>
@@ -21,7 +20,6 @@
 <fullyQualifiedTypeName name="android.text.Layout"/>
 <fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.dialog.CancelDialog"/>
 <fullyQualifiedTypeName name="android.widget.ToggleButton"/>
-<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.wrapper.LoggerWrapper"/>
 <fullyQualifiedTypeName name="android.content.Intent"/>
 <fullyQualifiedTypeName name="android.widget.Button"/>
 <fullyQualifiedTypeName name="android.widget.TimePicker"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.licenceing.LicenseStatus"/>
 <fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.businessobjects.FileStorageWriter"/>
 <fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.businessobjects.LicenseStatus"/>
+<fullyQualifiedTypeName name="java.security.Policy"/>
+<fullyQualifiedTypeName name="ch.kusar.contraceptivetimer.wrapper.LoggerWrapper"/>
 </qualifiedTypeNameHistroy>

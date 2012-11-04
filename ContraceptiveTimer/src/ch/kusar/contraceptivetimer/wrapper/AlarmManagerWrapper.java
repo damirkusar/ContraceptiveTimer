@@ -59,7 +59,7 @@ public class AlarmManagerWrapper extends BroadcastReceiver {
 
 		Notification notification = new Notification(icon, tickerText, when);
 
-		CharSequence contentTitle = "Your Contraception has news";
+		CharSequence contentTitle = "Contraception news";
 		CharSequence contentText = msg;
 
 		PendingIntent contentIntent = PendingIntent.getActivity(context, 0, new Intent(), 0);

@@ -11,6 +11,7 @@ import android.provider.Settings.Secure;
 import android.widget.Toast;
 import ch.kusar.contraceptivetimer.businessobjects.LicenseStatus;
 import ch.kusar.contraceptivetimer.wrapper.InternalStorageWrapper;
+import ch.kusar.contraceptivetimer.wrapper.LoggerWrapper;
 
 import com.google.android.vending.licensing.AESObfuscator;
 import com.google.android.vending.licensing.LicenseChecker;
@@ -32,67 +33,13 @@ public class LicenseCheck extends Activity {
 	// A handler on the UI thread.
 	public LicenseCheckerCallback mLicenseCheckerCallback;
 
-	public class MyLicenseCheckerCallBack implements LicenseCheckerCallback {
-
-		public void allow(int reason) {
-			if (LicenseCheck.this.isFinishing()) {
-				// Don't update UI if Activity is finishing.
-				return;
-			}
-			// Should allow user access.
-			LicenseCheck.this.updateLicenceStatus();
-			LicenseCheck.this.startMainActivity();
-		}
-
-		@SuppressWarnings("deprecation")
-		public void dontAllow(int reason) {
-			if (LicenseCheck.this.isFinishing()) {
-				// Don't update UI if Activity is finishing.
-				return;
-			}
-
-			// Should not allow access. In most cases, the app should assume
-			// the user has access unless it encounters this. If it does,
-			// the app should inform the user of their unlicensed ways
-			// and then either shut down the app or limit the user to a
-			// restricted set of features.
-			// In this example, we show a dialog that takes the user to Market.
-			LicenseCheck.this.showDialog(0);
-		}
-
-		public void applicationError(int errorCode) {
-			if (LicenseCheck.this.isFinishing()) {
-				// Don't update UI if Activity is finishing.
-				return;
-			}
-			// This is a polite way of saying the developer made a mistake
-			// while setting up or calling the license checker library.
-			// Please examine the error code and fix the error.
-			LicenseCheck.this.toast("Error: " + errorCode);
-			LicenseCheck.this.startMainActivity();
-		}
-	}
-
-	private void updateLicenceStatus() {
-		InternalStorageWrapper internalStorageWrapper = new InternalStorageWrapper(this.getApplicationContext());
-		internalStorageWrapper.saveToStorage(new LicenseStatus(true));
-	}
-
-	private boolean getLicenceStatus() {
-		InternalStorageWrapper internalStorageWrapper = new InternalStorageWrapper(this.getApplicationContext());
-		LicenseStatus ls = internalStorageWrapper.loadLicenseFileFromStorage();
-		if (ls == null) {
-			return false;
-		} else {
-			return ls.isPaid();
-		}
-	}
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		boolean isPaid = this.getLicenceStatus();
+		LoggerWrapper.LogInfo("Starting LicenseCheck Activity!!!");
+
+		boolean isPaid = this.getLicenseStatus();
 		if (isPaid) {
 			this.startMainActivity();
 		} else {
@@ -108,10 +55,6 @@ public class LicenseCheck extends Activity {
 					LicenseCheck.BASE64_PUBLIC_KEY);
 			this.doCheck();
 		}
-	}
-
-	private void doCheck() {
-		this.mChecker.checkAccess(this.mLicenseCheckerCallback);
 	}
 
 	@Override
@@ -139,12 +82,80 @@ public class LicenseCheck extends Activity {
 		this.mChecker.onDestroy();
 	}
 
+	private void doCheck() {
+		LoggerWrapper.LogInfo("Checking LicenseStatus!!!");
+		this.mChecker.checkAccess(this.mLicenseCheckerCallback);
+	}
+
+	private void updateLicenseStatus() {
+		LoggerWrapper.LogInfo("Updating LicenseStatus!!!");
+		InternalStorageWrapper internalStorageWrapper = new InternalStorageWrapper(this.getApplicationContext());
+		internalStorageWrapper.saveToStorage(new LicenseStatus(true));
+	}
+
+	private boolean getLicenseStatus() {
+		LoggerWrapper.LogInfo("Getting LicenseStatus!!!");
+		InternalStorageWrapper internalStorageWrapper = new InternalStorageWrapper(this.getApplicationContext());
+		LicenseStatus ls = internalStorageWrapper.loadLicenseFileFromStorage();
+		if (ls == null) {
+			return false;
+		} else {
+			return ls.isPaid();
+		}
+	}
+
 	private void startMainActivity() {
+		LoggerWrapper.LogInfo("Starting HomeScreenActivity!!!");
 		this.startActivity(new Intent(this, HomeScreenActivity.class));
 		this.finish();
 	}
 
 	public void toast(String string) {
 		Toast.makeText(this, string, Toast.LENGTH_SHORT).show();
+	}
+
+	public class MyLicenseCheckerCallBack implements LicenseCheckerCallback {
+
+		public void allow(int reason) {
+			LoggerWrapper.LogInfo("Allowing License: " + reason);
+			if (LicenseCheck.this.isFinishing()) {
+				// Don't update UI if Activity is finishing.
+				return;
+			}
+
+			// Should allow user access.
+			LicenseCheck.this.updateLicenseStatus();
+			LicenseCheck.this.startMainActivity();
+		}
+
+		@SuppressWarnings("deprecation")
+		public void dontAllow(int reason) {
+			LoggerWrapper.LogInfo("Dont Allowing License: " + reason);
+			if (LicenseCheck.this.isFinishing()) {
+				// Don't update UI if Activity is finishing.
+				return;
+			}
+
+			// Should not allow access. In most cases, the app should assume
+			// the user has access unless it encounters this. If it does,
+			// the app should inform the user of their unlicensed ways
+			// and then either shut down the app or limit the user to a
+			// restricted set of features.
+			// In this example, we show a dialog that takes the user to Market.
+			LicenseCheck.this.showDialog(0);
+		}
+
+		public void applicationError(int errorCode) {
+			LoggerWrapper.LogInfo("Error License: " + errorCode);
+			if (LicenseCheck.this.isFinishing()) {
+				// Don't update UI if Activity is finishing.
+				return;
+			}
+			// This is a polite way of saying the developer made a mistake
+			// while setting up or calling the license checker library.
+			// Please examine the error code and fix the error.
+			LicenseCheck.this.toast("Please report ERROR to developer: " + errorCode);
+			LicenseCheck.this.startMainActivity();
+		}
 	}
 }

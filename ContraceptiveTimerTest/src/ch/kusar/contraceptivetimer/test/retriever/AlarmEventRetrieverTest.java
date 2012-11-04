@@ -1,6 +1,5 @@
 package ch.kusar.contraceptivetimer.test.retriever;
 
-import java.security.SecureRandom;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -22,14 +21,12 @@ public class AlarmEventRetrieverTest extends AndroidTestCase {
 	private AlarmEventRetriever alarmEventRetriever;
 	private AlarmCalculationData alarmCalculationData;
 	private InternalStorageWrapper internalStorageWrapper;
-	private SecureRandom random;
 
 	@Override
 	public void setUp() {
 		this.alarmEventRetriever = new AlarmEventRetriever();
 		this.alarmCalculationData = new AlarmCalculationData();
 		this.internalStorageWrapper = new InternalStorageWrapper(this.getContext().getApplicationContext());
-		this.random = new SecureRandom();
 	}
 
 	@Override
@@ -37,7 +34,6 @@ public class AlarmEventRetrieverTest extends AndroidTestCase {
 		this.alarmEventRetriever = null;
 		this.alarmCalculationData = null;
 		this.internalStorageWrapper = null;
-		this.random = null;
 	}
 
 	public void testRetrieveAlarmEventData_AlarmCalculationDataFileIsAvailable_ShouldNotReturnNull() {

@@ -32,3 +32,5 @@
 1351949392188	Delete elements
 1351949400783	Delete element
 1351949466682	Delete element
+1352022934603	Rename method 'updateLicenceStatus'
+1352022938327	Rename method 'getLicenceStatus'

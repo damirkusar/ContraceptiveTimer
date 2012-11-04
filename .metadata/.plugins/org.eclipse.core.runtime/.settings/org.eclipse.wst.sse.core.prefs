@@ -1,2 +1,2 @@
 eclipse.preferences.version=1
-task-tag-projects-already-scanned=ContraceptiveTimer,ContraceptiveTimerTest,gLicencingLibrary
+task-tag-projects-already-scanned=ContraceptiveTimer,ContraceptiveTimerTest,ch.kusar.contraceptivetimer.LicenseCheck,library

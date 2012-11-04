@@ -1,7 +1,5 @@
 package ch.kusar.contraceptivetimer.test.wrapper;
 
-import java.security.SecureRandom;
-
 import junit.framework.Assert;
 import android.test.AndroidTestCase;
 import ch.kusar.contraceptivetimer.MainApplicationContext;
@@ -17,11 +15,9 @@ public class InternalStorageWrapperTest extends AndroidTestCase {
 	private AlarmCalculationData alarmCalculationData;
 	private LicenseStatus licenseStatus;
 	private InternalStorageWrapper internalStorageWrapper;
-	private SecureRandom random;
 
 	@Override
 	public void setUp() throws Exception {
-		this.random = new SecureRandom();
 
 		this.internalStorageWrapper = new InternalStorageWrapper(MainApplicationContext.getAppContext());
 
@@ -37,7 +33,6 @@ public class InternalStorageWrapperTest extends AndroidTestCase {
 	public void tearDown() throws Exception {
 		this.alarmCalculationData = null;
 		this.internalStorageWrapper = null;
-		this.random = null;
 	}
 
 	public void testLoadFromStorage_LoadsStoredFileIntoObject_ShouldLoadTheSavedDataCorrectly() {
