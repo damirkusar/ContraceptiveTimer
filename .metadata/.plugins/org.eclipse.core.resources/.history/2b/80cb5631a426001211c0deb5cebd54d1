@@ -66,6 +66,7 @@ public class AlarmScreenActivity extends FragmentActivity implements CancelDialo
 			this.setStartButtonEnabled(true);
 			this.setStopButtonEnabled(false);
 			this.setUpdateAlarmTimeEnabled(false);
+			this.setToggleButtonEnabled(true);
 		}
 	}
 

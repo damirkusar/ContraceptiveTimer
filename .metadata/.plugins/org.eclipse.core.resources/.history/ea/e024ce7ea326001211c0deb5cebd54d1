@@ -37,6 +37,7 @@ public class AlarmScreenActivity extends FragmentActivity implements CancelDialo
 		this.setContentView(R.layout.activity_alarmscreen);
 
 		this.internalStorageWrapper = new InternalStorageWrapper(MainApplicationContext.getAppContext());
+		this.setUpdateAlarmTimeEnabled(false);
 
 		this.setupViews();
 	}
@@ -63,9 +64,6 @@ public class AlarmScreenActivity extends FragmentActivity implements CancelDialo
 			this.turnToggleButtonOn(acd.getContraceptiveType());
 		} else {
 			this.turnToggleButtonOn(ContraceptiveType.CONTRACEPTION_PILL);
-			this.setStartButtonEnabled(true);
-			this.setStopButtonEnabled(false);
-			this.setUpdateAlarmTimeEnabled(false);
 		}
 	}
 

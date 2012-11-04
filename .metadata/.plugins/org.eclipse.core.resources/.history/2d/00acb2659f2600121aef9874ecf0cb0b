@@ -50,9 +50,11 @@ public class LicenseCheck extends Activity {
 				LicenseCheck.BASE64_PUBLIC_KEY);
 
 		boolean isPaid = this.getLicenseStatus();
+
 		if (isPaid) {
 			this.startMainActivity();
 		} else {
+
 			this.doCheck();
 		}
 	}

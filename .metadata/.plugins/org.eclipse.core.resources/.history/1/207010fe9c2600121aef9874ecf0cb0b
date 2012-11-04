@@ -39,20 +39,20 @@ public class LicenseCheck extends Activity {
 
 		LoggerWrapper.LogInfo("Starting LicenseCheck Activity!!!");
 
-		// Try to use more data here. ANDROID_ID is a single point of
-		// attack.
-		String deviceId = Secure.getString(this.getContentResolver(), Secure.ANDROID_ID);
-
-		// Library calls this when it's done.
-		this.mLicenseCheckerCallback = new MyLicenseCheckerCallBack();
-		// Construct the LicenseChecker with a policy.
-		this.mChecker = new LicenseChecker(this, new ServerManagedPolicy(this, new AESObfuscator(LicenseCheck.SALT, this.getPackageName(), deviceId)),
-				LicenseCheck.BASE64_PUBLIC_KEY);
-
 		boolean isPaid = this.getLicenseStatus();
 		if (isPaid) {
 			this.startMainActivity();
 		} else {
+
+			// Try to use more data here. ANDROID_ID is a single point of
+			// attack.
+			String deviceId = Secure.getString(this.getContentResolver(), Secure.ANDROID_ID);
+
+			// Library calls this when it's done.
+			this.mLicenseCheckerCallback = new MyLicenseCheckerCallBack();
+			// Construct the LicenseChecker with a policy.
+			this.mChecker = new LicenseChecker(this, new ServerManagedPolicy(this, new AESObfuscator(LicenseCheck.SALT, this.getPackageName(), deviceId)),
+					LicenseCheck.BASE64_PUBLIC_KEY);
 			this.doCheck();
 		}
 	}

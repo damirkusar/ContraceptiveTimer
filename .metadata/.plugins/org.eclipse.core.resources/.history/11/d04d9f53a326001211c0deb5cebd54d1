@@ -63,9 +63,6 @@ public class AlarmScreenActivity extends FragmentActivity implements CancelDialo
 			this.turnToggleButtonOn(acd.getContraceptiveType());
 		} else {
 			this.turnToggleButtonOn(ContraceptiveType.CONTRACEPTION_PILL);
-			this.setStartButtonEnabled(true);
-			this.setStopButtonEnabled(false);
-			this.setUpdateAlarmTimeEnabled(false);
 		}
 	}
 
