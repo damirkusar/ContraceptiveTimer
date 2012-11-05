@@ -7,9 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TimePicker;
-import android.widget.Toast;
 import android.widget.ToggleButton;
+import ch.kusar.contraceptivetimer.businessobjects.AlarmEventData;
+import ch.kusar.contraceptivetimer.businessobjects.AlarmMessage;
 import ch.kusar.contraceptivetimer.businessobjects.ContraceptiveType;
+import ch.kusar.contraceptivetimer.businessobjects.EventType;
 import ch.kusar.contraceptivetimer.calculator.AlarmCalculationData;
 import ch.kusar.contraceptivetimer.calculator.AlarmTime;
 import ch.kusar.contraceptivetimer.dialog.CancelDialog;
@@ -42,7 +44,7 @@ public class AlarmScreenActivity extends FragmentActivity implements CancelDialo
 		TimePicker tp = this.getTimePicker();
 		tp.setIs24HourView(true);
 
-		AlarmCalculationData acd = this.internalStorageWrapper.loadFromStorage();
+		AlarmCalculationData acd = this.internalStorageWrapper.loadAlarmCalculationDataFromStorage();
 		if (acd != null) {
 			LoggerWrapper.LogDebug(acd.toString());
 			tp.setCurrentHour(acd.getAlarmTimeHourOfDay());
@@ -60,6 +62,9 @@ public class AlarmScreenActivity extends FragmentActivity implements CancelDialo
 			this.turnToggleButtonOn(acd.getContraceptiveType());
 		} else {
 			this.turnToggleButtonOn(ContraceptiveType.CONTRACEPTION_PILL);
+			this.setStartButtonEnabled(true);
+			this.setStopButtonEnabled(false);
+			this.setUpdateAlarmTimeEnabled(false);
 		}
 	}
 
@@ -160,7 +165,7 @@ public class AlarmScreenActivity extends FragmentActivity implements CancelDialo
 	private void restartAlarm() {
 		AlarmManagerWrapper alarmManagerWrapper = new AlarmManagerWrapper();
 		alarmManagerWrapper.CancelAlarm();
-		alarmManagerWrapper.SetAlarm();
+		alarmManagerWrapper.SetupAlarm();
 	}
 
 	private void cancelAlarm() {
@@ -203,13 +208,9 @@ public class AlarmScreenActivity extends FragmentActivity implements CancelDialo
 	}
 
 	public void onStartDialogNowClick(DialogFragment dialog) {
-		this.setupAlarmCalculationData();
-
+		this.setupAlarmCalculationData(CalendarWrapper.getToday());
 		this.setupButtonsOnStart();
-
 		this.restartAlarm();
-
-		// Todo notification for first use now
 	}
 
 	private void setupButtonsOnStart() {
@@ -223,19 +224,12 @@ public class AlarmScreenActivity extends FragmentActivity implements CancelDialo
 		DatePicker dp = (DatePicker) dialog.getDialog().findViewById((R.id.datePicker));
 		CalendarWrapper calendarWrapper = new CalendarWrapper(dp.getYear(), dp.getMonth(), dp.getDayOfMonth());
 
-		AlarmCalculationData acd = this.internalStorageWrapper.loadFromStorage();
-		acd.setFirstUseWasOn(calendarWrapper);
-
-		Toast.makeText(this, acd.toString(), Toast.LENGTH_LONG).show();
-		Toast.makeText(this, calendarWrapper.toString(), Toast.LENGTH_LONG).show();
-		
+		this.setupAlarmCalculationData(calendarWrapper);
 		this.setupButtonsOnStart();
 		this.restartAlarm();
-
-		// Todo notification for first use on specific date
 	}
 
-	private void setupAlarmCalculationData() {
+	private void setupAlarmCalculationData(CalendarWrapper firstUseWasOn) {
 		TimePicker tp = this.getTimePicker();
 		tp.clearFocus();
 		int hours = tp.getCurrentHour();
@@ -246,11 +240,39 @@ public class AlarmScreenActivity extends FragmentActivity implements CancelDialo
 		acd.setAlarmTimeHourOfDay(hours);
 		acd.setAlarmTimeMinuteOfDay(minutes);
 		acd.setContraceptiveType(this.contraceptiveType);
-		acd.setLastUseOfContraceptive(CalendarWrapper.getToday());
-		acd.setLastBreak(CalendarWrapper.getTodayOneWeekAgo());
+		acd.setFirstUseWasOn(firstUseWasOn);
 
 		this.internalStorageWrapper.saveToStorage(acd);
 
-		LoggerWrapper.LogInfo(acd.toString());
+		this.setTodaysAlarm(firstUseWasOn, hours, minutes);
+
+		LoggerWrapper.LogError(acd.toString());
+	}
+
+	private void setTodaysAlarm(CalendarWrapper firstUseWasOn, int hours, int minutes) {
+		if (firstUseWasOn.toString().equals(CalendarWrapper.getToday().toString())) {
+			AlarmManagerWrapper alarmManagerWrapper = new AlarmManagerWrapper();
+			AlarmEventData aed = new AlarmEventData();
+			aed.setAlarmMessage(this.getCorrectMessage());
+			aed.setEventType(EventType.EVENT_AFTER_BREAK);
+
+			CalendarWrapper cal = CalendarWrapper.getToday();
+			cal.setHourOfDay(hours);
+			cal.setMinutes(minutes);
+			aed.setAlarmTimeInMilliSeconds(CalendarWrapper.getNowAsMilliseconds());
+
+			alarmManagerWrapper.setAlarm(MainApplicationContext.getAppContext(), aed);
+		}
+	}
+
+	public String getCorrectMessage() {
+		if (this.contraceptiveType == ContraceptiveType.CONTRACEPTION_PATCH) {
+			return AlarmMessage.getPatchChangeMessage(1);
+		} else if (this.contraceptiveType == ContraceptiveType.CONTRACEPTION_RING) {
+			return AlarmMessage.getRingChangeMessage();
+		} else if (this.contraceptiveType == ContraceptiveType.CONTRACEPTION_PILL) {
+			return AlarmMessage.getPillChangeMessage(1);
+		}
+		return "";
 	}
 }

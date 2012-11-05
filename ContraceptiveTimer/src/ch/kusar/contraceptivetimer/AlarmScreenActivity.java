@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TimePicker;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 import ch.kusar.contraceptivetimer.businessobjects.AlarmEventData;
 import ch.kusar.contraceptivetimer.businessobjects.AlarmMessage;
@@ -252,7 +251,7 @@ public class AlarmScreenActivity extends FragmentActivity implements CancelDialo
 
 	private void setTodaysAlarm(CalendarWrapper firstUseWasOn, int hours, int minutes) {
 		if (firstUseWasOn.toString().equals(CalendarWrapper.getToday().toString())) {
-			AlarmManagerWrapper alarmManagerWrapper = new AlarmManagerWrapper();
+			new AlarmManagerWrapper();
 			AlarmEventData aed = new AlarmEventData();
 			aed.setAlarmMessage(this.getCorrectMessage());
 			aed.setEventType(EventType.EVENT_AFTER_BREAK);
@@ -262,8 +261,8 @@ public class AlarmScreenActivity extends FragmentActivity implements CancelDialo
 			cal.setMinutes(minutes);
 			aed.setAlarmTimeInMilliSeconds(CalendarWrapper.getNowAsMilliseconds());
 
-			alarmManagerWrapper.setAlarm(MainApplicationContext.getAppContext(), aed);
-			Toast.makeText(this, "Today: " + firstUseWasOn.toString(), Toast.LENGTH_LONG).show();
+			// alarmManagerWrapper.setAlarm(MainApplicationContext.getAppContext(),
+			// aed);
 		}
 	}
 
